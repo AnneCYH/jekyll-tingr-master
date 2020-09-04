@@ -92,8 +92,8 @@
   <link rel="preload" as="script" href="/bower_components/modernizr/modernizr.js"/>
   <script src="/bower_components/modernizr/modernizr.js"></script>
 
-  <link rel="canonical" href="https://annecyh.github.io/jekyll-tingr-master/pricing.html.bak">
-  <link rel="alternate" type="application/rss+xml" title="TINGR. The Childcare Product. Putting Children 1st." href="https://annecyh.github.io/jekyll-tingr-master/feed.xml"
+  <link rel="canonical" href="http://localhost:4000/pricing.html.bak">
+  <link rel="alternate" type="application/rss+xml" title="TINGR. The Childcare Product. Putting Children 1st." href="http://localhost:4000/feed.xml"
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <!-- Google Tag Manager -->
@@ -122,7 +122,7 @@
     <ul class='title-area'>
       <li class="site-title-log">
         <h3>
-          <a href='https://annecyh.github.io/jekyll-tingr-master/index.html'>
+          <a href='http://localhost:4000/index.html'>
             <b>TIN</b><span>GR</span>
           </a>
         </h3>
@@ -142,7 +142,7 @@
           
             <li class=" ">
               
-                <a href="https://annecyh.github.io/jekyll-tingr-master/features.html" class="">Features</a>
+                <a href="http://localhost:4000/features.html" class="">Features</a>
               
             </li>
           
@@ -152,7 +152,7 @@
           
             <li class=" ">
               
-                <a href="https://annecyh.github.io/jekyll-tingr-master/contact.html" class="">Contact</a>
+                <a href="http://localhost:4000/contact.html" class="">Contact</a>
               
             </li>
           
@@ -162,7 +162,7 @@
           
             <li class=" ">
               
-                <a href="https://annecyh.github.io/jekyll-tingr-master/pricing.html" class="">Pricing</a>
+                <a href="http://localhost:4000/pricing.html" class="">Pricing</a>
               
             </li>
           
@@ -172,7 +172,7 @@
           
             <li class=" try-now-list">
               
-                <a href="https://annecyh.github.io/jekyll-tingr-master/signup.html" class="try-now-btn">Try it FREE</a>
+                <a href="http://localhost:4000/signup.html" class="try-now-btn">Try it FREE</a>
               
             </li>
           
@@ -208,8 +208,8 @@
 
 
     <div style="order:1; border-radius: 20px 0 0 20px;" class="Rtable-cell-promo-center Rtable-cell-promo-first"></div>
-    <div style="order:1;" class="Rtable-cell-promo-center Rtable-cell-promo-mid"><p style="width: 8rem; background; transparent; margin: 0 auto; height: 100%; font-weight: bold; padding: 1rem; color: white;">Free For Life</p></div>
-    <div style="order:1; border-radius: 0 20px 20px 0;" class="Rtable-cell-promo-center Rtable-cell-promo-last"><p style="padding: 1rem; float: left; color: white; font-weight: bold;">Covid-19 Promo<br />Offer ends 15 September, 2020</p></div>
+    <div style="order:1;" class="Rtable-cell-promo-center Rtable-cell-promo-mid"><p style="width: 8rem; background; transparent; margin: 0 auto; height: 100%; font-weight: bold; padding: 1rem; color: white;">Most Popular</p></div>
+    <div style="order:1; border-radius: 0 20px 20px 0;" class="Rtable-cell-promo-center Rtable-cell-promo-last"><p style="padding: 1rem; float: left; color: white; font-weight: bold;">Covid-19 Promo<br />Trial period extended to 6 months.</p></div>
 
     <div style="order:2;" class="Rtable-cell-promo Rtable-cell-promo-first"></div>
     <div style="order:2;" class="Rtable-cell-promo Rtable-cell-promo-mid"><p style="width: 0; height: 0; border-left: 4rem solid transparent; border-right: 4rem solid transparent; border-top: 20px solid #f857a6; margin: 0 auto;"></p></div>
@@ -279,7 +279,7 @@
        
     
 
-    <div style="order:3;" class="Rtable-cell Rtable-top-row Rtable-most-popular">Most Popular</div>
+    <div style="order:3;" class="Rtable-cell Rtable-top-row"></div>
     <div style="order:4; position: sticky; top: 0; background: white;" class="Rtable-cell Rtable-cell-col2">
       <p class="Rtable-cell">Unlimited Trial</p>
       <p class="RTable-cell-price"><span style="font-size: 1.1rem;">Free for Life</span><br /><span class="font-rem09 font-strike">$49<span class="font-rem09">/yr</span></span><br /><span class="font-rem08">For home childcares</span></p>
@@ -625,8 +625,8 @@
       </tr>
       <tr>
         <td class="Rtable-cell-promo-small" style="border-radius: 20px 0 0 20px;" ></td>
-        <td class="Rtable-cell-promo-small"><p class="cell-promo-small-text">Free For Life</p></td>
-        <td colspan="2" class="Rtable-cell-promo-small" style="border-radius: 0 20px 20px 0;"><p class="cell-promo-small-desc">Covid-19 Promo<br />Offer ends 15 September, 2020</p></td>
+        <td class="Rtable-cell-promo-small"><p class="cell-promo-small-text">Most Popular</p></td>
+        <td colspan="2" class="Rtable-cell-promo-small" style="border-radius: 0 20px 20px 0;"><p class="cell-promo-small-desc">Covid-19 Promo<br />Trial period extended to 6 months.</p></td>
       </tr>
       <tr>
         <td></td>
@@ -642,11 +642,6 @@
           <col style="width: 33.33%;">
           <col style="width: 33.33%;">
         </colgroup>
-        <tr>
-          <td class="tabUnlimited">Most Popular</td>
-          <td></td>
-          <td></td>
-        </tr>
         <tr>
           <td><button id="defaultPriceTab" class="tablinks tabUnlimited" onclick="openCity(event, 'unlimitedTrial')"><p class="description-small">Unlimited Trial</p><p class="price-small-description">Free for Life</p><p class="price-small-description-strike">$49<span class="font-rem09">/yr</span></p><p class="font-rem08">For home childcares</p></button></td>
           <td><button class="tablinks tabStandard" onclick="openCity(event, 'standard')"><p class="description-small">Standard</p><p class="price-small-description">$99<span class="font-rem09">/yr</span></p><p class="price-small-description-strike">$249<span class="font-rem09">/yr</span></p><p class="font-rem08">For center-based childcares</p></button></td>

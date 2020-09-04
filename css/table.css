@@ -67,10 +67,11 @@ p.Rtable-cell-col1 {
   color: white;
 }
 
-/* Unlimited Trial */
+/* Basic Trial */
 .Rtable-cell-col2 {
-  border: solid 1px #56C49E;
+  border: solid 1px rgba(105,120,129,0.15);
   border-top: solid 6px #56C49E;
+  border-bottom: solid 6px #56C49E;
   color: #56C49E;
 }
 .Rtable-most-popular {
@@ -80,8 +81,9 @@ p.Rtable-cell-col1 {
 
 /* Standard */
 .Rtable-cell-col3 {
-  border: solid 1px rgba(105,120,129,0.15);
+  border: solid 1px #8d44d3;
   border-top: solid 6px #8d44d3;
+  border-bottom: solid 6px #8d44d3;
   color: #8d44d3;
 }
 
@@ -89,6 +91,7 @@ p.Rtable-cell-col1 {
 .Rtable-cell-col4 {
   border: solid 1px rgba(105,120,129,0.15);
   border-top: solid 6px #2196F3;
+  border-bottom: solid 6px #2196F3;
   color: #2196F3;
 }
 
@@ -158,17 +161,17 @@ div.Rtable-top-row {
   background-color: rgba(255,88,88,1);
   margin: 0 auto;
   height: 100%;
-  border-radius: 20px 20px 0 0;
+  border-radius: 10px 10px 0 0;
   padding-top: 1rem;
 }
 .cell-promo-small-bottom {
   width: 6rem;
-  background-color: rgba(248,87,166,1);
   margin: 0 auto;
-  height: 100%;
-  border-radius: 0 0 20px 20px;
-  padding-bottom: 1rem;
-  margin-bottom: 1rem;
+  height: 0;
+  border-top: 1rem solid rgba(248,87,166,1);
+  border-left: 3rem solid transparent;
+  border-right: 3rem solid transparent;
+  margin-bottom: 0.5rem;
 }
 .cell-promo-small-text {
   font-size: 0.9rem;
@@ -217,11 +220,11 @@ p.Rtable-cell {
 .Rtable--2cols > .Rtable-cell  { width: 50%; }
 .Rtable--3cols > .Rtable-cell  { width: 33.33%; }
 .Rtable--4cols > .Rtable-cell  { width: 25%; }
-.Rtable--5cols > .Rtable-cell  { width: 20%; }
+.Rtable--5cols > .Rtable-cell  { width: 16%; }
 .Rtable--6cols > .Rtable-cell  { width: 16.6%; }
 
-.Rtable--5cols > .Rtable-cell-first  { width: 23%; text-align: left; padding-left: 2em;}
-.Rtable--5cols > .Rtable-cell-last  { width: 17%; }
+.Rtable--5cols > .Rtable-cell-first  { width: 20%; text-align: left; padding-left: 2em;}
+.Rtable--5cols > .Rtable-cell-last  { width: 32%; }
 
 @tableColour: slategrey;
 
@@ -233,19 +236,32 @@ p.Rtable-cell {
 
 /* Responsive
 ==================================== */
+
 @media all and (max-width: 1400px) {
+  .Rtable {
+    width: 85%;
+  }
+}
+
+@media all and (max-width: 1300px) {
   .Rtable {
     width: 90%;
   }
 }
 
-@media all and (max-width: 1050px) {
+@media all and (max-width: 1200px) {
   .Rtable {
     width: 95%;
   }
 }
 
-@media all and (max-width: 870px) {
+@media all and (max-width: 1100px) {
+  .Rtable {
+    width: 98%;
+  }
+}
+
+@media all and (max-width: 1023px) {
   .Rtable--collapse  {
     display: block;
     > .Rtable-cell { width: 100% !important; }
@@ -256,7 +272,7 @@ p.Rtable-cell {
   }
 }
 
-@media only screen and (min-width: 871px){
+@media only screen and (min-width: 1024px){
   .Rtable-show-small {
     display: none !important;
   }
@@ -303,11 +319,11 @@ p.RTable-cell-price {
   border-radius: 10px 10px 0 0;
 }
 
-button.tabUnlimited {
+button.tabBasic {
   background-color: #56C49E;
 }
 
-button.tabUnlimited.active {
+button.tabBasic.active {
   color: #56C49E;
   border: solid 2px #56C49E;
   border-bottom: solid 6px #56C49E;
@@ -367,7 +383,7 @@ button.tabEnterprise.active {
   padding: 5px 15px;
 }
 
-td.tabUnlimited {
+td.tabBasic {
   color: white;
   background-color: #56C49E;
   text-align: center;
@@ -395,8 +411,8 @@ td.tabUnlimited {
 
 /* Create an active/current tablink class */
 
-button.tabStandard, button.tabEnterprise {
-  border-radius: 15px 15px 0 0;
+button.tabBasic, button.tabStandard, button.tabEnterprise {
+  border-radius: 10px 10px 0 0;
 }
 
 /* Style the tab content */
@@ -484,4 +500,44 @@ p.description-small {
   margin: 5px;
   font-style: normal;
   font-family: 'Roboto Condensed', sans-serif;
+}
+
+.price-heading {
+  display: inline-block;
+  width: 92%;
+  text-align: left;
+}
+
+.price-description {
+  padding: 0.5rem;
+  font-size: 0.85rem;
+  color: #5e4a4a;
+  font-style: italic;
+}
+.price-play-button {
+  margin-right: 7px;
+  width: 4%;
+  display: inline-block;
+  float:right;
+  font-style: normal;
+  font-size: 1.2rem;
+  font-family: 'FontAwesome';
+  color: rgb(0, 173, 239);
+}
+
+summary {
+  cursor: pointer;
+}
+summary:before {
+  content: unset;
+}
+summary.price-heading-summary:before {
+  content: ' +  ';
+  font-size: 25px;
+  font-weight: 700;
+}
+details[open] summary.price-heading-summary:before {
+  content: ' -  ';
+  font-size: 25px;
+  font-weight: 700;
 }

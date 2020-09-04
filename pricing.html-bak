@@ -92,7 +92,7 @@
   <link rel="preload" as="script" href="/bower_components/modernizr/modernizr.js"/>
   <script src="/bower_components/modernizr/modernizr.js"></script>
 
-  <link rel="canonical" href="http://localhost:4000/pricing.html">
+  <link rel="canonical" href="http://localhost:4000/pricing.html-bak">
   <link rel="alternate" type="application/rss+xml" title="TINGR. The Childcare Product. Putting Children 1st." href="http://localhost:4000/feed.xml"
 
   <!-- Google Tag Manager -->
@@ -207,8 +207,8 @@
 
 
     <div style="order:1; border-radius: 20px 0 0 20px;" class="Rtable-cell-promo-center Rtable-cell-promo-first"></div>
-    <div style="order:1;" class="Rtable-cell-promo-center Rtable-cell-promo-mid"><p style="width: 8rem; background; transparent; margin: 0 auto; height: 100%; font-weight: bold; padding: 1rem; color: white;">Most Popular</p></div>
-    <div style="order:1; border-radius: 0 20px 20px 0;" class="Rtable-cell-promo-center Rtable-cell-promo-last"><p style="padding: 1rem; float: left; color: white; font-weight: bold;">Covid-19 Promo<br />Trial period extended to 6 months.</p></div>
+    <div style="order:1;" class="Rtable-cell-promo-center Rtable-cell-promo-mid"><p style="width: 8rem; background; transparent; margin: 0 auto; height: 100%; font-weight: bold; padding: 1rem; color: white;">Free For Life</p></div>
+    <div style="order:1; border-radius: 0 20px 20px 0;" class="Rtable-cell-promo-center Rtable-cell-promo-last"><p style="padding: 1rem; float: left; color: white; font-weight: bold;">Covid-19 Promo<br />Offer ends 15 September, 2020</p></div>
 
     <div style="order:2;" class="Rtable-cell-promo Rtable-cell-promo-first"></div>
     <div style="order:2;" class="Rtable-cell-promo Rtable-cell-promo-mid"><p style="width: 0; height: 0; border-left: 4rem solid transparent; border-right: 4rem solid transparent; border-top: 20px solid #f857a6; margin: 0 auto;"></p></div>
@@ -216,7 +216,7 @@
 
     
     <div style="order:3;" class="Rtable-cell Rtable-cell-first Rtable-top-row"></div>
-    <div style="order:4; position: sticky; top: 0; padding: 0.5rem 3rem;" class="Rtable-cell Rtable-cell-first Rtable-cell-col1">
+    <div style="order:4; position: sticky; top: 0;" class="Rtable-cell Rtable-cell-first Rtable-cell-col1">
       <p>&nbsp;</p>
       <p>&nbsp;</p>
       <p class="Rtable-cell Rtable-cell-col1">Features</p>
@@ -226,23 +226,23 @@
     
     
         
-       <div style="order: 5;" class="Rtable-cell Rtable-cell-first alternate-row">DIGITAL STATE FORMS</div>
+       <div style="order: 5;" class="Rtable-cell Rtable-cell-first alternate-row">STUDENT ENROLLMENTS</div>
        
     
         
-       <div style="order: 6;" class="Rtable-cell Rtable-cell-first ">STUDENT ENROLLMENTS</div>
+       <div style="order: 6;" class="Rtable-cell Rtable-cell-first ">DIGITAL STATE FORMS</div>
        
     
         
-       <div style="order: 7;" class="Rtable-cell Rtable-cell-first alternate-row">STUDENT DOCUMENTS</div>
+       <div style="order: 7;" class="Rtable-cell Rtable-cell-first alternate-row">PARENT COMMUNICATION</div>
        
     
         
-       <div style="order: 8;" class="Rtable-cell Rtable-cell-first ">ATTENDANCE (STUDENTS & STAFF)</div>
+       <div style="order: 8;" class="Rtable-cell Rtable-cell-first ">ATTENDANCE FOR STUDENTS & STAFF</div>
        
     
         
-       <div style="order: 9;" class="Rtable-cell Rtable-cell-first alternate-row">EMAILS & NEWSLETTERS</div>
+       <div style="order: 9;" class="Rtable-cell Rtable-cell-first alternate-row">SCHOOL NEWSLETTERS</div>
        
     
         
@@ -250,7 +250,7 @@
        
     
         
-       <div style="order: 11;" class="Rtable-cell Rtable-cell-first alternate-row">CLASSROOM AGENDA</div>
+       <div style="order: 11;" class="Rtable-cell Rtable-cell-first alternate-row">CLASSROOM SCHEDULES</div>
        
     
         
@@ -262,7 +262,7 @@
        
     
         
-       <div style="order: 14;" class="Rtable-cell Rtable-cell-first ">ROSTER</div>
+       <div style="order: 14;" class="Rtable-cell Rtable-cell-first ">STUDENT ROSTER</div>
        
     
         
@@ -270,18 +270,18 @@
        
     
         
-       <div style="order: 16;" class="Rtable-cell Rtable-cell-first ">SCHOOL WEBSITE</div>
+       <div style="order: 16;" class="Rtable-cell Rtable-cell-first ">24/7 365 DAYS SUPPORT</div>
        
     
         
-       <div style="order: 17;" class="Rtable-cell Rtable-cell-first alternate-row">24/7 SUPPORT</div>
+       <div style="order: 17;" class="Rtable-cell Rtable-cell-first alternate-row">FREE WEBSITE</div>
        
     
 
-    <div style="order:3;" class="Rtable-cell Rtable-top-row"></div>
-    <div style="order:4; position: sticky; top: 0; background: white; padding: 0.5rem 0.1rem;" class="Rtable-cell Rtable-cell-col2">
-      <p class="Rtable-cell">Basic</p>
-      <p class="RTable-cell-price"><span style="font-size: 1.1rem;">$49</span><span class="font-rem09">/yr</span><br /><br /><span class="font-rem08">For home child cares</span></p>
+    <div style="order:3;" class="Rtable-cell Rtable-top-row Rtable-most-popular">Most Popular</div>
+    <div style="order:4; position: sticky; top: 0; background: white;" class="Rtable-cell Rtable-cell-col2">
+      <p class="Rtable-cell">Unlimited Trial</p>
+      <p class="RTable-cell-price"><span style="font-size: 1.1rem;">Free for Life</span><br /><span class="font-rem09 font-strike">$49<span class="font-rem09">/yr</span></span><br /><span class="font-rem08">For home childcares</span></p>
       <p><a class="price-cta-button" style="background-color: #56C49E; width: 80%;" href="https://my.tingr.org/signup.html">SIGN UP</a></p>
     </div>
     
@@ -301,7 +301,7 @@
     
       
       
-      <div style="order: 7;" class="Rtable-cell alternate-row"></div>
+      <div style="order: 7;" class="Rtable-cell alternate-row"><span style="color: green; font-weight: 600; font-size: 18px;">✓</span></div>
       
       
     
@@ -331,13 +331,13 @@
     
       
       
-      <div style="order: 12;" class="Rtable-cell "></div>
+      <div style="order: 12;" class="Rtable-cell "><span style="color: green; font-weight: 600; font-size: 18px;">✓</span></div>
       
       
     
       
       
-      <div style="order: 13;" class="Rtable-cell alternate-row"></div>
+      <div style="order: 13;" class="Rtable-cell alternate-row"><span style="color: green; font-weight: 600; font-size: 18px;">✓</span></div>
       
       
     
@@ -355,19 +355,19 @@
     
       
       
-      <div style="order: 16;" class="Rtable-cell "><span style="color: green; font-weight: 600; font-size: 18px;">✓</span></div>
+      <div style="order: 16;" class="Rtable-cell ">Email only</div>
       
       
     
       
       
-      <div style="order: 17;" class="Rtable-cell alternate-row">Email only</div>
+      <div style="order: 17;" class="Rtable-cell alternate-row"><span style="color: green; font-weight: 600; font-size: 18px;">✓</span></div>
       
       
     
 
     <div style="order:3;" class="Rtable-cell Rtable-top-row"></div>
-    <div style="order:4; position: sticky; top: 0; background: white; padding: 0.5rem 0.1rem;" class="Rtable-cell Rtable-cell-col3">
+    <div style="order:4; position: sticky; top: 0; background: white;" class="Rtable-cell Rtable-cell-col3">
       <p class="Rtable-cell">Standard</p>
       <p class="RTable-cell-price"><span style="font-size: 1.1rem;">$99</span><span class="font-rem09">/yr</span><br /><span class="font-rem09 font-strike">$249<span class="font-rem09">/yr</span></span><br /><span class="font-rem08">For center-based childcares</span></p>
       <p><a class="price-cta-button" style="background-color: #8d44d3; width: 80%;" href="https://my.tingr.org/signup.html">SIGN UP</a></p>
@@ -443,19 +443,19 @@
     
         
         
-        <div style="order: 16;" class="Rtable-cell "><span style="color: green; font-weight: 600; font-size: 18px;">✓</span></div>
+        <div style="order: 16;" class="Rtable-cell ">Email only</div>
         
         
     
         
         
-        <div style="order: 17;" class="Rtable-cell alternate-row">Email only</div>
+        <div style="order: 17;" class="Rtable-cell alternate-row"><span style="color: green; font-weight: 600; font-size: 18px;">✓</span></div>
         
         
     
 
     <div style="order:3;" class="Rtable-cell Rtable-top-row"></div>
-    <div style="order:4; position: sticky; top: 0; background: white; padding: 0.5rem 0.1rem;" class="Rtable-cell Rtable-cell-col4">
+    <div style="order:4; position: sticky; top: 0; background: white;" class="Rtable-cell Rtable-cell-col4">
       <p class="Rtable-cell">Enterprise</p>
       <p class="RTable-cell-price"><span style="font-size: 1.1rem;"><a href="/contact.html" style="color: unset;">Contact Us</a></span><br />&nbsp;<br /><span class="font-rem08">For peace of mind</span></p>
       <p><a class="price-cta-button" style="background-color: #2196F3; width: 80%;" href="/contact.html">REQUEST A DEMO</a></p>
@@ -531,19 +531,19 @@
     
       
       
-      <div style="order: 16;" class="Rtable-cell "><span style="color: green; font-weight: 600; font-size: 18px;">✓</span></div>
+      <div style="order: 16;" class="Rtable-cell ">Email + Phone</div>
       
       
     
       
       
-      <div style="order: 17;" class="Rtable-cell alternate-row">Email + Phone</div>
+      <div style="order: 17;" class="Rtable-cell alternate-row"><span style="color: green; font-weight: 600; font-size: 18px;">✓</span></div>
       
       
     
 
     <div style="order:3;" class="Rtable-cell Rtable-cell-last Rtable-cell-left Rtable-top-row"></div>
-    <div style="order:4; position: sticky; top: 0; padding: 0.5rem 0.1rem;" class="Rtable-cell Rtable-cell-last Rtable-cell-col5">
+    <div style="order:4; position: sticky; top: 0;" class="Rtable-cell Rtable-cell-last Rtable-cell-col5">
       <p>&nbsp;</p>
       <p>&nbsp;</p>
       <p class="Rtable-cell Rtable-cell-col5">Description</p>
@@ -553,146 +553,55 @@
     
     
       
-       <div style="order: 5;" class="Rtable-cell Rtable-cell-last Rtable-cell-left alternate-row">
-         <div class="price-heading">
-         <details><summary markdown="span">Collect State forms and other paper work with a single click.</summary>
-           <div class="price-description">Convenient. Secure. 100% Legit.<br />Organized by Student, and available for you at all times.</div>
-         </details>
-         </div>
-         <div class="price-play-button"><i class="fas fa-play-circle"></i></div>
-       </div>
+       <div style="order: 5;" class="Rtable-cell Rtable-cell-last Rtable-cell-left alternate-row">description here</div>
        
     
       
-       <div style="order: 6;" class="Rtable-cell Rtable-cell-last Rtable-cell-left ">
-         <div class="price-heading">
-         <details><summary markdown="span">New Student enrollments. Made super easy.</summary>
-           <div class="price-description">Parents love it. No wasted paper. Good karma too!</div>
-         </details>
-         </div>
-         <div class="price-play-button"><i class="fas fa-play-circle"></i></div>
-       </div>
+       <div style="order: 6;" class="Rtable-cell Rtable-cell-last Rtable-cell-left ">description here</div>
        
     
       
-       <div style="order: 7;" class="Rtable-cell Rtable-cell-last Rtable-cell-left alternate-row">
-         <div class="price-heading">
-         <details><summary markdown="span">Request and Receive documents online. Clutter free.</summary>
-           <div class="price-description">Let technology work for you. Auto-organized by Student. Download whenever you need.</div>
-         </details>
-         </div>
-         <div class="price-play-button"><i class="fas fa-play-circle"></i></div>
-       </div>
+       <div style="order: 7;" class="Rtable-cell Rtable-cell-last Rtable-cell-left alternate-row">description here</div>
        
     
       
-       <div style="order: 8;" class="Rtable-cell Rtable-cell-last Rtable-cell-left ">
-         <div class="price-heading">
-         <details><summary markdown="span">How about, your smart phone (tablet) as your Attendance sheet?</summary>
-           <div class="price-description">Yep. That's right. Sign-In and Sign-Out Students just right. Works for your Staff too!</div>
-         </details>
-         </div>
-         <div class="price-play-button"><i class="fas fa-play-circle"></i></div>
-       </div>
+       <div style="order: 8;" class="Rtable-cell Rtable-cell-last Rtable-cell-left ">description here</div>
        
     
       
-       <div style="order: 9;" class="Rtable-cell Rtable-cell-last Rtable-cell-left alternate-row">
-         <div class="price-heading">
-         <details><summary markdown="span">Reliable and Professional looking emails & newletters at your disposal.</summary>
-           <div class="price-description">Send to individual parent (or) entire classroom (or) to new prospects. As simple as that.</div>
-         </details>
-         </div>
-         <div class="price-play-button"><i class="fas fa-play-circle"></i></div>
-       </div>
+       <div style="order: 9;" class="Rtable-cell Rtable-cell-last Rtable-cell-left alternate-row">description here</div>
        
     
       
-       <div style="order: 10;" class="Rtable-cell Rtable-cell-last Rtable-cell-left ">
-         <div class="price-heading">
-         <details><summary markdown="span">Invite and manage Teachers by Classroom. Works for temporary Staff too!</summary>
-           <div class="price-description">As an Administrator, you can provide and revoke Teacher access at anytime you want.</div>
-         </details>
-         </div>
-         <div class="price-play-button"><i class="fas fa-play-circle"></i></div>
-       </div>
+       <div style="order: 10;" class="Rtable-cell Rtable-cell-last Rtable-cell-left ">description here</div>
        
     
       
-       <div style="order: 11;" class="Rtable-cell Rtable-cell-last Rtable-cell-left alternate-row">
-         <div class="price-heading">
-         <details><summary markdown="span">Your classroom needs a Daily Agenda.</summary>
-           <div class="price-description">Your Teachers needs to follow. Your Parents wants to know. Know by minute.</div>
-         </details>
-         </div>
-         <div class="price-play-button"><i class="fas fa-play-circle"></i></div>
-       </div>
+       <div style="order: 11;" class="Rtable-cell Rtable-cell-last Rtable-cell-left alternate-row">description here</div>
        
     
       
-       <div style="order: 12;" class="Rtable-cell Rtable-cell-last Rtable-cell-left ">
-         <div class="price-heading">
-         <details><summary markdown="span">Parents love to connect to the Classroom.</summary>
-           <div class="price-description">Whether it is a picture, video or a moment. Capture your classroom in action.</div>
-         </details>
-         </div>
-         <div class="price-play-button"><i class="fas fa-play-circle"></i></div>
-       </div>
+       <div style="order: 12;" class="Rtable-cell Rtable-cell-last Rtable-cell-left ">description here</div>
        
     
       
-       <div style="order: 13;" class="Rtable-cell Rtable-cell-last Rtable-cell-left alternate-row">
-         <div class="price-heading">
-         <details><summary markdown="span">Teachers daily agenda by Classroom in their pocket.</summary>
-           <div class="price-description">From taking attendance -to- messaging a parent -to- sharing moments.</div>
-         </details>
-         </div>
-         <div class="price-play-button"><i class="fas fa-play-circle"></i></div>
-       </div>
+       <div style="order: 13;" class="Rtable-cell Rtable-cell-last Rtable-cell-left alternate-row">description here</div>
        
     
       
-       <div style="order: 14;" class="Rtable-cell Rtable-cell-last Rtable-cell-left ">
-         <div class="price-heading">
-         <details><summary markdown="span">Automatically created SCHOOL ROSTER saves you a ton of time!</summary>
-           <div class="price-description">Ready to Download & Print.</div>
-         </details>
-         </div>
-         <div class="price-play-button"><i class="fas fa-play-circle"></i></div>
-       </div>
+       <div style="order: 14;" class="Rtable-cell Rtable-cell-last Rtable-cell-left ">description here</div>
        
     
       
-       <div style="order: 15;" class="Rtable-cell Rtable-cell-last Rtable-cell-left alternate-row">
-         <div class="price-heading">
-         <details><summary markdown="span">Securely send and receive invoice to Parents.</summary>
-           <div class="price-description">Funds disbursed in few days*</div>
-         </details>
-         </div>
-         <div class="price-play-button"><i class="fas fa-play-circle"></i></div>
-       </div>
+       <div style="order: 15;" class="Rtable-cell Rtable-cell-last Rtable-cell-left alternate-row">description here</div>
        
     
       
-       <div style="order: 16;" class="Rtable-cell Rtable-cell-last Rtable-cell-left ">
-         <div class="price-heading">
-         <details><summary markdown="span">Wouldn't it be nice to have a dedicated wesbite for Student Enrollments?</summary>
-           <div class="price-description">In fact, a lot of centers use it as main website.</div>
-         </details>
-         </div>
-         <div class="price-play-button"><i class="fas fa-play-circle"></i></div>
-       </div>
+       <div style="order: 16;" class="Rtable-cell Rtable-cell-last Rtable-cell-left ">description here</div>
        
     
       
-       <div style="order: 17;" class="Rtable-cell Rtable-cell-last Rtable-cell-left alternate-row">
-         <div class="price-heading">
-         <details><summary markdown="span">Real humans to address real issues.</summary>
-           <div class="price-description">We are committed to make it right.</div>
-         </details>
-         </div>
-         <div class="price-play-button"><i class="fas fa-play-circle"></i></div>
-       </div>
+       <div style="order: 17;" class="Rtable-cell Rtable-cell-last Rtable-cell-left alternate-row">description here</div>
        
     
 
@@ -715,8 +624,8 @@
       </tr>
       <tr>
         <td class="Rtable-cell-promo-small" style="border-radius: 20px 0 0 20px;" ></td>
-        <td class="Rtable-cell-promo-small"><p class="cell-promo-small-text">Most Popular</p></td>
-        <td colspan="2" class="Rtable-cell-promo-small" style="border-radius: 0 20px 20px 0;"><p class="cell-promo-small-desc">Covid-19 Promo<br />Trial period extended to 6 months.</p></td>
+        <td class="Rtable-cell-promo-small"><p class="cell-promo-small-text">Free For Life</p></td>
+        <td colspan="2" class="Rtable-cell-promo-small" style="border-radius: 0 20px 20px 0;"><p class="cell-promo-small-desc">Covid-19 Promo<br />Offer ends 15 September, 2020</p></td>
       </tr>
       <tr>
         <td></td>
@@ -733,15 +642,20 @@
           <col style="width: 33.33%;">
         </colgroup>
         <tr>
-          <td><button class="tablinks tabBasic" onclick="openCity(event, 'basic')"><p class="description-small">Basic</p><p class="price-small-description">$49<span class="font-rem09">/yr</span></p><p class="price-small-description-strike">&nbsp;</p><p class="font-rem08">For home child cares</p></button></td>
-          <td><button id="defaultPriceTab" class="tablinks tabStandard" onclick="openCity(event, 'standard')"><p class="description-small">Standard</p><p class="price-small-description">$99<span class="font-rem09">/yr</span></p><p class="price-small-description-strike">$249<span class="font-rem09">/yr</span></p><p class="font-rem08">For center-based childcares</p></button></td>
+          <td class="tabUnlimited">Most Popular</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><button id="defaultPriceTab" class="tablinks tabUnlimited" onclick="openCity(event, 'unlimitedTrial')"><p class="description-small">Unlimited Trial</p><p class="price-small-description">Free for Life</p><p class="price-small-description-strike">$49<span class="font-rem09">/yr</span></p><p class="font-rem08">For home childcares</p></button></td>
+          <td><button class="tablinks tabStandard" onclick="openCity(event, 'standard')"><p class="description-small">Standard</p><p class="price-small-description">$99<span class="font-rem09">/yr</span></p><p class="price-small-description-strike">$249<span class="font-rem09">/yr</span></p><p class="font-rem08">For center-based childcares</p></button></td>
           <td><button class="tablinks tabEnterprise" onclick="openCity(event, 'enterprise')"><p class="description-small">Enterprise</p><p class="price-small-description">Contact Us</p><p class="price-small-description-strike" style="text-decoration: none;"><span class="font-rem09">&nbsp;</span></p><p class="font-rem08">For peace of mind</p></button></td>
         </tr>
     </table>
 
     
-    <div id="basic" class="tabcontent">
-      <div class="small-header-row"><span>Basic</span>
+    <div id="unlimitedTrial" class="tabcontent">
+      <div class="small-header-row"><span>Unlimited Trial</span>
         <a style="background-color: #56C49E;" href="https://my.tingr.org/signup.html">Sign Up</a>
       </div>
       
@@ -749,61 +663,61 @@
       
       <div class="small-container ">
         <div class="small-row">
-          <div class="small-column small-left">DIGITAL STATE FORMS</div>
-          <div class="small-column small-right">
-            <span style="color: green; font-weight: 600; font-size: 18px;">✓</span>
-            
-          </div>
-        </div>
-        <div class="small-row-description">Collect State forms and other paper work with a single click.</div>
-      </div>
-      
-      
-      <div class="small-container alternate-row">
-        <div class="small-row">
           <div class="small-column small-left">STUDENT ENROLLMENTS</div>
           <div class="small-column small-right">
             <span style="color: green; font-weight: 600; font-size: 18px;">✓</span>
             
           </div>
         </div>
-        <div class="small-row-description">New Student enrollments. Made super easy.</div>
-      </div>
-      
-      
-      <div class="small-container ">
-        <div class="small-row">
-          <div class="small-column small-left">STUDENT DOCUMENTS</div>
-          <div class="small-column small-right">
-            
-            
-          </div>
-        </div>
-        <div class="small-row-description">Request and Receive documents online. Clutter free.</div>
+        <div class="small-row-description">description here</div>
       </div>
       
       
       <div class="small-container alternate-row">
         <div class="small-row">
-          <div class="small-column small-left">ATTENDANCE (STUDENTS & STAFF)</div>
+          <div class="small-column small-left">DIGITAL STATE FORMS</div>
           <div class="small-column small-right">
-            
+            <span style="color: green; font-weight: 600; font-size: 18px;">✓</span>
             
           </div>
         </div>
-        <div class="small-row-description">How about, your smart phone (tablet) as your Attendance sheet?</div>
+        <div class="small-row-description">description here</div>
       </div>
       
       
       <div class="small-container ">
         <div class="small-row">
-          <div class="small-column small-left">EMAILS & NEWSLETTERS</div>
+          <div class="small-column small-left">PARENT COMMUNICATION</div>
+          <div class="small-column small-right">
+            <span style="color: green; font-weight: 600; font-size: 18px;">✓</span>
+            
+          </div>
+        </div>
+        <div class="small-row-description">description here</div>
+      </div>
+      
+      
+      <div class="small-container alternate-row">
+        <div class="small-row">
+          <div class="small-column small-left">ATTENDANCE FOR STUDENTS & STAFF</div>
           <div class="small-column small-right">
             
             
           </div>
         </div>
-        <div class="small-row-description">Reliable and Professional looking emails & newletters at your disposal.</div>
+        <div class="small-row-description">description here</div>
+      </div>
+      
+      
+      <div class="small-container ">
+        <div class="small-row">
+          <div class="small-column small-left">SCHOOL NEWSLETTERS</div>
+          <div class="small-column small-right">
+            
+            
+          </div>
+        </div>
+        <div class="small-row-description">description here</div>
       </div>
       
       
@@ -815,19 +729,19 @@
             
           </div>
         </div>
-        <div class="small-row-description">Invite and manage Teachers by Classroom. Works for temporary Staff too!</div>
+        <div class="small-row-description">description here</div>
       </div>
       
       
       <div class="small-container ">
         <div class="small-row">
-          <div class="small-column small-left">CLASSROOM AGENDA</div>
+          <div class="small-column small-left">CLASSROOM SCHEDULES</div>
           <div class="small-column small-right">
             
             
           </div>
         </div>
-        <div class="small-row-description">Your classroom needs a Daily Agenda.</div>
+        <div class="small-row-description">description here</div>
       </div>
       
       
@@ -835,11 +749,11 @@
         <div class="small-row">
           <div class="small-column small-left">PARENT APPS</div>
           <div class="small-column small-right">
-            
+            <span style="color: green; font-weight: 600; font-size: 18px;">✓</span>
             
           </div>
         </div>
-        <div class="small-row-description">Parents love to connect to the Classroom.</div>
+        <div class="small-row-description">description here</div>
       </div>
       
       
@@ -847,23 +761,23 @@
         <div class="small-row">
           <div class="small-column small-left">TEACHER APPS</div>
           <div class="small-column small-right">
-            
+            <span style="color: green; font-weight: 600; font-size: 18px;">✓</span>
             
           </div>
         </div>
-        <div class="small-row-description">Teachers daily agenda by Classroom in their pocket.</div>
+        <div class="small-row-description">description here</div>
       </div>
       
       
       <div class="small-container alternate-row">
         <div class="small-row">
-          <div class="small-column small-left">ROSTER</div>
+          <div class="small-column small-left">STUDENT ROSTER</div>
           <div class="small-column small-right">
             <span style="color: green; font-weight: 600; font-size: 18px;">✓</span>
             
           </div>
         </div>
-        <div class="small-row-description">Automatically created SCHOOL ROSTER saves you a ton of time!</div>
+        <div class="small-row-description">description here</div>
       </div>
       
       
@@ -875,31 +789,31 @@
             
           </div>
         </div>
-        <div class="small-row-description">Securely send and receive invoice to Parents.</div>
+        <div class="small-row-description">description here</div>
       </div>
       
       
       <div class="small-container alternate-row">
         <div class="small-row">
-          <div class="small-column small-left">SCHOOL WEBSITE</div>
-          <div class="small-column small-right">
-            <span style="color: green; font-weight: 600; font-size: 18px;">✓</span>
-            
-          </div>
-        </div>
-        <div class="small-row-description">Wouldn't it be nice to have a dedicated wesbite for Student Enrollments?</div>
-      </div>
-      
-      
-      <div class="small-container ">
-        <div class="small-row">
-          <div class="small-column small-left">24/7 SUPPORT</div>
+          <div class="small-column small-left">24/7 365 DAYS SUPPORT</div>
           <div class="small-column small-right">
             Email only
             
           </div>
         </div>
-        <div class="small-row-description">Real humans to address real issues.</div>
+        <div class="small-row-description">description here</div>
+      </div>
+      
+      
+      <div class="small-container ">
+        <div class="small-row">
+          <div class="small-column small-left">FREE WEBSITE</div>
+          <div class="small-column small-right">
+            <span style="color: green; font-weight: 600; font-size: 18px;">✓</span>
+            
+          </div>
+        </div>
+        <div class="small-row-description">description here</div>
       </div>
       
     </div>
@@ -914,61 +828,61 @@
       
       <div class="small-container ">
         <div class="small-row">
-          <div class="small-column small-left">DIGITAL STATE FORMS</div>
-          <div class="small-column small-right">
-            <span style="color: green; font-weight: 600; font-size: 18px;">✓</span>
-            
-          </div>
-        </div>
-        <div class="small-row-description">Collect State forms and other paper work with a single click.</div>
-      </div>
-      
-      
-      <div class="small-container alternate-row">
-        <div class="small-row">
           <div class="small-column small-left">STUDENT ENROLLMENTS</div>
           <div class="small-column small-right">
             <span style="color: green; font-weight: 600; font-size: 18px;">✓</span>
             
           </div>
         </div>
-        <div class="small-row-description">New Student enrollments. Made super easy.</div>
-      </div>
-      
-      
-      <div class="small-container ">
-        <div class="small-row">
-          <div class="small-column small-left">STUDENT DOCUMENTS</div>
-          <div class="small-column small-right">
-            yes
-            
-          </div>
-        </div>
-        <div class="small-row-description">Request and Receive documents online. Clutter free.</div>
+        <div class="small-row-description">description here</div>
       </div>
       
       
       <div class="small-container alternate-row">
         <div class="small-row">
-          <div class="small-column small-left">ATTENDANCE (STUDENTS & STAFF)</div>
+          <div class="small-column small-left">DIGITAL STATE FORMS</div>
           <div class="small-column small-right">
-            yes
+            <span style="color: green; font-weight: 600; font-size: 18px;">✓</span>
             
           </div>
         </div>
-        <div class="small-row-description">How about, your smart phone (tablet) as your Attendance sheet?</div>
+        <div class="small-row-description">description here</div>
       </div>
       
       
       <div class="small-container ">
         <div class="small-row">
-          <div class="small-column small-left">EMAILS & NEWSLETTERS</div>
+          <div class="small-column small-left">PARENT COMMUNICATION</div>
+          <div class="small-column small-right">
+            <span style="color: green; font-weight: 600; font-size: 18px;">✓</span>
+            
+          </div>
+        </div>
+        <div class="small-row-description">description here</div>
+      </div>
+      
+      
+      <div class="small-container alternate-row">
+        <div class="small-row">
+          <div class="small-column small-left">ATTENDANCE FOR STUDENTS & STAFF</div>
           <div class="small-column small-right">
             yes
             
           </div>
         </div>
-        <div class="small-row-description">Reliable and Professional looking emails & newletters at your disposal.</div>
+        <div class="small-row-description">description here</div>
+      </div>
+      
+      
+      <div class="small-container ">
+        <div class="small-row">
+          <div class="small-column small-left">SCHOOL NEWSLETTERS</div>
+          <div class="small-column small-right">
+            yes
+            
+          </div>
+        </div>
+        <div class="small-row-description">description here</div>
       </div>
       
       
@@ -980,19 +894,19 @@
             
           </div>
         </div>
-        <div class="small-row-description">Invite and manage Teachers by Classroom. Works for temporary Staff too!</div>
+        <div class="small-row-description">description here</div>
       </div>
       
       
       <div class="small-container ">
         <div class="small-row">
-          <div class="small-column small-left">CLASSROOM AGENDA</div>
+          <div class="small-column small-left">CLASSROOM SCHEDULES</div>
           <div class="small-column small-right">
             yes
             
           </div>
         </div>
-        <div class="small-row-description">Your classroom needs a Daily Agenda.</div>
+        <div class="small-row-description">description here</div>
       </div>
       
       
@@ -1000,11 +914,11 @@
         <div class="small-row">
           <div class="small-column small-left">PARENT APPS</div>
           <div class="small-column small-right">
-            yes
+            <span style="color: green; font-weight: 600; font-size: 18px;">✓</span>
             
           </div>
         </div>
-        <div class="small-row-description">Parents love to connect to the Classroom.</div>
+        <div class="small-row-description">description here</div>
       </div>
       
       
@@ -1012,23 +926,23 @@
         <div class="small-row">
           <div class="small-column small-left">TEACHER APPS</div>
           <div class="small-column small-right">
-            yes
+            <span style="color: green; font-weight: 600; font-size: 18px;">✓</span>
             
           </div>
         </div>
-        <div class="small-row-description">Teachers daily agenda by Classroom in their pocket.</div>
+        <div class="small-row-description">description here</div>
       </div>
       
       
       <div class="small-container alternate-row">
         <div class="small-row">
-          <div class="small-column small-left">ROSTER</div>
+          <div class="small-column small-left">STUDENT ROSTER</div>
           <div class="small-column small-right">
             <span style="color: green; font-weight: 600; font-size: 18px;">✓</span>
             
           </div>
         </div>
-        <div class="small-row-description">Automatically created SCHOOL ROSTER saves you a ton of time!</div>
+        <div class="small-row-description">description here</div>
       </div>
       
       
@@ -1040,31 +954,31 @@
             
           </div>
         </div>
-        <div class="small-row-description">Securely send and receive invoice to Parents.</div>
+        <div class="small-row-description">description here</div>
       </div>
       
       
       <div class="small-container alternate-row">
         <div class="small-row">
-          <div class="small-column small-left">SCHOOL WEBSITE</div>
-          <div class="small-column small-right">
-            <span style="color: green; font-weight: 600; font-size: 18px;">✓</span>
-            
-          </div>
-        </div>
-        <div class="small-row-description">Wouldn't it be nice to have a dedicated wesbite for Student Enrollments?</div>
-      </div>
-      
-      
-      <div class="small-container ">
-        <div class="small-row">
-          <div class="small-column small-left">24/7 SUPPORT</div>
+          <div class="small-column small-left">24/7 365 DAYS SUPPORT</div>
           <div class="small-column small-right">
             Email only
             
           </div>
         </div>
-        <div class="small-row-description">Real humans to address real issues.</div>
+        <div class="small-row-description">description here</div>
+      </div>
+      
+      
+      <div class="small-container ">
+        <div class="small-row">
+          <div class="small-column small-left">FREE WEBSITE</div>
+          <div class="small-column small-right">
+            <span style="color: green; font-weight: 600; font-size: 18px;">✓</span>
+            
+          </div>
+        </div>
+        <div class="small-row-description">description here</div>
       </div>
       
     </div>
@@ -1079,61 +993,61 @@
       
       <div class="small-container ">
         <div class="small-row">
-          <div class="small-column small-left">DIGITAL STATE FORMS</div>
-          <div class="small-column small-right">
-            <span style="color: green; font-weight: 600; font-size: 18px;">✓</span>
-            
-          </div>
-        </div>
-        <div class="small-row-description">Collect State forms and other paper work with a single click.</div>
-      </div>
-      
-      
-      <div class="small-container alternate-row">
-        <div class="small-row">
           <div class="small-column small-left">STUDENT ENROLLMENTS</div>
           <div class="small-column small-right">
             <span style="color: green; font-weight: 600; font-size: 18px;">✓</span>
             
           </div>
         </div>
-        <div class="small-row-description">New Student enrollments. Made super easy.</div>
-      </div>
-      
-      
-      <div class="small-container ">
-        <div class="small-row">
-          <div class="small-column small-left">STUDENT DOCUMENTS</div>
-          <div class="small-column small-right">
-            yes
-            
-          </div>
-        </div>
-        <div class="small-row-description">Request and Receive documents online. Clutter free.</div>
+        <div class="small-row-description">description here</div>
       </div>
       
       
       <div class="small-container alternate-row">
         <div class="small-row">
-          <div class="small-column small-left">ATTENDANCE (STUDENTS & STAFF)</div>
+          <div class="small-column small-left">DIGITAL STATE FORMS</div>
           <div class="small-column small-right">
-            yes
+            <span style="color: green; font-weight: 600; font-size: 18px;">✓</span>
             
           </div>
         </div>
-        <div class="small-row-description">How about, your smart phone (tablet) as your Attendance sheet?</div>
+        <div class="small-row-description">description here</div>
       </div>
       
       
       <div class="small-container ">
         <div class="small-row">
-          <div class="small-column small-left">EMAILS & NEWSLETTERS</div>
+          <div class="small-column small-left">PARENT COMMUNICATION</div>
+          <div class="small-column small-right">
+            <span style="color: green; font-weight: 600; font-size: 18px;">✓</span>
+            
+          </div>
+        </div>
+        <div class="small-row-description">description here</div>
+      </div>
+      
+      
+      <div class="small-container alternate-row">
+        <div class="small-row">
+          <div class="small-column small-left">ATTENDANCE FOR STUDENTS & STAFF</div>
           <div class="small-column small-right">
             yes
             
           </div>
         </div>
-        <div class="small-row-description">Reliable and Professional looking emails & newletters at your disposal.</div>
+        <div class="small-row-description">description here</div>
+      </div>
+      
+      
+      <div class="small-container ">
+        <div class="small-row">
+          <div class="small-column small-left">SCHOOL NEWSLETTERS</div>
+          <div class="small-column small-right">
+            yes
+            
+          </div>
+        </div>
+        <div class="small-row-description">description here</div>
       </div>
       
       
@@ -1145,19 +1059,19 @@
             
           </div>
         </div>
-        <div class="small-row-description">Invite and manage Teachers by Classroom. Works for temporary Staff too!</div>
+        <div class="small-row-description">description here</div>
       </div>
       
       
       <div class="small-container ">
         <div class="small-row">
-          <div class="small-column small-left">CLASSROOM AGENDA</div>
+          <div class="small-column small-left">CLASSROOM SCHEDULES</div>
           <div class="small-column small-right">
             yes
             
           </div>
         </div>
-        <div class="small-row-description">Your classroom needs a Daily Agenda.</div>
+        <div class="small-row-description">description here</div>
       </div>
       
       
@@ -1165,11 +1079,11 @@
         <div class="small-row">
           <div class="small-column small-left">PARENT APPS</div>
           <div class="small-column small-right">
-            yes
+            <span style="color: green; font-weight: 600; font-size: 18px;">✓</span>
             
           </div>
         </div>
-        <div class="small-row-description">Parents love to connect to the Classroom.</div>
+        <div class="small-row-description">description here</div>
       </div>
       
       
@@ -1177,23 +1091,23 @@
         <div class="small-row">
           <div class="small-column small-left">TEACHER APPS</div>
           <div class="small-column small-right">
-            yes
+            <span style="color: green; font-weight: 600; font-size: 18px;">✓</span>
             
           </div>
         </div>
-        <div class="small-row-description">Teachers daily agenda by Classroom in their pocket.</div>
+        <div class="small-row-description">description here</div>
       </div>
       
       
       <div class="small-container alternate-row">
         <div class="small-row">
-          <div class="small-column small-left">ROSTER</div>
+          <div class="small-column small-left">STUDENT ROSTER</div>
           <div class="small-column small-right">
             <span style="color: green; font-weight: 600; font-size: 18px;">✓</span>
             
           </div>
         </div>
-        <div class="small-row-description">Automatically created SCHOOL ROSTER saves you a ton of time!</div>
+        <div class="small-row-description">description here</div>
       </div>
       
       
@@ -1205,31 +1119,31 @@
             
           </div>
         </div>
-        <div class="small-row-description">Securely send and receive invoice to Parents.</div>
+        <div class="small-row-description">description here</div>
       </div>
       
       
       <div class="small-container alternate-row">
         <div class="small-row">
-          <div class="small-column small-left">SCHOOL WEBSITE</div>
-          <div class="small-column small-right">
-            <span style="color: green; font-weight: 600; font-size: 18px;">✓</span>
-            
-          </div>
-        </div>
-        <div class="small-row-description">Wouldn't it be nice to have a dedicated wesbite for Student Enrollments?</div>
-      </div>
-      
-      
-      <div class="small-container ">
-        <div class="small-row">
-          <div class="small-column small-left">24/7 SUPPORT</div>
+          <div class="small-column small-left">24/7 365 DAYS SUPPORT</div>
           <div class="small-column small-right">
             Email + Phone
             
           </div>
         </div>
-        <div class="small-row-description">Real humans to address real issues.</div>
+        <div class="small-row-description">description here</div>
+      </div>
+      
+      
+      <div class="small-container ">
+        <div class="small-row">
+          <div class="small-column small-left">FREE WEBSITE</div>
+          <div class="small-column small-right">
+            <span style="color: green; font-weight: 600; font-size: 18px;">✓</span>
+            
+          </div>
+        </div>
+        <div class="small-row-description">description here</div>
       </div>
       
     </div>
