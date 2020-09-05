@@ -341,7 +341,6 @@ body {
     line-height: 1;
     padding-left: 15px;
     margin-top: 1.6rem;}
-    /*margin-top: 35px;}*/
     .title-area h3 a {
       color: #333;
       font-size: 24px;
@@ -968,8 +967,6 @@ nav.wrapper {
   -o-transform: translateX(-20px);
   transform: translateX(-20px); }
 
-/* Anne */
-
 .landing-video {
   width: unset;
   margin-bottom: 5.5rem;
@@ -977,15 +974,6 @@ nav.wrapper {
   padding-right: 0;
 }
 
-/*.cta-landing {
-  padding: 0.6rem 0;
-  margin-bottom: 2rem;
-  background: #2196F3;
-  border-radius: 2em;
-  font-weight: 700;
-  color: white;
-  box-shadow: 2px 2px 2px rgba(33,150,243,0.3);
-}*/
 .cta-landing {
   padding: 0.6rem 0;
   margin-bottom: 2rem;

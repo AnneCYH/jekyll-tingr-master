@@ -431,7 +431,7 @@ button.tabBasic, button.tabStandard, button.tabEnterprise {
 }
 
 .small-container {
-  padding: 1.2rem 0;
+  padding: 1rem 0;
 }
 
 .alternate-row {
@@ -497,7 +497,7 @@ p.description-small {
   font-size: 0.7rem;
   display: inline-block;
   border-radius: 25px;
-  margin: 5px;
+  margin: 5px 5px 5px 0;
   font-style: normal;
   font-family: 'Roboto Condensed', sans-serif;
 }
@@ -507,6 +507,11 @@ p.description-small {
   width: 92%;
   text-align: left;
 }
+.price-heading-small {
+  display: inline-block;
+  width: 95%;
+  text-align: left;
+}
 
 .price-description {
   padding: 0.5rem;
@@ -514,11 +519,26 @@ p.description-small {
   color: #5e4a4a;
   font-style: italic;
 }
+
+.price-description-small {
+  padding: 0.5rem 0.85rem;
+  font-size: 0.85rem;
+  color: #5e4a4a;
+  font-style: italic;
+}
+
 .price-play-button {
   margin-right: 7px;
   width: 4%;
   display: inline-block;
-  float:right;
+  float: right;
+  font-style: normal;
+  font-size: 1.2rem;
+  font-family: 'FontAwesome';
+  color: rgb(0, 173, 239);
+}
+.price-play-button-small {
+  display: inline-block;
   font-style: normal;
   font-size: 1.2rem;
   font-family: 'FontAwesome';
@@ -528,16 +548,29 @@ p.description-small {
 summary {
   cursor: pointer;
 }
-summary:before {
-  content: unset;
+
+summary::-webkit-details-marker {
+  display: none
 }
-summary.price-heading-summary:before {
-  content: ' +  ';
-  font-size: 25px;
+
+summary.price-heading-summary::before {
+  content: '+';
+  text-align: center;
+  font-size: 18px;
+  line-height: 18px;
   font-weight: 700;
+  color: #AB8860;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+  margin-right: 5px;
 }
-details[open] summary.price-heading-summary:before {
-  content: ' -  ';
-  font-size: 25px;
+
+details[open] summary.price-heading-summary::before {
+  content: '-';
+  text-align: center;
+  font-size: 18px;
+  line-height: 18px;
   font-weight: 700;
+  color: #AB8860;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+  margin-right: 5px;
 }
