@@ -207,7 +207,7 @@
 
 
     <div style="order:1; border-radius: 20px 0 0 20px;" class="Rtable-cell-promo-center Rtable-cell-promo-first"></div>
-    <div style="order:1;" class="Rtable-cell-promo-center Rtable-cell-promo-mid"><p style="width: 8rem; background; transparent; margin: 0 auto; height: 100%; font-weight: bold; padding: 1rem; color: white;">Most Popular</p></div>
+    <div style="order:1;" class="Rtable-cell-promo-center Rtable-cell-promo-mid"><p style="width: 8rem; background; transparent; margin: 0 auto; height: 100%; font-weight: bold; padding: 1rem; color: white;">Special Pricing</p></div>
     <div style="order:1; border-radius: 0 20px 20px 0;" class="Rtable-cell-promo-center Rtable-cell-promo-last"><p style="padding: 1rem; float: left; color: white; font-weight: bold;">Covid-19 Promo<br />Trial period extended to 6 months.</p></div>
 
     <div style="order:2;" class="Rtable-cell-promo Rtable-cell-promo-first"></div>
@@ -281,7 +281,7 @@
     <div style="order:3;" class="Rtable-cell Rtable-top-row"></div>
     <div style="order:4; position: sticky; top: 0; background: white; padding: 0.5rem 0.1rem;" class="Rtable-cell Rtable-cell-col2">
       <p class="Rtable-cell">Basic</p>
-      <p class="RTable-cell-price"><span style="font-size: 1.1rem;">$49</span><span class="font-rem09">/yr</span><br /><br /><span class="font-rem08">For home child cares</span></p>
+      <p class="RTable-cell-price"><span style="font-size: 1.1rem;">$49</span><span class="font-rem09">/yr</span><br /><span class="font-rem09 font-strike">$99<span class="font-rem09">/yr</span></span><br /><span class="font-rem08">For home child cares</span></p>
       <p><a class="price-cta-button" style="background-color: #56C49E; width: 80%;" href="https://my.tingr.org/signup.html">SIGN UP</a></p>
     </div>
     
@@ -366,10 +366,10 @@
       
     
 
-    <div style="order:3;" class="Rtable-cell Rtable-top-row"></div>
+    <div style="order:3;" class="Rtable-cell Rtable-top-row Rtable-most-popular">Most Popular</div>
     <div style="order:4; position: sticky; top: 0; background: white; padding: 0.5rem 0.1rem;" class="Rtable-cell Rtable-cell-col3">
       <p class="Rtable-cell">Standard</p>
-      <p class="RTable-cell-price"><span style="font-size: 1.1rem;">$99</span><span class="font-rem09">/yr</span><br /><span class="font-rem09 font-strike">$249<span class="font-rem09">/yr</span></span><br /><span class="font-rem08">For center-based childcares</span></p>
+      <p class="RTable-cell-price"><span style="font-size: 1.1rem;">$99</span><span class="font-rem09">/yr</span><br /><span class="font-rem09 font-strike">$249<span class="font-rem09">/yr</span></span><br /><span class="font-rem08">For center-based child cares</span></p>
       <p><a class="price-cta-button" style="background-color: #8d44d3; width: 80%;" href="https://my.tingr.org/signup.html">SIGN UP</a></p>
     </div>
     
@@ -1183,10 +1183,10 @@ $(function() {
   <div class="Rtable-show-small">
     <table class="small-table">
       <colgroup>
-        <col style="width: 8%;">
-        <col style="width: 15%;">
-        <col style="width: 8%;">
-        <col style="width: 69%;">
+        <col style="width: 42%;">
+        <col style="width: 16%;">
+        <col style="width: 3%;">
+        <col style="width: 39%;">
       </colgroup>
       <tr>
         <td></td>
@@ -1196,8 +1196,8 @@ $(function() {
       </tr>
       <tr>
         <td class="Rtable-cell-promo-small" style="border-radius: 20px 0 0 20px;" ></td>
-        <td class="Rtable-cell-promo-small"><p class="cell-promo-small-text">Most Popular</p></td>
-        <td colspan="2" class="Rtable-cell-promo-small" style="border-radius: 0 20px 20px 0;"><p class="cell-promo-small-desc">Covid-19 Promo<br />Trial period extended to 6 months.</p></td>
+        <td class="Rtable-cell-promo-small"><p class="cell-promo-small-text">Special Pricing</p></td>
+        <td colspan="2" class="Rtable-cell-promo-small" style="border-radius: 0 20px 20px 0;"><p class="cell-promo-small-desc">Covid-19 Promo<br/><span style="font-size: 0.7rem;">Trial period extended to 6 months.</span></p></td>
       </tr>
       <tr>
         <td></td>
@@ -1214,8 +1214,13 @@ $(function() {
           <col style="width: 33.33%;">
         </colgroup>
         <tr>
-          <td><button class="tablinks tabBasic" onclick="openCity(event, 'basic')"><p class="description-small">Basic</p><p class="price-small-description">$49<span class="font-rem09">/yr</span></p><p class="price-small-description-strike" style="text-decoration: none;">&nbsp;</p><p class="font-rem08">For home child cares</p></button></td>
-          <td><button id="defaultPriceTab" class="tablinks tabStandard" onclick="openCity(event, 'standard')"><p class="description-small">Standard</p><p class="price-small-description">$99<span class="font-rem09">/yr</span></p><p class="price-small-description-strike">$249<span class="font-rem09">/yr</span></p><p class="font-rem08">For center-based childcares</p></button></td>
+          <td></td>
+          <td class="tabStandard">Most Popular</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><button class="tablinks tabBasic" onclick="openCity(event, 'basic')"><p class="description-small">Basic</p><p class="price-small-description">$49<span class="font-rem09">/yr</span></p><p class="price-small-description-strike">$99<span class="font-rem09">/yr</span></p><p class="font-rem08">For home child cares</p></button></td>
+          <td><button id="defaultPriceTab" class="tablinks tabStandard" onclick="openCity(event, 'standard')"><p class="description-small">Standard</p><p class="price-small-description">$99<span class="font-rem09">/yr</span></p><p class="price-small-description-strike">$249<span class="font-rem09">/yr</span></p><p class="font-rem08">For center-based child cares</p></button></td>
           <td><button class="tablinks tabEnterprise" onclick="openCity(event, 'enterprise')"><p class="description-small">Enterprise</p><p class="price-small-description">Contact Us</p><p class="price-small-description-strike" style="text-decoration: none;"><span class="font-rem09">&nbsp;</span></p><p class="font-rem08">For peace of mind</p></button></td>
         </tr>
     </table>
@@ -1266,14 +1271,14 @@ $(function() {
 });
 </script>
 
-<a class="price-play-button-small" data-video="https://player.vimeo.com/video/210447078" data-toggle="modal" data-target="#videoSmallModal1"><span style="font-size: 0.8rem;">Watch Video</span>  <i class="fas fa-play-circle" style="font-style: normal;"></i></a>
+<a class="price-play-button-small" data-video="https://player.vimeo.com/video/210447078" data-toggle="modal" data-target="#videoSmallBasic1"><span style="font-size: 0.8rem;">Learn more</span>  <i class="fas fa-play-circle" style="font-style: normal;"></i></a>
 
-<div class="modal fade" id="videoSmallModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="videoSmallBasic1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-body">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <iframe id="nofocusvideo" style="height: 50vh; width: 100%;" src="" frameborder="0" allow="autoplay; fullscreen" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <iframe id="nofocusvideosmall" style="height: 50vh; width: 100%;" src="" frameborder="0" allow="autoplay; fullscreen"></iframe>
       </div>
     </div>
   </div>
@@ -1320,14 +1325,14 @@ $(function() {
 });
 </script>
 
-<a class="price-play-button-small" data-video="https://player.vimeo.com/video/210447078" data-toggle="modal" data-target="#videoSmallModal2"><span style="font-size: 0.8rem;">Watch Video</span>  <i class="fas fa-play-circle" style="font-style: normal;"></i></a>
+<a class="price-play-button-small" data-video="https://player.vimeo.com/video/210447078" data-toggle="modal" data-target="#videoSmallBasic2"><span style="font-size: 0.8rem;">Learn more</span>  <i class="fas fa-play-circle" style="font-style: normal;"></i></a>
 
-<div class="modal fade" id="videoSmallModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="videoSmallBasic2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-body">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <iframe id="nofocusvideo" style="height: 50vh; width: 100%;" src="" frameborder="0" allow="autoplay; fullscreen" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <iframe id="nofocusvideosmall" style="height: 50vh; width: 100%;" src="" frameborder="0" allow="autoplay; fullscreen"></iframe>
       </div>
     </div>
   </div>
@@ -1374,14 +1379,14 @@ $(function() {
 });
 </script>
 
-<a class="price-play-button-small" data-video="https://player.vimeo.com/video/210447078" data-toggle="modal" data-target="#videoSmallModal3"><span style="font-size: 0.8rem;">Watch Video</span>  <i class="fas fa-play-circle" style="font-style: normal;"></i></a>
+<a class="price-play-button-small" data-video="https://player.vimeo.com/video/210447078" data-toggle="modal" data-target="#videoSmallBasic3"><span style="font-size: 0.8rem;">Learn more</span>  <i class="fas fa-play-circle" style="font-style: normal;"></i></a>
 
-<div class="modal fade" id="videoSmallModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="videoSmallBasic3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-body">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <iframe id="nofocusvideo" style="height: 50vh; width: 100%;" src="" frameborder="0" allow="autoplay; fullscreen" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <iframe id="nofocusvideosmall" style="height: 50vh; width: 100%;" src="" frameborder="0" allow="autoplay; fullscreen"></iframe>
       </div>
     </div>
   </div>
@@ -1428,14 +1433,14 @@ $(function() {
 });
 </script>
 
-<a class="price-play-button-small" data-video="https://player.vimeo.com/video/210447078" data-toggle="modal" data-target="#videoSmallModal4"><span style="font-size: 0.8rem;">Watch Video</span>  <i class="fas fa-play-circle" style="font-style: normal;"></i></a>
+<a class="price-play-button-small" data-video="https://player.vimeo.com/video/210447078" data-toggle="modal" data-target="#videoSmallBasic4"><span style="font-size: 0.8rem;">Learn more</span>  <i class="fas fa-play-circle" style="font-style: normal;"></i></a>
 
-<div class="modal fade" id="videoSmallModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="videoSmallBasic4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-body">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <iframe id="nofocusvideo" style="height: 50vh; width: 100%;" src="" frameborder="0" allow="autoplay; fullscreen" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <iframe id="nofocusvideosmall" style="height: 50vh; width: 100%;" src="" frameborder="0" allow="autoplay; fullscreen"></iframe>
       </div>
     </div>
   </div>
@@ -1482,14 +1487,14 @@ $(function() {
 });
 </script>
 
-<a class="price-play-button-small" data-video="https://player.vimeo.com/video/210447078" data-toggle="modal" data-target="#videoSmallModal5"><span style="font-size: 0.8rem;">Watch Video</span>  <i class="fas fa-play-circle" style="font-style: normal;"></i></a>
+<a class="price-play-button-small" data-video="https://player.vimeo.com/video/210447078" data-toggle="modal" data-target="#videoSmallBasic5"><span style="font-size: 0.8rem;">Learn more</span>  <i class="fas fa-play-circle" style="font-style: normal;"></i></a>
 
-<div class="modal fade" id="videoSmallModal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="videoSmallBasic5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-body">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <iframe id="nofocusvideo" style="height: 50vh; width: 100%;" src="" frameborder="0" allow="autoplay; fullscreen" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <iframe id="nofocusvideosmall" style="height: 50vh; width: 100%;" src="" frameborder="0" allow="autoplay; fullscreen"></iframe>
       </div>
     </div>
   </div>
@@ -1536,14 +1541,14 @@ $(function() {
 });
 </script>
 
-<a class="price-play-button-small" data-video="https://player.vimeo.com/video/210447078" data-toggle="modal" data-target="#videoSmallModal6"><span style="font-size: 0.8rem;">Watch Video</span>  <i class="fas fa-play-circle" style="font-style: normal;"></i></a>
+<a class="price-play-button-small" data-video="https://player.vimeo.com/video/210447078" data-toggle="modal" data-target="#videoSmallBasic6"><span style="font-size: 0.8rem;">Learn more</span>  <i class="fas fa-play-circle" style="font-style: normal;"></i></a>
 
-<div class="modal fade" id="videoSmallModal6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="videoSmallBasic6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-body">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <iframe id="nofocusvideo" style="height: 50vh; width: 100%;" src="" frameborder="0" allow="autoplay; fullscreen" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <iframe id="nofocusvideosmall" style="height: 50vh; width: 100%;" src="" frameborder="0" allow="autoplay; fullscreen"></iframe>
       </div>
     </div>
   </div>
@@ -1590,14 +1595,14 @@ $(function() {
 });
 </script>
 
-<a class="price-play-button-small" data-video="https://player.vimeo.com/video/210447078" data-toggle="modal" data-target="#videoSmallModal7"><span style="font-size: 0.8rem;">Watch Video</span>  <i class="fas fa-play-circle" style="font-style: normal;"></i></a>
+<a class="price-play-button-small" data-video="https://player.vimeo.com/video/210447078" data-toggle="modal" data-target="#videoSmallBasic7"><span style="font-size: 0.8rem;">Learn more</span>  <i class="fas fa-play-circle" style="font-style: normal;"></i></a>
 
-<div class="modal fade" id="videoSmallModal7" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="videoSmallBasic7" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-body">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <iframe id="nofocusvideo" style="height: 50vh; width: 100%;" src="" frameborder="0" allow="autoplay; fullscreen" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <iframe id="nofocusvideosmall" style="height: 50vh; width: 100%;" src="" frameborder="0" allow="autoplay; fullscreen"></iframe>
       </div>
     </div>
   </div>
@@ -1644,14 +1649,14 @@ $(function() {
 });
 </script>
 
-<a class="price-play-button-small" data-video="https://player.vimeo.com/video/210447078" data-toggle="modal" data-target="#videoSmallModal8"><span style="font-size: 0.8rem;">Watch Video</span>  <i class="fas fa-play-circle" style="font-style: normal;"></i></a>
+<a class="price-play-button-small" data-video="https://player.vimeo.com/video/210447078" data-toggle="modal" data-target="#videoSmallBasic8"><span style="font-size: 0.8rem;">Learn more</span>  <i class="fas fa-play-circle" style="font-style: normal;"></i></a>
 
-<div class="modal fade" id="videoSmallModal8" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="videoSmallBasic8" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-body">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <iframe id="nofocusvideo" style="height: 50vh; width: 100%;" src="" frameborder="0" allow="autoplay; fullscreen" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <iframe id="nofocusvideosmall" style="height: 50vh; width: 100%;" src="" frameborder="0" allow="autoplay; fullscreen"></iframe>
       </div>
     </div>
   </div>
@@ -1698,14 +1703,14 @@ $(function() {
 });
 </script>
 
-<a class="price-play-button-small" data-video="https://player.vimeo.com/video/210447078" data-toggle="modal" data-target="#videoSmallModal9"><span style="font-size: 0.8rem;">Watch Video</span>  <i class="fas fa-play-circle" style="font-style: normal;"></i></a>
+<a class="price-play-button-small" data-video="https://player.vimeo.com/video/210447078" data-toggle="modal" data-target="#videoSmallBasic9"><span style="font-size: 0.8rem;">Learn more</span>  <i class="fas fa-play-circle" style="font-style: normal;"></i></a>
 
-<div class="modal fade" id="videoSmallModal9" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="videoSmallBasic9" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-body">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <iframe id="nofocusvideo" style="height: 50vh; width: 100%;" src="" frameborder="0" allow="autoplay; fullscreen" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <iframe id="nofocusvideosmall" style="height: 50vh; width: 100%;" src="" frameborder="0" allow="autoplay; fullscreen"></iframe>
       </div>
     </div>
   </div>
@@ -1752,14 +1757,14 @@ $(function() {
 });
 </script>
 
-<a class="price-play-button-small" data-video="https://player.vimeo.com/video/210447078" data-toggle="modal" data-target="#videoSmallModal10"><span style="font-size: 0.8rem;">Watch Video</span>  <i class="fas fa-play-circle" style="font-style: normal;"></i></a>
+<a class="price-play-button-small" data-video="https://player.vimeo.com/video/210447078" data-toggle="modal" data-target="#videoSmallBasic10"><span style="font-size: 0.8rem;">Learn more</span>  <i class="fas fa-play-circle" style="font-style: normal;"></i></a>
 
-<div class="modal fade" id="videoSmallModal10" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="videoSmallBasic10" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-body">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <iframe id="nofocusvideo" style="height: 50vh; width: 100%;" src="" frameborder="0" allow="autoplay; fullscreen" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <iframe id="nofocusvideosmall" style="height: 50vh; width: 100%;" src="" frameborder="0" allow="autoplay; fullscreen"></iframe>
       </div>
     </div>
   </div>
@@ -1806,14 +1811,14 @@ $(function() {
 });
 </script>
 
-<a class="price-play-button-small" data-video="https://player.vimeo.com/video/210447078" data-toggle="modal" data-target="#videoSmallModal11"><span style="font-size: 0.8rem;">Watch Video</span>  <i class="fas fa-play-circle" style="font-style: normal;"></i></a>
+<a class="price-play-button-small" data-video="https://player.vimeo.com/video/210447078" data-toggle="modal" data-target="#videoSmallBasic11"><span style="font-size: 0.8rem;">Learn more</span>  <i class="fas fa-play-circle" style="font-style: normal;"></i></a>
 
-<div class="modal fade" id="videoSmallModal11" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="videoSmallBasic11" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-body">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <iframe id="nofocusvideo" style="height: 50vh; width: 100%;" src="" frameborder="0" allow="autoplay; fullscreen" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <iframe id="nofocusvideosmall" style="height: 50vh; width: 100%;" src="" frameborder="0" allow="autoplay; fullscreen"></iframe>
       </div>
     </div>
   </div>
@@ -1860,14 +1865,14 @@ $(function() {
 });
 </script>
 
-<a class="price-play-button-small" data-video="https://player.vimeo.com/video/210447078" data-toggle="modal" data-target="#videoSmallModal12"><span style="font-size: 0.8rem;">Watch Video</span>  <i class="fas fa-play-circle" style="font-style: normal;"></i></a>
+<a class="price-play-button-small" data-video="https://player.vimeo.com/video/210447078" data-toggle="modal" data-target="#videoSmallBasic12"><span style="font-size: 0.8rem;">Learn more</span>  <i class="fas fa-play-circle" style="font-style: normal;"></i></a>
 
-<div class="modal fade" id="videoSmallModal12" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="videoSmallBasic12" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-body">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <iframe id="nofocusvideo" style="height: 50vh; width: 100%;" src="" frameborder="0" allow="autoplay; fullscreen" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <iframe id="nofocusvideosmall" style="height: 50vh; width: 100%;" src="" frameborder="0" allow="autoplay; fullscreen"></iframe>
       </div>
     </div>
   </div>
@@ -1914,14 +1919,14 @@ $(function() {
 });
 </script>
 
-<a class="price-play-button-small" data-video="https://player.vimeo.com/video/210447078" data-toggle="modal" data-target="#videoSmallModal13"><span style="font-size: 0.8rem;">Watch Video</span>  <i class="fas fa-play-circle" style="font-style: normal;"></i></a>
+<a class="price-play-button-small" data-video="https://player.vimeo.com/video/210447078" data-toggle="modal" data-target="#videoSmallBasic13"><span style="font-size: 0.8rem;">Learn more</span>  <i class="fas fa-play-circle" style="font-style: normal;"></i></a>
 
-<div class="modal fade" id="videoSmallModal13" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="videoSmallBasic13" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-body">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <iframe id="nofocusvideo" style="height: 50vh; width: 100%;" src="" frameborder="0" allow="autoplay; fullscreen" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <iframe id="nofocusvideosmall" style="height: 50vh; width: 100%;" src="" frameborder="0" allow="autoplay; fullscreen"></iframe>
       </div>
     </div>
   </div>
@@ -1952,6 +1957,44 @@ $(function() {
             <div class="price-description-small">Convenient. Secure. 100% Legit.<br />Organized by Student, and available for you at all times.</div>
           </details>
         </div>
+        <div style="width: 95%; margin: 0 auto; text-align: left">
+
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+$(function() {
+  $(".price-play-button-small").click(function () {
+    var thisModel = $(this).data("target"),
+        videoSRC = $(this).attr("data-video"),
+        videoSRCauto = videoSRC + "?autoplay=1";
+    $(thisModel + ' iframe').attr('src', videoSRCauto);
+
+    $(thisModel + ' button.close').click(function () {
+      $(thisModel + ' iframe').attr('src', videoSRC);
+      console.log('closing modal')
+    });
+
+  });
+
+});
+</script>
+
+<a class="price-play-button-small" data-video="https://player.vimeo.com/video/210447078" data-toggle="modal" data-target="#videoSmallStandard1"><span style="font-size: 0.8rem;">Learn more</span>  <i class="fas fa-play-circle" style="font-style: normal;"></i></a>
+
+<div class="modal fade" id="videoSmallStandard1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <iframe id="nofocusvideosmall" style="height: 50vh; width: 100%;" src="" frameborder="0" allow="autoplay; fullscreen"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
       </div>
       
       
@@ -1968,6 +2011,44 @@ $(function() {
             <div class="price-description-small">Parents love it. No wasted paper. Good karma too!</div>
           </details>
         </div>
+        <div style="width: 95%; margin: 0 auto; text-align: left">
+
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+$(function() {
+  $(".price-play-button-small").click(function () {
+    var thisModel = $(this).data("target"),
+        videoSRC = $(this).attr("data-video"),
+        videoSRCauto = videoSRC + "?autoplay=1";
+    $(thisModel + ' iframe').attr('src', videoSRCauto);
+
+    $(thisModel + ' button.close').click(function () {
+      $(thisModel + ' iframe').attr('src', videoSRC);
+      console.log('closing modal')
+    });
+
+  });
+
+});
+</script>
+
+<a class="price-play-button-small" data-video="https://player.vimeo.com/video/210447078" data-toggle="modal" data-target="#videoSmallStandard2"><span style="font-size: 0.8rem;">Learn more</span>  <i class="fas fa-play-circle" style="font-style: normal;"></i></a>
+
+<div class="modal fade" id="videoSmallStandard2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <iframe id="nofocusvideosmall" style="height: 50vh; width: 100%;" src="" frameborder="0" allow="autoplay; fullscreen"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
       </div>
       
       
@@ -1984,6 +2065,44 @@ $(function() {
             <div class="price-description-small">Let technology work for you. Auto-organized by Student. Download whenever you need.</div>
           </details>
         </div>
+        <div style="width: 95%; margin: 0 auto; text-align: left">
+
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+$(function() {
+  $(".price-play-button-small").click(function () {
+    var thisModel = $(this).data("target"),
+        videoSRC = $(this).attr("data-video"),
+        videoSRCauto = videoSRC + "?autoplay=1";
+    $(thisModel + ' iframe').attr('src', videoSRCauto);
+
+    $(thisModel + ' button.close').click(function () {
+      $(thisModel + ' iframe').attr('src', videoSRC);
+      console.log('closing modal')
+    });
+
+  });
+
+});
+</script>
+
+<a class="price-play-button-small" data-video="https://player.vimeo.com/video/210447078" data-toggle="modal" data-target="#videoSmallStandard3"><span style="font-size: 0.8rem;">Learn more</span>  <i class="fas fa-play-circle" style="font-style: normal;"></i></a>
+
+<div class="modal fade" id="videoSmallStandard3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <iframe id="nofocusvideosmall" style="height: 50vh; width: 100%;" src="" frameborder="0" allow="autoplay; fullscreen"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
       </div>
       
       
@@ -2000,6 +2119,44 @@ $(function() {
             <div class="price-description-small">Yep. That's right. Sign-In and Sign-Out Students just right. Works for your Staff too!</div>
           </details>
         </div>
+        <div style="width: 95%; margin: 0 auto; text-align: left">
+
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+$(function() {
+  $(".price-play-button-small").click(function () {
+    var thisModel = $(this).data("target"),
+        videoSRC = $(this).attr("data-video"),
+        videoSRCauto = videoSRC + "?autoplay=1";
+    $(thisModel + ' iframe').attr('src', videoSRCauto);
+
+    $(thisModel + ' button.close').click(function () {
+      $(thisModel + ' iframe').attr('src', videoSRC);
+      console.log('closing modal')
+    });
+
+  });
+
+});
+</script>
+
+<a class="price-play-button-small" data-video="https://player.vimeo.com/video/210447078" data-toggle="modal" data-target="#videoSmallStandard4"><span style="font-size: 0.8rem;">Learn more</span>  <i class="fas fa-play-circle" style="font-style: normal;"></i></a>
+
+<div class="modal fade" id="videoSmallStandard4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <iframe id="nofocusvideosmall" style="height: 50vh; width: 100%;" src="" frameborder="0" allow="autoplay; fullscreen"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
       </div>
       
       
@@ -2016,6 +2173,44 @@ $(function() {
             <div class="price-description-small">Send to individual parent (or) entire classroom (or) to new prospects. As simple as that.</div>
           </details>
         </div>
+        <div style="width: 95%; margin: 0 auto; text-align: left">
+
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+$(function() {
+  $(".price-play-button-small").click(function () {
+    var thisModel = $(this).data("target"),
+        videoSRC = $(this).attr("data-video"),
+        videoSRCauto = videoSRC + "?autoplay=1";
+    $(thisModel + ' iframe').attr('src', videoSRCauto);
+
+    $(thisModel + ' button.close').click(function () {
+      $(thisModel + ' iframe').attr('src', videoSRC);
+      console.log('closing modal')
+    });
+
+  });
+
+});
+</script>
+
+<a class="price-play-button-small" data-video="https://player.vimeo.com/video/210447078" data-toggle="modal" data-target="#videoSmallStandard5"><span style="font-size: 0.8rem;">Learn more</span>  <i class="fas fa-play-circle" style="font-style: normal;"></i></a>
+
+<div class="modal fade" id="videoSmallStandard5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <iframe id="nofocusvideosmall" style="height: 50vh; width: 100%;" src="" frameborder="0" allow="autoplay; fullscreen"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
       </div>
       
       
@@ -2032,6 +2227,44 @@ $(function() {
             <div class="price-description-small">As an Administrator, you can provide and revoke Teacher access at anytime you want.</div>
           </details>
         </div>
+        <div style="width: 95%; margin: 0 auto; text-align: left">
+
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+$(function() {
+  $(".price-play-button-small").click(function () {
+    var thisModel = $(this).data("target"),
+        videoSRC = $(this).attr("data-video"),
+        videoSRCauto = videoSRC + "?autoplay=1";
+    $(thisModel + ' iframe').attr('src', videoSRCauto);
+
+    $(thisModel + ' button.close').click(function () {
+      $(thisModel + ' iframe').attr('src', videoSRC);
+      console.log('closing modal')
+    });
+
+  });
+
+});
+</script>
+
+<a class="price-play-button-small" data-video="https://player.vimeo.com/video/210447078" data-toggle="modal" data-target="#videoSmallStandard6"><span style="font-size: 0.8rem;">Learn more</span>  <i class="fas fa-play-circle" style="font-style: normal;"></i></a>
+
+<div class="modal fade" id="videoSmallStandard6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <iframe id="nofocusvideosmall" style="height: 50vh; width: 100%;" src="" frameborder="0" allow="autoplay; fullscreen"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
       </div>
       
       
@@ -2048,6 +2281,44 @@ $(function() {
             <div class="price-description-small">Your Teachers needs to follow. Your Parents wants to know. Know by minute.</div>
           </details>
         </div>
+        <div style="width: 95%; margin: 0 auto; text-align: left">
+
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+$(function() {
+  $(".price-play-button-small").click(function () {
+    var thisModel = $(this).data("target"),
+        videoSRC = $(this).attr("data-video"),
+        videoSRCauto = videoSRC + "?autoplay=1";
+    $(thisModel + ' iframe').attr('src', videoSRCauto);
+
+    $(thisModel + ' button.close').click(function () {
+      $(thisModel + ' iframe').attr('src', videoSRC);
+      console.log('closing modal')
+    });
+
+  });
+
+});
+</script>
+
+<a class="price-play-button-small" data-video="https://player.vimeo.com/video/210447078" data-toggle="modal" data-target="#videoSmallStandard7"><span style="font-size: 0.8rem;">Learn more</span>  <i class="fas fa-play-circle" style="font-style: normal;"></i></a>
+
+<div class="modal fade" id="videoSmallStandard7" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <iframe id="nofocusvideosmall" style="height: 50vh; width: 100%;" src="" frameborder="0" allow="autoplay; fullscreen"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
       </div>
       
       
@@ -2064,6 +2335,44 @@ $(function() {
             <div class="price-description-small">Whether it is a picture, video or a moment. Capture your classroom in action.</div>
           </details>
         </div>
+        <div style="width: 95%; margin: 0 auto; text-align: left">
+
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+$(function() {
+  $(".price-play-button-small").click(function () {
+    var thisModel = $(this).data("target"),
+        videoSRC = $(this).attr("data-video"),
+        videoSRCauto = videoSRC + "?autoplay=1";
+    $(thisModel + ' iframe').attr('src', videoSRCauto);
+
+    $(thisModel + ' button.close').click(function () {
+      $(thisModel + ' iframe').attr('src', videoSRC);
+      console.log('closing modal')
+    });
+
+  });
+
+});
+</script>
+
+<a class="price-play-button-small" data-video="https://player.vimeo.com/video/210447078" data-toggle="modal" data-target="#videoSmallStandard8"><span style="font-size: 0.8rem;">Learn more</span>  <i class="fas fa-play-circle" style="font-style: normal;"></i></a>
+
+<div class="modal fade" id="videoSmallStandard8" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <iframe id="nofocusvideosmall" style="height: 50vh; width: 100%;" src="" frameborder="0" allow="autoplay; fullscreen"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
       </div>
       
       
@@ -2080,6 +2389,44 @@ $(function() {
             <div class="price-description-small">From taking attendance -to- messaging a parent -to- sharing moments.</div>
           </details>
         </div>
+        <div style="width: 95%; margin: 0 auto; text-align: left">
+
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+$(function() {
+  $(".price-play-button-small").click(function () {
+    var thisModel = $(this).data("target"),
+        videoSRC = $(this).attr("data-video"),
+        videoSRCauto = videoSRC + "?autoplay=1";
+    $(thisModel + ' iframe').attr('src', videoSRCauto);
+
+    $(thisModel + ' button.close').click(function () {
+      $(thisModel + ' iframe').attr('src', videoSRC);
+      console.log('closing modal')
+    });
+
+  });
+
+});
+</script>
+
+<a class="price-play-button-small" data-video="https://player.vimeo.com/video/210447078" data-toggle="modal" data-target="#videoSmallStandard9"><span style="font-size: 0.8rem;">Learn more</span>  <i class="fas fa-play-circle" style="font-style: normal;"></i></a>
+
+<div class="modal fade" id="videoSmallStandard9" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <iframe id="nofocusvideosmall" style="height: 50vh; width: 100%;" src="" frameborder="0" allow="autoplay; fullscreen"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
       </div>
       
       
@@ -2096,6 +2443,44 @@ $(function() {
             <div class="price-description-small">Ready to Download & Print.</div>
           </details>
         </div>
+        <div style="width: 95%; margin: 0 auto; text-align: left">
+
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+$(function() {
+  $(".price-play-button-small").click(function () {
+    var thisModel = $(this).data("target"),
+        videoSRC = $(this).attr("data-video"),
+        videoSRCauto = videoSRC + "?autoplay=1";
+    $(thisModel + ' iframe').attr('src', videoSRCauto);
+
+    $(thisModel + ' button.close').click(function () {
+      $(thisModel + ' iframe').attr('src', videoSRC);
+      console.log('closing modal')
+    });
+
+  });
+
+});
+</script>
+
+<a class="price-play-button-small" data-video="https://player.vimeo.com/video/210447078" data-toggle="modal" data-target="#videoSmallStandard10"><span style="font-size: 0.8rem;">Learn more</span>  <i class="fas fa-play-circle" style="font-style: normal;"></i></a>
+
+<div class="modal fade" id="videoSmallStandard10" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <iframe id="nofocusvideosmall" style="height: 50vh; width: 100%;" src="" frameborder="0" allow="autoplay; fullscreen"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
       </div>
       
       
@@ -2112,6 +2497,44 @@ $(function() {
             <div class="price-description-small">Funds disbursed in few days*</div>
           </details>
         </div>
+        <div style="width: 95%; margin: 0 auto; text-align: left">
+
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+$(function() {
+  $(".price-play-button-small").click(function () {
+    var thisModel = $(this).data("target"),
+        videoSRC = $(this).attr("data-video"),
+        videoSRCauto = videoSRC + "?autoplay=1";
+    $(thisModel + ' iframe').attr('src', videoSRCauto);
+
+    $(thisModel + ' button.close').click(function () {
+      $(thisModel + ' iframe').attr('src', videoSRC);
+      console.log('closing modal')
+    });
+
+  });
+
+});
+</script>
+
+<a class="price-play-button-small" data-video="https://player.vimeo.com/video/210447078" data-toggle="modal" data-target="#videoSmallStandard11"><span style="font-size: 0.8rem;">Learn more</span>  <i class="fas fa-play-circle" style="font-style: normal;"></i></a>
+
+<div class="modal fade" id="videoSmallStandard11" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <iframe id="nofocusvideosmall" style="height: 50vh; width: 100%;" src="" frameborder="0" allow="autoplay; fullscreen"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
       </div>
       
       
@@ -2128,6 +2551,44 @@ $(function() {
             <div class="price-description-small">In fact, a lot of centers use it as main website.</div>
           </details>
         </div>
+        <div style="width: 95%; margin: 0 auto; text-align: left">
+
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+$(function() {
+  $(".price-play-button-small").click(function () {
+    var thisModel = $(this).data("target"),
+        videoSRC = $(this).attr("data-video"),
+        videoSRCauto = videoSRC + "?autoplay=1";
+    $(thisModel + ' iframe').attr('src', videoSRCauto);
+
+    $(thisModel + ' button.close').click(function () {
+      $(thisModel + ' iframe').attr('src', videoSRC);
+      console.log('closing modal')
+    });
+
+  });
+
+});
+</script>
+
+<a class="price-play-button-small" data-video="https://player.vimeo.com/video/210447078" data-toggle="modal" data-target="#videoSmallStandard12"><span style="font-size: 0.8rem;">Learn more</span>  <i class="fas fa-play-circle" style="font-style: normal;"></i></a>
+
+<div class="modal fade" id="videoSmallStandard12" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <iframe id="nofocusvideosmall" style="height: 50vh; width: 100%;" src="" frameborder="0" allow="autoplay; fullscreen"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
       </div>
       
       
@@ -2144,6 +2605,44 @@ $(function() {
             <div class="price-description-small">We are committed to make it right.</div>
           </details>
         </div>
+        <div style="width: 95%; margin: 0 auto; text-align: left">
+
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+$(function() {
+  $(".price-play-button-small").click(function () {
+    var thisModel = $(this).data("target"),
+        videoSRC = $(this).attr("data-video"),
+        videoSRCauto = videoSRC + "?autoplay=1";
+    $(thisModel + ' iframe').attr('src', videoSRCauto);
+
+    $(thisModel + ' button.close').click(function () {
+      $(thisModel + ' iframe').attr('src', videoSRC);
+      console.log('closing modal')
+    });
+
+  });
+
+});
+</script>
+
+<a class="price-play-button-small" data-video="https://player.vimeo.com/video/210447078" data-toggle="modal" data-target="#videoSmallStandard13"><span style="font-size: 0.8rem;">Learn more</span>  <i class="fas fa-play-circle" style="font-style: normal;"></i></a>
+
+<div class="modal fade" id="videoSmallStandard13" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <iframe id="nofocusvideosmall" style="height: 50vh; width: 100%;" src="" frameborder="0" allow="autoplay; fullscreen"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
       </div>
       
     </div>
@@ -2169,6 +2668,44 @@ $(function() {
             <div class="price-description-small">Convenient. Secure. 100% Legit.<br />Organized by Student, and available for you at all times.</div>
           </details>
         </div>
+        <div style="width: 95%; margin: 0 auto; text-align: left">
+
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+$(function() {
+  $(".price-play-button-small").click(function () {
+    var thisModel = $(this).data("target"),
+        videoSRC = $(this).attr("data-video"),
+        videoSRCauto = videoSRC + "?autoplay=1";
+    $(thisModel + ' iframe').attr('src', videoSRCauto);
+
+    $(thisModel + ' button.close').click(function () {
+      $(thisModel + ' iframe').attr('src', videoSRC);
+      console.log('closing modal')
+    });
+
+  });
+
+});
+</script>
+
+<a class="price-play-button-small" data-video="https://player.vimeo.com/video/210447078" data-toggle="modal" data-target="#videoSmallEnterprise1"><span style="font-size: 0.8rem;">Learn more</span>  <i class="fas fa-play-circle" style="font-style: normal;"></i></a>
+
+<div class="modal fade" id="videoSmallEnterprise1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <iframe id="nofocusvideosmall" style="height: 50vh; width: 100%;" src="" frameborder="0" allow="autoplay; fullscreen"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
       </div>
       
       
@@ -2185,6 +2722,44 @@ $(function() {
             <div class="price-description-small">Parents love it. No wasted paper. Good karma too!</div>
           </details>
         </div>
+        <div style="width: 95%; margin: 0 auto; text-align: left">
+
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+$(function() {
+  $(".price-play-button-small").click(function () {
+    var thisModel = $(this).data("target"),
+        videoSRC = $(this).attr("data-video"),
+        videoSRCauto = videoSRC + "?autoplay=1";
+    $(thisModel + ' iframe').attr('src', videoSRCauto);
+
+    $(thisModel + ' button.close').click(function () {
+      $(thisModel + ' iframe').attr('src', videoSRC);
+      console.log('closing modal')
+    });
+
+  });
+
+});
+</script>
+
+<a class="price-play-button-small" data-video="https://player.vimeo.com/video/210447078" data-toggle="modal" data-target="#videoSmallEnterprise2"><span style="font-size: 0.8rem;">Learn more</span>  <i class="fas fa-play-circle" style="font-style: normal;"></i></a>
+
+<div class="modal fade" id="videoSmallEnterprise2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <iframe id="nofocusvideosmall" style="height: 50vh; width: 100%;" src="" frameborder="0" allow="autoplay; fullscreen"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
       </div>
       
       
@@ -2201,6 +2776,44 @@ $(function() {
             <div class="price-description-small">Let technology work for you. Auto-organized by Student. Download whenever you need.</div>
           </details>
         </div>
+        <div style="width: 95%; margin: 0 auto; text-align: left">
+
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+$(function() {
+  $(".price-play-button-small").click(function () {
+    var thisModel = $(this).data("target"),
+        videoSRC = $(this).attr("data-video"),
+        videoSRCauto = videoSRC + "?autoplay=1";
+    $(thisModel + ' iframe').attr('src', videoSRCauto);
+
+    $(thisModel + ' button.close').click(function () {
+      $(thisModel + ' iframe').attr('src', videoSRC);
+      console.log('closing modal')
+    });
+
+  });
+
+});
+</script>
+
+<a class="price-play-button-small" data-video="https://player.vimeo.com/video/210447078" data-toggle="modal" data-target="#videoSmallEnterprise3"><span style="font-size: 0.8rem;">Learn more</span>  <i class="fas fa-play-circle" style="font-style: normal;"></i></a>
+
+<div class="modal fade" id="videoSmallEnterprise3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <iframe id="nofocusvideosmall" style="height: 50vh; width: 100%;" src="" frameborder="0" allow="autoplay; fullscreen"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
       </div>
       
       
@@ -2217,6 +2830,44 @@ $(function() {
             <div class="price-description-small">Yep. That's right. Sign-In and Sign-Out Students just right. Works for your Staff too!</div>
           </details>
         </div>
+        <div style="width: 95%; margin: 0 auto; text-align: left">
+
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+$(function() {
+  $(".price-play-button-small").click(function () {
+    var thisModel = $(this).data("target"),
+        videoSRC = $(this).attr("data-video"),
+        videoSRCauto = videoSRC + "?autoplay=1";
+    $(thisModel + ' iframe').attr('src', videoSRCauto);
+
+    $(thisModel + ' button.close').click(function () {
+      $(thisModel + ' iframe').attr('src', videoSRC);
+      console.log('closing modal')
+    });
+
+  });
+
+});
+</script>
+
+<a class="price-play-button-small" data-video="https://player.vimeo.com/video/210447078" data-toggle="modal" data-target="#videoSmallEnterprise4"><span style="font-size: 0.8rem;">Learn more</span>  <i class="fas fa-play-circle" style="font-style: normal;"></i></a>
+
+<div class="modal fade" id="videoSmallEnterprise4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <iframe id="nofocusvideosmall" style="height: 50vh; width: 100%;" src="" frameborder="0" allow="autoplay; fullscreen"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
       </div>
       
       
@@ -2233,6 +2884,44 @@ $(function() {
             <div class="price-description-small">Send to individual parent (or) entire classroom (or) to new prospects. As simple as that.</div>
           </details>
         </div>
+        <div style="width: 95%; margin: 0 auto; text-align: left">
+
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+$(function() {
+  $(".price-play-button-small").click(function () {
+    var thisModel = $(this).data("target"),
+        videoSRC = $(this).attr("data-video"),
+        videoSRCauto = videoSRC + "?autoplay=1";
+    $(thisModel + ' iframe').attr('src', videoSRCauto);
+
+    $(thisModel + ' button.close').click(function () {
+      $(thisModel + ' iframe').attr('src', videoSRC);
+      console.log('closing modal')
+    });
+
+  });
+
+});
+</script>
+
+<a class="price-play-button-small" data-video="https://player.vimeo.com/video/210447078" data-toggle="modal" data-target="#videoSmallEnterprise5"><span style="font-size: 0.8rem;">Learn more</span>  <i class="fas fa-play-circle" style="font-style: normal;"></i></a>
+
+<div class="modal fade" id="videoSmallEnterprise5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <iframe id="nofocusvideosmall" style="height: 50vh; width: 100%;" src="" frameborder="0" allow="autoplay; fullscreen"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
       </div>
       
       
@@ -2249,6 +2938,44 @@ $(function() {
             <div class="price-description-small">As an Administrator, you can provide and revoke Teacher access at anytime you want.</div>
           </details>
         </div>
+        <div style="width: 95%; margin: 0 auto; text-align: left">
+
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+$(function() {
+  $(".price-play-button-small").click(function () {
+    var thisModel = $(this).data("target"),
+        videoSRC = $(this).attr("data-video"),
+        videoSRCauto = videoSRC + "?autoplay=1";
+    $(thisModel + ' iframe').attr('src', videoSRCauto);
+
+    $(thisModel + ' button.close').click(function () {
+      $(thisModel + ' iframe').attr('src', videoSRC);
+      console.log('closing modal')
+    });
+
+  });
+
+});
+</script>
+
+<a class="price-play-button-small" data-video="https://player.vimeo.com/video/210447078" data-toggle="modal" data-target="#videoSmallEnterprise6"><span style="font-size: 0.8rem;">Learn more</span>  <i class="fas fa-play-circle" style="font-style: normal;"></i></a>
+
+<div class="modal fade" id="videoSmallEnterprise6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <iframe id="nofocusvideosmall" style="height: 50vh; width: 100%;" src="" frameborder="0" allow="autoplay; fullscreen"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
       </div>
       
       
@@ -2265,6 +2992,44 @@ $(function() {
             <div class="price-description-small">Your Teachers needs to follow. Your Parents wants to know. Know by minute.</div>
           </details>
         </div>
+        <div style="width: 95%; margin: 0 auto; text-align: left">
+
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+$(function() {
+  $(".price-play-button-small").click(function () {
+    var thisModel = $(this).data("target"),
+        videoSRC = $(this).attr("data-video"),
+        videoSRCauto = videoSRC + "?autoplay=1";
+    $(thisModel + ' iframe').attr('src', videoSRCauto);
+
+    $(thisModel + ' button.close').click(function () {
+      $(thisModel + ' iframe').attr('src', videoSRC);
+      console.log('closing modal')
+    });
+
+  });
+
+});
+</script>
+
+<a class="price-play-button-small" data-video="https://player.vimeo.com/video/210447078" data-toggle="modal" data-target="#videoSmallEnterprise7"><span style="font-size: 0.8rem;">Learn more</span>  <i class="fas fa-play-circle" style="font-style: normal;"></i></a>
+
+<div class="modal fade" id="videoSmallEnterprise7" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <iframe id="nofocusvideosmall" style="height: 50vh; width: 100%;" src="" frameborder="0" allow="autoplay; fullscreen"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
       </div>
       
       
@@ -2281,6 +3046,44 @@ $(function() {
             <div class="price-description-small">Whether it is a picture, video or a moment. Capture your classroom in action.</div>
           </details>
         </div>
+        <div style="width: 95%; margin: 0 auto; text-align: left">
+
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+$(function() {
+  $(".price-play-button-small").click(function () {
+    var thisModel = $(this).data("target"),
+        videoSRC = $(this).attr("data-video"),
+        videoSRCauto = videoSRC + "?autoplay=1";
+    $(thisModel + ' iframe').attr('src', videoSRCauto);
+
+    $(thisModel + ' button.close').click(function () {
+      $(thisModel + ' iframe').attr('src', videoSRC);
+      console.log('closing modal')
+    });
+
+  });
+
+});
+</script>
+
+<a class="price-play-button-small" data-video="https://player.vimeo.com/video/210447078" data-toggle="modal" data-target="#videoSmallEnterprise8"><span style="font-size: 0.8rem;">Learn more</span>  <i class="fas fa-play-circle" style="font-style: normal;"></i></a>
+
+<div class="modal fade" id="videoSmallEnterprise8" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <iframe id="nofocusvideosmall" style="height: 50vh; width: 100%;" src="" frameborder="0" allow="autoplay; fullscreen"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
       </div>
       
       
@@ -2297,6 +3100,44 @@ $(function() {
             <div class="price-description-small">From taking attendance -to- messaging a parent -to- sharing moments.</div>
           </details>
         </div>
+        <div style="width: 95%; margin: 0 auto; text-align: left">
+
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+$(function() {
+  $(".price-play-button-small").click(function () {
+    var thisModel = $(this).data("target"),
+        videoSRC = $(this).attr("data-video"),
+        videoSRCauto = videoSRC + "?autoplay=1";
+    $(thisModel + ' iframe').attr('src', videoSRCauto);
+
+    $(thisModel + ' button.close').click(function () {
+      $(thisModel + ' iframe').attr('src', videoSRC);
+      console.log('closing modal')
+    });
+
+  });
+
+});
+</script>
+
+<a class="price-play-button-small" data-video="https://player.vimeo.com/video/210447078" data-toggle="modal" data-target="#videoSmallEnterprise9"><span style="font-size: 0.8rem;">Learn more</span>  <i class="fas fa-play-circle" style="font-style: normal;"></i></a>
+
+<div class="modal fade" id="videoSmallEnterprise9" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <iframe id="nofocusvideosmall" style="height: 50vh; width: 100%;" src="" frameborder="0" allow="autoplay; fullscreen"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
       </div>
       
       
@@ -2313,6 +3154,44 @@ $(function() {
             <div class="price-description-small">Ready to Download & Print.</div>
           </details>
         </div>
+        <div style="width: 95%; margin: 0 auto; text-align: left">
+
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+$(function() {
+  $(".price-play-button-small").click(function () {
+    var thisModel = $(this).data("target"),
+        videoSRC = $(this).attr("data-video"),
+        videoSRCauto = videoSRC + "?autoplay=1";
+    $(thisModel + ' iframe').attr('src', videoSRCauto);
+
+    $(thisModel + ' button.close').click(function () {
+      $(thisModel + ' iframe').attr('src', videoSRC);
+      console.log('closing modal')
+    });
+
+  });
+
+});
+</script>
+
+<a class="price-play-button-small" data-video="https://player.vimeo.com/video/210447078" data-toggle="modal" data-target="#videoSmallEnterprise10"><span style="font-size: 0.8rem;">Learn more</span>  <i class="fas fa-play-circle" style="font-style: normal;"></i></a>
+
+<div class="modal fade" id="videoSmallEnterprise10" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <iframe id="nofocusvideosmall" style="height: 50vh; width: 100%;" src="" frameborder="0" allow="autoplay; fullscreen"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
       </div>
       
       
@@ -2329,6 +3208,44 @@ $(function() {
             <div class="price-description-small">Funds disbursed in few days*</div>
           </details>
         </div>
+        <div style="width: 95%; margin: 0 auto; text-align: left">
+
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+$(function() {
+  $(".price-play-button-small").click(function () {
+    var thisModel = $(this).data("target"),
+        videoSRC = $(this).attr("data-video"),
+        videoSRCauto = videoSRC + "?autoplay=1";
+    $(thisModel + ' iframe').attr('src', videoSRCauto);
+
+    $(thisModel + ' button.close').click(function () {
+      $(thisModel + ' iframe').attr('src', videoSRC);
+      console.log('closing modal')
+    });
+
+  });
+
+});
+</script>
+
+<a class="price-play-button-small" data-video="https://player.vimeo.com/video/210447078" data-toggle="modal" data-target="#videoSmallEnterprise11"><span style="font-size: 0.8rem;">Learn more</span>  <i class="fas fa-play-circle" style="font-style: normal;"></i></a>
+
+<div class="modal fade" id="videoSmallEnterprise11" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <iframe id="nofocusvideosmall" style="height: 50vh; width: 100%;" src="" frameborder="0" allow="autoplay; fullscreen"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
       </div>
       
       
@@ -2345,6 +3262,44 @@ $(function() {
             <div class="price-description-small">In fact, a lot of centers use it as main website.</div>
           </details>
         </div>
+        <div style="width: 95%; margin: 0 auto; text-align: left">
+
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+$(function() {
+  $(".price-play-button-small").click(function () {
+    var thisModel = $(this).data("target"),
+        videoSRC = $(this).attr("data-video"),
+        videoSRCauto = videoSRC + "?autoplay=1";
+    $(thisModel + ' iframe').attr('src', videoSRCauto);
+
+    $(thisModel + ' button.close').click(function () {
+      $(thisModel + ' iframe').attr('src', videoSRC);
+      console.log('closing modal')
+    });
+
+  });
+
+});
+</script>
+
+<a class="price-play-button-small" data-video="https://player.vimeo.com/video/210447078" data-toggle="modal" data-target="#videoSmallEnterprise12"><span style="font-size: 0.8rem;">Learn more</span>  <i class="fas fa-play-circle" style="font-style: normal;"></i></a>
+
+<div class="modal fade" id="videoSmallEnterprise12" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <iframe id="nofocusvideosmall" style="height: 50vh; width: 100%;" src="" frameborder="0" allow="autoplay; fullscreen"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
       </div>
       
       
@@ -2361,6 +3316,44 @@ $(function() {
             <div class="price-description-small">We are committed to make it right.</div>
           </details>
         </div>
+        <div style="width: 95%; margin: 0 auto; text-align: left">
+
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+$(function() {
+  $(".price-play-button-small").click(function () {
+    var thisModel = $(this).data("target"),
+        videoSRC = $(this).attr("data-video"),
+        videoSRCauto = videoSRC + "?autoplay=1";
+    $(thisModel + ' iframe').attr('src', videoSRCauto);
+
+    $(thisModel + ' button.close').click(function () {
+      $(thisModel + ' iframe').attr('src', videoSRC);
+      console.log('closing modal')
+    });
+
+  });
+
+});
+</script>
+
+<a class="price-play-button-small" data-video="https://player.vimeo.com/video/210447078" data-toggle="modal" data-target="#videoSmallEnterprise13"><span style="font-size: 0.8rem;">Learn more</span>  <i class="fas fa-play-circle" style="font-style: normal;"></i></a>
+
+<div class="modal fade" id="videoSmallEnterprise13" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <iframe id="nofocusvideosmall" style="height: 50vh; width: 100%;" src="" frameborder="0" allow="autoplay; fullscreen"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
       </div>
       
     </div>
