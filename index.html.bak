@@ -46,55 +46,54 @@
   <meta content='images/@stock/largetile.png' name='msapplication-square310x310logo'>
 
 
-  <link rel="preload" as="style" href="/css/app.css">
-  <link rel="stylesheet" href="/css/app.css">
+  <link rel="preload" as="style" href="https://annecyh.github.io/jekyll-tingr-master/css/app.css">
+  <link rel="stylesheet" href="https://annecyh.github.io/jekyll-tingr-master/css/app.css">
 
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700,600,300">
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700,600,300" media="screen" rel="stylesheet" type="text/css" />
 
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
-  <link rel="preload" as="style" href="/css/superslides.css">
-  <link rel="stylesheet" href="/css/superslides.css"/>
+  <link rel="preload" as="style" href="https://annecyh.github.io/jekyll-tingr-master/css/superslides.css">
+  <link rel="stylesheet" href="https://annecyh.github.io/jekyll-tingr-master/css/superslides.css"/>
 
-  <link rel="preload" as="style" href="/css/slick-theme.css"/>
-  <link rel="stylesheet" href="/css/slick-theme.css"/>
+  <link rel="preload" as="style" href="https://annecyh.github.io/jekyll-tingr-master/css/slick-theme.css"/>
+  <link rel="stylesheet" href="https://annecyh.github.io/jekyll-tingr-master/css/slick-theme.css"/>
 
-  <link rel="preload" as="style" href="/css/slick.css"/>
-  <link rel="stylesheet" href="/css/slick.css"/>
+  <link rel="preload" as="style" href="https://annecyh.github.io/jekyll-tingr-master/css/slick.css"/>
+  <link rel="stylesheet" href="https://annecyh.github.io/jekyll-tingr-master/css/slick.css"/>
 
-  <link rel="preload" as="style" href="/css/animate.css"/>
-  <link rel="stylesheet" href="/css/animate.css"/>
+  <link rel="preload" as="style" href="https://annecyh.github.io/jekyll-tingr-master/css/animate.css"/>
+  <link rel="stylesheet" href="https://annecyh.github.io/jekyll-tingr-master/css/animate.css"/>
 
-  <link rel="preload" as="style" href="/css/linea-styles.css"/>
-  <link rel="stylesheet" href="/css/linea-styles.css"/>
+  <link rel="preload" as="style" href="https://annecyh.github.io/jekyll-tingr-master/css/linea-styles.css"/>
+  <link rel="stylesheet" href="https://annecyh.github.io/jekyll-tingr-master/css/linea-styles.css"/>
 
-  <link rel="preload" as="style" href="/css/linea-arrows-styles.css"/>
-  <link rel="stylesheet" href="/css/linea-arrows-styles.css"/>
+  <link rel="preload" as="style" href="https://annecyh.github.io/jekyll-tingr-master/css/linea-arrows-styles.css"/>
+  <link rel="stylesheet" href="https://annecyh.github.io/jekyll-tingr-master/css/linea-arrows-styles.css"/>
 
-  <link rel="preload" as="style" href="/css/font-awesome.css"/>
-  <link rel="stylesheet" href="/css/font-awesome.css"/>
+  <link rel="preload" as="style" href="https://annecyh.github.io/jekyll-tingr-master/css/font-awesome.css"/>
+  <link rel="stylesheet" href="https://annecyh.github.io/jekyll-tingr-master/css/font-awesome.css"/>
 
-  <link rel="preload" as="style" href="/css/chivo.css"/>
-  <link rel="stylesheet" href="/css/chivo.css"/>
+  <link rel="preload" as="style" href="https://annecyh.github.io/jekyll-tingr-master/css/chivo.css"/>
+  <link rel="stylesheet" href="https://annecyh.github.io/jekyll-tingr-master/css/chivo.css"/>
 
-  <link rel="preload" as="style" href="/css/style.css"/>
-  <link rel="stylesheet" href="/css/style.css"/>
+  <link rel="preload" as="style" href="https://annecyh.github.io/jekyll-tingr-master/css/style.css"/>
+  <link rel="stylesheet" href="https://annecyh.github.io/jekyll-tingr-master/css/style.css"/>
 
-  <link rel="preload" as="style" href="/css/responsive.css"/>
-  <link rel="stylesheet" href="/css/responsive.css"/>
+  <link rel="preload" as="style" href="https://annecyh.github.io/jekyll-tingr-master/css/responsive.css"/>
+  <link rel="stylesheet" href="https://annecyh.github.io/jekyll-tingr-master/css/responsive.css"/>
 
-  <link rel="preload" as="style" href="/css/video.css" />
-  <link rel="stylesheet" href="/css/video.css" />
+  <link rel="preload" as="style" href="https://annecyh.github.io/jekyll-tingr-master/css/video.css" />
+  <link rel="stylesheet" href="https://annecyh.github.io/jekyll-tingr-master/css/video.css" />
 
-  <link rel="preload" as="style" href="/css/table.css"/>
-  <link rel="stylesheet" href="/css/table.css"/>
+  <link rel="preload" as="style" href="https://annecyh.github.io/jekyll-tingr-master/css/table.css"/>
+  <link rel="stylesheet" href="https://annecyh.github.io/jekyll-tingr-master/css/table.css"/>
 
-  <link rel="preload" as="script" href="/bower_components/modernizr/modernizr.js"/>
-  <script src="/bower_components/modernizr/modernizr.js"></script>
+  <link rel="preload" as="script" href="https://annecyh.github.io/jekyll-tingr-master/bower_components/modernizr/modernizr.js"/>
+  <script src="https://annecyh.github.io/jekyll-tingr-master/bower_components/modernizr/modernizr.js"></script>
 
-  <link rel="canonical" href="http://localhost:4000/.bak">
-  <link rel="alternate" type="application/rss+xml" title="TINGR. The Childcare Product. Putting Children 1st." href="http://localhost:4000/feed.xml"
-
+  <link rel="canonical" href="https://annecyh.github.io/jekyll-tingr-masterhttps://annecyh.github.io/jekyll-tingr-master/.bak">
+  <link rel="alternate" type="application/rss+xml" title="TINGR. The Childcare Product. Putting Children 1st." href="https://annecyh.github.io/jekyll-tingr-masterhttps://annecyh.github.io/jekyll-tingr-master/feed.xml"
 
   <!-- Google Tag Manager -->
   <script>
@@ -122,7 +121,7 @@
     <ul class='title-area'>
       <li class="site-title-log">
         <h3>
-          <a href='http://localhost:4000/index.html'>
+          <a href='https://annecyh.github.io/jekyll-tingr-master/index.html'>
             <b>TIN</b><span>GR</span>
           </a>
         </h3>
@@ -142,7 +141,7 @@
           
             <li class=" ">
               
-                <a href="http://localhost:4000/features.html" class="">Features</a>
+                <a href="https://annecyh.github.io/jekyll-tingr-master/features.html" class="">Features</a>
               
             </li>
           
@@ -152,7 +151,7 @@
           
             <li class=" ">
               
-                <a href="http://localhost:4000/contact.html" class="">Contact</a>
+                <a href="https://annecyh.github.io/jekyll-tingr-master/contact.html" class="">Contact</a>
               
             </li>
           
@@ -162,7 +161,7 @@
           
             <li class=" ">
               
-                <a href="http://localhost:4000/pricing.html" class="">Pricing</a>
+                <a href="https://annecyh.github.io/jekyll-tingr-master/pricing.html" class="">Pricing</a>
               
             </li>
           
@@ -172,7 +171,7 @@
           
             <li class=" try-now-list">
               
-                <a href="http://localhost:4000/signup.html" class="try-now-btn">Try it FREE</a>
+                <a href="https://annecyh.github.io/jekyll-tingr-master/signup.html" class="try-now-btn">Try it FREE</a>
               
             </li>
           
@@ -201,7 +200,9 @@
       
         <div class="slide">
           <div class="slide-info">
+            
             <div class="four spacing"></div>
+            
             <p><b><u>THE</u></b> CHILDCARE PRODUCT</p>
             <h1>putting children <u>first</u></h1>
             <div class="three spacing"></div>
@@ -215,7 +216,9 @@
       
         <div class="slide">
           <div class="slide-info">
+            
             <div class="four spacing"></div>
+            
             <p></p>
             <h1>Student Enrollments<br/><span>&beyond</span></h1>
             <div class="three spacing"></div>
@@ -229,7 +232,9 @@
       
         <div class="slide">
           <div class="slide-info">
+            
             <div class="four spacing"></div>
+            
             <p>Legal. Secure. Organized.</p>
             <h1>Digital State Forms<p>no more wasted paper.</p></h1>
             <div class="three spacing"></div>
@@ -243,7 +248,9 @@
       
         <div class="slide">
           <div class="slide-info">
+            
             <div class="four spacing"></div>
+            
             <p>Pictures. Videos. Messages.</p>
             <h1>Capture. Share. <p>make <b>yearbook</b> of memories</p></h1>
             <div class="three spacing"></div>
@@ -257,7 +264,9 @@
       
         <div class="slide">
           <div class="slide-info">
-            <div class="four spacing"></div>
+            
+            <div style="height: 5%;"></div>
+            
             <p>Take attendance. Track hours.</p>
             <h1>sign in/out <span>Works for Students & Staff</span><p>Simple yet Smart</p></h1>
             <div class="three spacing"></div>
@@ -274,7 +283,44 @@
       <a href="#" class="next"><i class="icon-arrows-slim-right"></i></a>
       <a href="#" class="prev"><i class="icon-arrows-slim-left"></i></a>
     </nav>
-    <a class="slides-pagination cta-landing-blue" href="https://my.tingr.org/signup.html">Sign Up Now</a>
+
+    <script src="https://player.vimeo.com/api/player.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+$(function() {
+  $(".landing-video").click(function () {
+    var theModal = $(this).data("target"),
+        videoSRC = $(this).attr("data-video"),
+        videoSRCauto = videoSRC + "?autoplay=1";
+    $(theModal + ' iframe').attr('src', videoSRCauto);
+
+    $(theModal + ' button.close, .modal, .modal-dialog, .modal-body, .modal-content').click(function () {
+      $(theModal + ' iframe').attr('src', videoSRC);
+      console.log('closing modal')
+    });
+
+  });
+
+});
+</script>
+
+<a class="landing-cta landing-video" data-video="https://player.vimeo.com/video/210447078" data-toggle="modal" data-target="#videoModal"><img style="height: 60px" src="https://annecyh.github.io/jekyll-tingr-master/images/play-vimeo.gif"></a>
+
+<div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <iframe id="nofocusvideo" style="position: absolute; height: 78%; width: 78%;" src="" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <a class="slides-pagination cta-landing animated-button1" href="https://my.tingr.org/signup.html">Sign Up Now<i class="cta-landing-animation"></i></a>
   </div>
 </div>
 <div class="full light-grey centered-text">
@@ -296,7 +342,7 @@
         In our customer words..."Every Daycare's must have product. Easy to use. Not cluttered with unnecessary things."
       </p>
       <div class="two spacing"></div>
-      <a href="http://localhost:4000/features.html" class="button boxed">Learn more about tingr</a>
+      <a href="https://annecyh.github.io/jekyll-tingr-master/features.html" class="button boxed">Learn more about tingr</a>
     </div>
   </div>
 </div>
@@ -446,15 +492,15 @@
   <div class="spacing"></div>
 </div>
 
-<script src="/bower_components/jquery/dist/jquery.min.js"></script>
-<script src="/bower_components/foundation/js/foundation.min.js"></script>
-<script src="/js/jquery.superslides.min.js"></script>
-<script src="/js/slick.min.js"></script>
-<script src="/js/wow.min.js"></script>
-<script src="/js/jquery.validate.js"></script>
-<script src="/bower_components/countto/jquery.countTo.js"></script>
-<script src="/bower_components/appear/jquery.appear.js"></script>
-<script src="/js/app.js"></script>
+<script src="https://annecyh.github.io/jekyll-tingr-master/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="https://annecyh.github.io/jekyll-tingr-master/bower_components/foundation/js/foundation.min.js"></script>
+<script src="https://annecyh.github.io/jekyll-tingr-master/js/jquery.superslides.min.js"></script>
+<script src="https://annecyh.github.io/jekyll-tingr-master/js/slick.min.js"></script>
+<script src="https://annecyh.github.io/jekyll-tingr-master/js/wow.min.js"></script>
+<script src="https://annecyh.github.io/jekyll-tingr-master/js/jquery.validate.js"></script>
+<script src="https://annecyh.github.io/jekyll-tingr-master/bower_components/countto/jquery.countTo.js"></script>
+<script src="https://annecyh.github.io/jekyll-tingr-master/bower_components/appear/jquery.appear.js"></script>
+<script src="https://annecyh.github.io/jekyll-tingr-master/js/app.js"></script>
 
 
   </body>

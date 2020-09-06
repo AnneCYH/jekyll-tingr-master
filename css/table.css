@@ -505,24 +505,26 @@ p.description-small {
   display: inline-block;
   width: 92%;
   text-align: left;
+  color: #666666;
 }
 .price-heading-small {
   display: inline-block;
   width: 95%;
   text-align: left;
+  color: #666666;
 }
 
 .price-description {
   padding: 0.5rem;
   font-size: 0.85rem;
-  color: #5e4a4a;
+  color: rgba(94, 74, 74, 0.9);
   font-style: italic;
 }
 
 .price-description-small {
   padding: 0.5rem 0.85rem;
   font-size: 0.85rem;
-  color: #5e4a4a;
+  color: rgba(94, 74, 74, 0.9);
   font-style: italic;
 }
 

@@ -990,12 +990,12 @@ a.cta-landing:hover {
   color: #ab8860;
 }
 
-.slides-pagination {
+.slides-pagination, .landing-cta {
     text-align: center;
     width: 16%;
     margin-left: 42%;
     margin-right: 42%;}
-  .slides-pagination a {
+  .slides-pagination a, .landing-cta a {
     text-indent: 100%; }
 
 .fullwidth {
@@ -1012,7 +1012,7 @@ a.cta-landing:hover {
       font-size: 22px; }
     .fullwidth .slide-info .button {
       margin-top: 50px; }
-  .fullwidth .slides-pagination {
+  .fullwidth .slides-pagination, .fullwidth .landing-cta {
     margin-left: 0;
     text-align: center; }
 
@@ -1032,7 +1032,7 @@ a.cta-landing:hover {
       font-size: 22px; }
     .fullscreen .slide-info .button {
       margin-top: 50px; }
-  .fullscreen .slides-pagination {
+  .fullscreen .slides-pagination, .fullscreen .landing-cta {
     margin-left: 0;
     text-align: center;
     width: 100%; }
