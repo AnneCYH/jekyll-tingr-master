@@ -1,5 +1,3 @@
 define([
 	"../Data"
-], function( Data ) {
-	return new Data();
-});
+], Data => new Data());

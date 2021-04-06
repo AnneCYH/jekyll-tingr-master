@@ -2,7 +2,7 @@
 /*
  * This is the JSONSelect reference implementation, in javascript.
  */
-(function(exports) {
+((exports => {
 
     var // localize references
     toString = Object.prototype.toString;
@@ -46,7 +46,7 @@
 
     var pat = /^(?:([\r\n\t\ ]+)|([*.,>])|(string|boolean|null|array|object|number)|(:(?:root|first-child|last-child|only-child))|(:(?:nth-child|nth-last-child))|(:\w+)|(\"(?:[^\\]|\\[^\"])*\")|(\")|((?:[_a-zA-Z]|[^\0-\0177]|\\[^\r\n\f0-9a-fA-F])(?:[_a-zA-Z0-9\-]|[^\u0000-\u0177]|(?:\\[^\r\n\f0-9a-fA-F]))*))/;
     var exprPat = /^\s*\(\s*(?:([+\-]?)([0-9]*)n\s*(?:([+\-])\s*([0-9]))?|(odd|even)|([+\-]?[0-9]+))\s*\)/;
-    var lex = function (str, off) {
+    var lex = (str, off) => {
         if (!off) off = 0;
         var m = pat.exec(str.substr(off));
         if (!m) return undefined;
@@ -66,7 +66,7 @@
 
     // THE PARSER
 
-    var parse = function (str) {
+    var parse = str => {
         var a = [], off = 0, am;
 
         while (true) {
@@ -90,7 +90,7 @@
         return am ? am : a;
     };
 
-    var parse_selector = function(str, off) {
+    var parse_selector = (str, off) => {
         var soff = off;
         var s = { };
         var l = lex(str, off);
@@ -248,7 +248,7 @@
 
     function match(sel, obj) {
         var a = [];
-        forEach(sel, obj, function(x) {
+        forEach(sel, obj, x => {
             a.push(x);
         });
         return a;
@@ -268,12 +268,8 @@
 
     exports._lex = lex;
     exports._parse = parse;
-    exports.match = function (sel, obj) {
-        return compile(sel).match(obj);
-    };
-    exports.forEach = function(sel, obj, fun) {
-        return compile(sel).forEach(obj, fun);
-    };
+    exports.match = (sel, obj) => compile(sel).match(obj);
+    exports.forEach = (sel, obj, fun) => compile(sel).forEach(obj, fun);
     exports.compile = compile;
-})(typeof exports === "undefined" ? (window.JSONSelect = {}) : exports);
+}))(typeof exports === "undefined" ? (window.JSONSelect = {}) : exports);
 

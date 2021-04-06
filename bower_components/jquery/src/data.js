@@ -4,7 +4,7 @@ define([
 	"./core/access",
 	"./data/var/data_priv",
 	"./data/var/data_user"
-], function( jQuery, rnotwhite, access, data_priv, data_user ) {
+], (jQuery, rnotwhite, access, data_priv, data_user) => {
 
 //	Implementation Summary
 //
@@ -49,25 +49,19 @@ function dataAttr( elem, key, data ) {
 }
 
 jQuery.extend({
-	hasData: function( elem ) {
-		return data_user.hasData( elem ) || data_priv.hasData( elem );
-	},
+	hasData: elem => data_user.hasData( elem ) || data_priv.hasData( elem ),
 
-	data: function( elem, name, data ) {
-		return data_user.access( elem, name, data );
-	},
+	data: (elem, name, data) => data_user.access( elem, name, data ),
 
-	removeData: function( elem, name ) {
+	removeData: (elem, name) => {
 		data_user.remove( elem, name );
 	},
 
 	// TODO: Now that all calls to _data and _removeData have been replaced
 	// with direct calls to data_priv methods, these can be deprecated.
-	_data: function( elem, name, data ) {
-		return data_priv.access( elem, name, data );
-	},
+	_data: (elem, name, data) => data_priv.access( elem, name, data ),
 
-	_removeData: function( elem, name ) {
+	_removeData: (elem, name) => {
 		data_priv.remove( elem, name );
 	}
 });

@@ -10,7 +10,7 @@ define([
 	"./core/init",
 	"./data/accepts",
 	"./selector"
-], function( jQuery, strundefined, rnotwhite, hasOwn, slice, support, data_priv ) {
+], (jQuery, strundefined, rnotwhite, hasOwn, slice, support, data_priv) => {
 
 var
 	rkeyEvent = /^key/,
@@ -40,7 +40,7 @@ jQuery.event = {
 
 	global: {},
 
-	add: function( elem, types, handler, data, selector ) {
+	add: (elem, types, handler, data, selector) => {
 
 		var handleObjIn, eventHandle, tmp,
 			events, t, handleObj,
@@ -146,7 +146,7 @@ jQuery.event = {
 	},
 
 	// Detach an event or set of events from an element
-	remove: function( elem, types, handler, selector, mappedTypes ) {
+	remove: (elem, types, handler, selector, mappedTypes) => {
 
 		var j, origCount, tmp,
 			events, t, handleObj,
@@ -216,7 +216,7 @@ jQuery.event = {
 		}
 	},
 
-	trigger: function( event, data, elem, onlyHandlers ) {
+	trigger: (event, data, elem, onlyHandlers) => {
 
 		var i, cur, tmp, bubbleType, ontype, handle, special,
 			eventPath = [ elem || document ],
@@ -460,7 +460,7 @@ jQuery.event = {
 
 	keyHooks: {
 		props: "char charCode key keyCode".split(" "),
-		filter: function( event, original ) {
+		filter: (event, original) => {
 
 			// Add which for key events
 			if ( event.which == null ) {
@@ -473,7 +473,7 @@ jQuery.event = {
 
 	mouseHooks: {
 		props: "button buttons clientX clientY offsetX offsetY pageX pageY screenX screenY toElement".split(" "),
-		filter: function( event, original ) {
+		filter: (event, original) => {
 			var eventDoc, doc, body,
 				button = original.button;
 
@@ -573,13 +573,11 @@ jQuery.event = {
 			},
 
 			// For cross-browser consistency, don't fire native .click() on links
-			_default: function( event ) {
-				return jQuery.nodeName( event.target, "a" );
-			}
+			_default: event => jQuery.nodeName( event.target, "a" )
 		},
 
 		beforeunload: {
-			postDispatch: function( event ) {
+			postDispatch: event => {
 
 				// Support: Firefox 20+
 				// Firefox doesn't alert if the returnValue field is not set.
@@ -590,7 +588,7 @@ jQuery.event = {
 		}
 	},
 
-	simulate: function( type, elem, event, bubble ) {
+	simulate: (type, elem, event, bubble) => {
 		// Piggyback on a donor event to simulate a different one.
 		// Fake originalEvent to avoid donor's stopPropagation, but if the
 		// simulated event prevents default then we do the same on the donor.
@@ -614,7 +612,7 @@ jQuery.event = {
 	}
 };
 
-jQuery.removeEvent = function( elem, type, handle ) {
+jQuery.removeEvent = (elem, type, handle) => {
 	if ( elem.removeEventListener ) {
 		elem.removeEventListener( type, handle, false );
 	}
@@ -702,7 +700,7 @@ jQuery.each({
 	mouseleave: "mouseout",
 	pointerenter: "pointerover",
 	pointerleave: "pointerout"
-}, function( orig, fix ) {
+}, (orig, fix) => {
 	jQuery.event.special[ orig ] = {
 		delegateType: fix,
 		bindType: fix,
@@ -728,10 +726,10 @@ jQuery.each({
 // Support: Firefox, Chrome, Safari
 // Create "bubbling" focus and blur events
 if ( !support.focusinBubbles ) {
-	jQuery.each({ focus: "focusin", blur: "focusout" }, function( orig, fix ) {
+	jQuery.each({ focus: "focusin", blur: "focusout" }, (orig, fix) => {
 
 		// Attach a single capturing handler on the document while someone wants focusin/focusout
-		var handler = function( event ) {
+		var handler = event => {
 				jQuery.event.simulate( fix, event.target, jQuery.event.fix( event ), true );
 			};
 

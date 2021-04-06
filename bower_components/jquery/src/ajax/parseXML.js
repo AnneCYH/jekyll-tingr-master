@@ -1,9 +1,9 @@
 define([
 	"../core"
-], function( jQuery ) {
+], jQuery => {
 
 // Cross-browser xml parsing
-jQuery.parseXML = function( data ) {
+jQuery.parseXML = data => {
 	var xml, tmp;
 	if ( !data || typeof data !== "string" ) {
 		return null;

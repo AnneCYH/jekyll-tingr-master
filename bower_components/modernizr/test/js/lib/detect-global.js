@@ -2,7 +2,7 @@
 
 // tweaked to run without a UI.
 
-(function () {
+((() => {
     function getPropertyDescriptors(object) {
       var props = { };
       for (var prop in object) {
@@ -66,7 +66,7 @@
       elCancel.href = '#';
       elCancel.innerHTML = 'Cancel';
       elCancel.style.cssText = 'color:#eee;margin-left:0.5em;';
-      elCancel.onclick = function() {
+      elCancel.onclick = () => {
         el.parentNode.removeChild(el);
         return false; 
       };
@@ -150,4 +150,4 @@
     
     analyze(); // and assign total added globals to window.__globalsCount
     
-})();
+}))();

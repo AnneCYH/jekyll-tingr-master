@@ -1,6 +1,6 @@
 define([
 	"./core"
-], function( jQuery ) {
+], jQuery => {
 
 /*
  * Optional (non-Sizzle) selector module for custom builds.
@@ -34,7 +34,7 @@ var docElem = window.document.documentElement,
 		docElem.mozMatchesSelector ||
 		docElem.oMatchesSelector ||
 		docElem.msMatchesSelector,
-	selector_sortOrder = function( a, b ) {
+	selector_sortOrder = (a, b) => {
 		// Flag for duplicate removal
 		if ( a === b ) {
 			selector_hasDuplicate = true;
@@ -67,7 +67,7 @@ var docElem = window.document.documentElement,
 	};
 
 jQuery.extend({
-	find: function( selector, context, results, seed ) {
+	find: (selector, context, results, seed) => {
 		var elem, nodeType,
 			i = 0;
 
@@ -96,7 +96,7 @@ jQuery.extend({
 
 		return results;
 	},
-	unique: function( results ) {
+	unique: results => {
 		var elem,
 			duplicates = [],
 			i = 0,
@@ -118,7 +118,7 @@ jQuery.extend({
 
 		return results;
 	},
-	text: function( elem ) {
+	text: elem => {
 		var node,
 			ret = "",
 			i = 0,
@@ -140,14 +140,12 @@ jQuery.extend({
 
 		return ret;
 	},
-	contains: function( a, b ) {
+	contains: (a, b) => {
 		var adown = a.nodeType === 9 ? a.documentElement : a,
 			bup = b && b.parentNode;
 		return a === bup || !!( bup && bup.nodeType === 1 && adown.contains(bup) );
 	},
-	isXMLDoc: function( elem ) {
-		return (elem.ownerDocument || elem).documentElement.nodeName !== "HTML";
-	},
+	isXMLDoc: elem => (elem.ownerDocument || elem).documentElement.nodeName !== "HTML",
 	expr: {
 		attrHandle: {},
 		match: {
@@ -158,15 +156,9 @@ jQuery.extend({
 });
 
 jQuery.extend( jQuery.find, {
-	matches: function( expr, elements ) {
-		return jQuery.find( expr, null, null, elements );
-	},
-	matchesSelector: function( elem, expr ) {
-		return matches.call( elem, expr );
-	},
-	attr: function( elem, name ) {
-		return elem.getAttribute( name );
-	}
+	matches: (expr, elements) => jQuery.find( expr, null, null, elements ),
+	matchesSelector: (elem, expr) => matches.call( elem, expr ),
+	attr: (elem, name) => elem.getAttribute( name )
 });
 
 });

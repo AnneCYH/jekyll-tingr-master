@@ -1,9 +1,9 @@
 define([
 	"../core",
 	"../var/support"
-], function( jQuery, support ) {
+], (jQuery, support) => {
 
-(function() {
+((() => {
 	var pixelPositionVal, boxSizingReliableVal,
 		docElem = document.documentElement,
 		container = document.createElement( "div" ),
@@ -46,7 +46,7 @@ define([
 	// Don't assume that getComputedStyle is a property of the global object
 	if ( window.getComputedStyle ) {
 		jQuery.extend( support, {
-			pixelPosition: function() {
+			pixelPosition: () => {
 
 				// This test is executed only once but we still do memoizing
 				// since we can use the boxSizingReliable pre-computing.
@@ -54,13 +54,13 @@ define([
 				computePixelPositionAndBoxSizingReliable();
 				return pixelPositionVal;
 			},
-			boxSizingReliable: function() {
+			boxSizingReliable: () => {
 				if ( boxSizingReliableVal == null ) {
 					computePixelPositionAndBoxSizingReliable();
 				}
 				return boxSizingReliableVal;
 			},
-			reliableMarginRight: function() {
+			reliableMarginRight: () => {
 
 				// Support: Android 2.3
 				// Check if div with explicit width and no margin-right incorrectly
@@ -89,7 +89,7 @@ define([
 			}
 		});
 	}
-})();
+}))();
 
 return support;
 

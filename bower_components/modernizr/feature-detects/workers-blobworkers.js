@@ -5,7 +5,7 @@
 
 // The test will potentially add garbage to console.
 
-(function(){
+((() => {
   try {
     // we're avoiding using Modernizr._domPrefixes as the prefix capitalization on
     // these guys are notoriously peculiar.
@@ -33,7 +33,7 @@
     url = URL.createObjectURL(blob);
     worker = new Worker(url);
 
-    worker.onmessage = function(e) {
+    worker.onmessage = e => {
       Modernizr.addTest('blobworkers', data === e.data);
       cleanup();
     };
@@ -63,4 +63,4 @@
       clearTimeout(timeout);
     }
   }
-}());
+})());

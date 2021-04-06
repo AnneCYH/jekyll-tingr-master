@@ -1,7 +1,7 @@
 define([
 	"./core",
 	"./traversing"
-], function( jQuery ) {
+], jQuery => {
 
 // The number of elements contained in the matched element set
 jQuery.fn.size = function() {

@@ -4,7 +4,7 @@
 
 // browserized by paul irish
 
-(function(exports){
+((exports => {
 
   exports.uaparse = parse;
   
@@ -186,7 +186,7 @@
 
   ];
   
-  var parsers = regexes.map(function(obj) {
+  var parsers = regexes.map(obj => {
     var regexp = new RegExp(obj.pattern),
         famRep = obj.family_replacement,
         v1Rep = obj.v1_replacement;
@@ -210,6 +210,6 @@
   });
   
   
-})(window);
+}))(window);
 
 

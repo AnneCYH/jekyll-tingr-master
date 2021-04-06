@@ -5,7 +5,7 @@ var myscript = document.createElement('script'),
 
 myscript.src = 'http://caniuse.com/jsonp.php?callback=caniusecb';
 
-setTimeout(function(){
+setTimeout(() => {
   ref.parentNode.insertBefore(myscript, ref);
 }, 100);
 
@@ -48,7 +48,7 @@ var map = {
   postmessage : 'x-doc-messaging'
 };
 
-window.caniusecb = function(scriptdata) {
+window.caniusecb = scriptdata => {
 
   window.doo = scriptdata;
 
@@ -110,14 +110,14 @@ window.caniusecb = function(scriptdata) {
 
 
   module('caniuse.com data matches', {
-      setup:function() {
+      setup:() => {
       },
-      teardown:function() {
+      teardown:() => {
       }
   });
 
 
-  test("we match caniuse data", function() {
+  test("we match caniuse data", () => {
 
     for (var feature in Modernizr){
 

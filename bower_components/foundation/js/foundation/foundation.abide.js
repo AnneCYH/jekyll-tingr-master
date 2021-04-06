@@ -84,7 +84,7 @@
           var is_ajax = /ajax/i.test(self.S(this).attr(self.attr_name()));
           return self.validate(self.S(this).find('input, textarea, select').not(":hidden, [data-abide-ignore]").get(), e, is_ajax);
         })
-        .on('validate.fndtn.abide', function (e) {
+        .on('validate.fndtn.abide', e => {
           if (settings.validate_on === 'manual') {
             self.validate([e.target], e);
           }
@@ -119,7 +119,7 @@
               validate(this, e);
             }
           })
-          .on('focus', function (e) {
+          .on('focus', e => {
             if (navigator.userAgent.match(/iPad|iPhone|Android|BlackBerry|Windows Phone|webOS/i)) {
               $('html, body').animate({
                   scrollTop: $(e.target).offset().top
@@ -268,7 +268,7 @@
             el_validations.push(false);
           }
 
-          el_validations = [el_validations.every(function (valid) {return valid;})];
+          el_validations = [el_validations.every(valid => valid)];
           if (el_validations[0]) {
             this.S(el).removeAttr(this.invalid_attr);
             el.setAttribute('aria-invalid', 'false');
@@ -400,7 +400,7 @@
     reflow : function(scope, options) {
       var self = this,
           form = self.S('[' + this.attr_name() + ']').attr('novalidate', 'novalidate');
-          self.S(form).each(function (idx, el) {
+          self.S(form).each((idx, el) => {
             self.events(el);
           });
     }

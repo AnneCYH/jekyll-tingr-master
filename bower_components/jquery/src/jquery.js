@@ -30,8 +30,4 @@ define([
 	"./deprecated",
 	"./exports/amd",
 	"./exports/global"
-], function( jQuery ) {
-
-return jQuery;
-
-});
+], jQuery => jQuery);

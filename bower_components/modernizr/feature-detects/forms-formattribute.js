@@ -1,6 +1,6 @@
 // Detects whether input form="form_id" is available on the platform
 // E.g. IE 10 (and below), don't support this
-Modernizr.addTest("formattribute", function() {
+Modernizr.addTest("formattribute", () => {
 	var form = document.createElement("form"),
 		input = document.createElement("input"),
 		div = document.createElement("div"),

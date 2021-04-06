@@ -243,14 +243,14 @@
           }
         });
 
-      S(window).off('.topbar').on('resize.fndtn.topbar', self.throttle(function () {
+      S(window).off('.topbar').on('resize.fndtn.topbar', self.throttle(() => {
           self.resize.call(self);
       }, 50)).trigger('resize.fndtn.topbar').load(function () {
           // Ensure that the offset is calculated after all of the pages resources have loaded
           S(this).trigger('resize.fndtn.topbar');
       });
 
-      S('body').off('.topbar').on('click.fndtn.topbar', function (e) {
+      S('body').off('.topbar').on('click.fndtn.topbar', e => {
         var parent = S(e.target).closest('li').closest('li.hover');
 
         if (parent.length > 0) {
@@ -287,7 +287,7 @@
           topbar.css('height', $previousLevelUl.outerHeight(true) + topbar.data('height'));
         }
 
-        setTimeout(function () {
+        setTimeout(() => {
           $movedLi.removeClass('moved');
         }, 300);
       });
@@ -345,21 +345,13 @@
       });
     },
 
-    breakpoint : function () {
-      return !matchMedia(Foundation.media_queries['topbar']).matches;
-    },
+    breakpoint : () => !matchMedia(Foundation.media_queries['topbar']).matches,
 
-    small : function () {
-      return matchMedia(Foundation.media_queries['small']).matches;
-    },
+    small : () => matchMedia(Foundation.media_queries['small']).matches,
 
-    medium : function () {
-      return matchMedia(Foundation.media_queries['medium']).matches;
-    },
+    medium : () => matchMedia(Foundation.media_queries['medium']).matches,
 
-    large : function () {
-      return matchMedia(Foundation.media_queries['large']).matches;
-    },
+    large : () => matchMedia(Foundation.media_queries['large']).matches,
 
     assemble : function (topbar) {
       var self = this,
@@ -420,7 +412,7 @@
     sticky : function () {
       var self = this;
 
-      this.S(window).on('scroll', function () {
+      this.S(window).on('scroll', () => {
         self.update_sticky_positioning();
       });
     },
@@ -453,6 +445,6 @@
       this.S(window).off('.fndtn.topbar');
     },
 
-    reflow : function () {}
+    reflow : () => {}
   };
 }(jQuery, window, window.document));

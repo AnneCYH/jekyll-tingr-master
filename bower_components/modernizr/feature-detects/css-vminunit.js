@@ -1,8 +1,8 @@
 // https://github.com/Modernizr/Modernizr/issues/572
 // http://jsfiddle.net/glsee/JRmdq/8/
-Modernizr.addTest('cssvminunit', function(){
+Modernizr.addTest('cssvminunit', () => {
     var bool;
-    Modernizr.testStyles("#modernizr { width: 50vmin; }", function(elem, rule) {
+    Modernizr.testStyles("#modernizr { width: 50vmin; }", (elem, rule) => {
         var one_vw = window.innerWidth/100,
             one_vh = window.innerHeight/100,
             compWidth = parseInt((window.getComputedStyle ?

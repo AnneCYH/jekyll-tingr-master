@@ -21,9 +21,9 @@
     },
 
     events : function () {
-      this.S(window).off('.equalizer').on('resize.fndtn.equalizer', function (e) {
+      this.S(window).off('.equalizer').on('resize.fndtn.equalizer', e => {
         this.reflow();
-      }.bind(this));
+      });
     },
 
     equalize : function (equalizer) {
@@ -90,7 +90,7 @@
           }
         }
 
-        self.image_loaded(self.S('img', this), function () {
+        self.image_loaded(self.S('img', this), () => {
           if (ignore_media_query || Foundation.utils[media_query]()) {
             self.equalize($eq_target)
           } else {

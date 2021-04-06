@@ -2,7 +2,7 @@ define([
 	"../core",
 	"../core/access",
 	"./support"
-], function( jQuery, access, support ) {
+], (jQuery, access, support) => {
 
 var rfocusable = /^(?:input|select|textarea|button)$/i;
 
@@ -24,7 +24,7 @@ jQuery.extend({
 		"class": "className"
 	},
 
-	prop: function( elem, name, value ) {
+	prop: (elem, name, value) => {
 		var ret, hooks, notxml,
 			nType = elem.nodeType;
 
@@ -55,18 +55,16 @@ jQuery.extend({
 
 	propHooks: {
 		tabIndex: {
-			get: function( elem ) {
-				return elem.hasAttribute( "tabindex" ) || rfocusable.test( elem.nodeName ) || elem.href ?
-					elem.tabIndex :
-					-1;
-			}
+			get: elem => elem.hasAttribute( "tabindex" ) || rfocusable.test( elem.nodeName ) || elem.href ?
+                elem.tabIndex :
+                -1
 		}
 	}
 });
 
 if ( !support.optSelected ) {
 	jQuery.propHooks.selected = {
-		get: function( elem ) {
+		get: elem => {
 			var parent = elem.parentNode;
 			if ( parent && parent.parentNode ) {
 				parent.parentNode.selectedIndex;

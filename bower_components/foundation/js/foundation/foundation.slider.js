@@ -15,7 +15,7 @@
       display_selector : '',
       vertical : false,
       trigger_input_change : false,
-      on_change : function () {}
+      on_change : () => {}
     },
 
     cache : {},
@@ -32,13 +32,13 @@
       $(this.scope)
         .off('.slider')
         .on('mousedown.fndtn.slider touchstart.fndtn.slider pointerdown.fndtn.slider',
-        '[' + self.attr_name() + ']:not(.disabled, [disabled]) .range-slider-handle', function (e) {
+        '[' + self.attr_name() + ']:not(.disabled, [disabled]) .range-slider-handle', e => {
           if (!self.cache.active) {
             e.preventDefault();
             self.set_active_slider($(e.target));
           }
         })
-        .on('mousemove.fndtn.slider touchmove.fndtn.slider pointermove.fndtn.slider', function (e) {
+        .on('mousemove.fndtn.slider touchmove.fndtn.slider pointermove.fndtn.slider', e => {
           if (!!self.cache.active) {
             e.preventDefault();
             if ($.data(self.cache.active[0], 'settings').vertical) {
@@ -52,15 +52,15 @@
             }
           }
         })
-        .on('mouseup.fndtn.slider touchend.fndtn.slider pointerup.fndtn.slider', function (e) {
+        .on('mouseup.fndtn.slider touchend.fndtn.slider pointerup.fndtn.slider', e => {
           self.remove_active_slider();
         })
-        .on('change.fndtn.slider', function (e) {
+        .on('change.fndtn.slider', e => {
           self.settings.on_change();
         });
 
       self.S(window)
-        .on('resize.fndtn.slider', self.throttle(function (e) {
+        .on('resize.fndtn.slider', self.throttle(e => {
           self.reflow();
         }, 300));
 
@@ -83,7 +83,7 @@
       });
     },
 
-    get_cursor_position : function (e, xy) {
+    get_cursor_position : (e, xy) => {
       var pageXY = 'page' + xy.toUpperCase(),
           clientXY = 'client' + xy.toUpperCase(),
           position;
@@ -117,7 +117,7 @@
           bar_l = $.data($handle[0], 'bar_l'),
           bar_o = $.data($handle[0], 'bar_o');
 
-      requestAnimationFrame(function () {
+      requestAnimationFrame(() => {
         var pct;
 
         if (Foundation.rtl && !settings.vertical) {
@@ -184,11 +184,9 @@
 
     },
 
-    normalized_percentage : function (val, start, end) {
-      return Math.min(1, (val - start) / (end - start));
-    },
+    normalized_percentage : (val, start, end) => Math.min(1, (val - start) / (end - start)),
 
-    normalized_value : function (val, start, end, step, precision) {
+    normalized_value : (val, start, end, step, precision) => {
       var range = end - start,
           point = val * range,
           mod = (point - (point % step)) / step,
@@ -197,7 +195,7 @@
       return ((mod * step + round) + start).toFixed(precision);
     },
 
-    set_translate : function (ele, offset, vertical) {
+    set_translate : (ele, offset, vertical) => {
       if (vertical) {
         $(ele)
           .css('-webkit-transform', 'translateY(' + offset + 'px)')
@@ -215,9 +213,7 @@
       }
     },
 
-    limit_to : function (val, min, max) {
-      return Math.min(Math.max(val, min), max);
-    },
+    limit_to : (val, min, max) => Math.min(Math.max(val, min), max),
 
     initialize_settings : function (handle) {
       var settings = $.extend({}, this.settings, this.data_options($(handle).parent())),

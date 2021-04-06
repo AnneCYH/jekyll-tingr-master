@@ -4,7 +4,7 @@
 // Based on work by Davide (@dpvc) and David (@davidcarlisle)
 // in https://github.com/mathjax/MathJax/issues/182
 
-Modernizr.addTest('mathml', function(){
+Modernizr.addTest('mathml', () => {
 	var hasMathML = false;
 	if ( document.createElementNS ) {
 	var ns = "http://www.w3.org/1998/Math/MathML",

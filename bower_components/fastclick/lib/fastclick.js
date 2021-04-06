@@ -135,7 +135,7 @@
 		// which is how FastClick normally stops click events bubbling to callbacks registered on the FastClick
 		// layer when they are cancelled.
 		if (!Event.prototype.stopImmediatePropagation) {
-			layer.removeEventListener = function(type, callback, capture) {
+			layer.removeEventListener = (type, callback, capture) => {
 				var rmv = Node.prototype.removeEventListener;
 				if (type === 'click') {
 					rmv.call(layer, type, callback.hijacked || callback, capture);
@@ -144,10 +144,10 @@
 				}
 			};
 
-			layer.addEventListener = function(type, callback, capture) {
+			layer.addEventListener = (type, callback, capture) => {
 				var adv = Node.prototype.addEventListener;
 				if (type === 'click') {
-					adv.call(layer, type, callback.hijacked || (callback.hijacked = function(event) {
+					adv.call(layer, type, callback.hijacked || (callback.hijacked = event => {
 						if (!event.propagationStopped) {
 							callback(event);
 						}
@@ -166,7 +166,7 @@
 			// Android browser on at least 3.2 requires a new reference to the function in layer.onclick
 			// - the old one won't work if passed to addEventListener directly.
 			oldOnClick = layer.onclick;
-			layer.addEventListener('click', function(event) {
+			layer.addEventListener('click', event => {
 				oldOnClick(event);
 			}, false);
 			layer.onclick = null;
@@ -224,7 +224,7 @@
 	 * @param {EventTarget|Element} target Target DOM element
 	 * @returns {boolean} Returns true if the element needs a native click
 	 */
-	FastClick.prototype.needsClick = function(target) {
+	FastClick.prototype.needsClick = target => {
 		switch (target.nodeName.toLowerCase()) {
 
 		// Don't send a synthetic click to disabled inputs (issue #62)
@@ -260,7 +260,7 @@
 	 * @param {EventTarget|Element} target Target DOM element
 	 * @returns {boolean} Returns true if the element requires a call to focus to simulate native click.
 	 */
-	FastClick.prototype.needsFocus = function(target) {
+	FastClick.prototype.needsFocus = target => {
 		switch (target.nodeName.toLowerCase()) {
 		case 'textarea':
 			return true;
@@ -308,7 +308,7 @@
 		targetElement.dispatchEvent(clickEvent);
 	};
 
-	FastClick.prototype.determineEventType = function(targetElement) {
+	FastClick.prototype.determineEventType = targetElement => {
 
 		//Issue #159: Android Chrome Select Box does not open with a synthetic click event
 		if (deviceIsAndroid && targetElement.tagName.toLowerCase() === 'select') {
@@ -322,7 +322,7 @@
 	/**
 	 * @param {EventTarget|Element} targetElement
 	 */
-	FastClick.prototype.focus = function(targetElement) {
+	FastClick.prototype.focus = targetElement => {
 		var length;
 
 		// Issue #160: on iOS 7, some input elements (e.g. date datetime month) throw a vague TypeError on setSelectionRange. These elements don't have an integer value for the selectionStart and selectionEnd properties, but unfortunately that can't be used for detection because accessing the properties also throws a TypeError. Just check the type instead. Filed as Apple bug #15122724.
@@ -340,7 +340,7 @@
 	 *
 	 * @param {EventTarget|Element} targetElement
 	 */
-	FastClick.prototype.updateScrollParent = function(targetElement) {
+	FastClick.prototype.updateScrollParent = targetElement => {
 		var scrollParent, parentElement;
 
 		scrollParent = targetElement.fastClickScrollParent;
@@ -371,7 +371,7 @@
 	 * @param {EventTarget} targetElement
 	 * @returns {Element|EventTarget}
 	 */
-	FastClick.prototype.getTargetElementFromEventTarget = function(eventTarget) {
+	FastClick.prototype.getTargetElementFromEventTarget = eventTarget => {
 
 		// On some older browsers (notably Safari on iOS 4.1 - see issue #56) the event target may be a text node.
 		if (eventTarget.nodeType === Node.TEXT_NODE) {
@@ -494,7 +494,7 @@
 	 * @param {EventTarget|HTMLLabelElement} labelElement
 	 * @returns {Element|null}
 	 */
-	FastClick.prototype.findControl = function(labelElement) {
+	FastClick.prototype.findControl = labelElement => {
 
 		// Fast path for newer browsers supporting the HTML5 control attribute
 		if (labelElement.control !== undefined) {
@@ -731,7 +731,7 @@
 	 *
 	 * @param {Element} layer The layer to listen on
 	 */
-	FastClick.notNeeded = function(layer) {
+	FastClick.notNeeded = layer => {
 		var metaViewport;
 		var chromeVersion;
 		var blackberryVersion;
@@ -821,17 +821,13 @@
 	 * @param {Element} layer The layer to listen on
 	 * @param {Object} [options={}] The options to override the defaults
 	 */
-	FastClick.attach = function(layer, options) {
-		return new FastClick(layer, options);
-	};
+	FastClick.attach = (layer, options) => new FastClick(layer, options);
 
 
 	if (typeof define === 'function' && typeof define.amd === 'object' && define.amd) {
 
 		// AMD. Register as an anonymous module.
-		define(function() {
-			return FastClick;
-		});
+		define(() => FastClick);
 	} else if (typeof module !== 'undefined' && module.exports) {
 		module.exports = FastClick.attach;
 		module.exports.FastClick = FastClick;

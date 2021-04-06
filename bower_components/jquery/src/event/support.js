@@ -1,6 +1,6 @@
 define([
 	"../var/support"
-], function( support ) {
+], support => {
 
 support.focusinBubbles = "onfocusin" in window;
 

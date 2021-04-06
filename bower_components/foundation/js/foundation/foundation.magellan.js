@@ -57,7 +57,7 @@
             }
             $('html, body').stop().animate({
               'scrollTop' : scroll_top
-            }, settings.duration, settings.easing, function () {
+            }, settings.duration, settings.easing, () => {
               if (history.pushState) {
                         history.pushState(null, null, anchor.pathname + '#' + hash);
               }
@@ -137,7 +137,7 @@
             offsets = self.offsets(expedition, window_top_offset),
             arrivals = expedition.find('[' + self.add_namespace('data-magellan-arrival') + ']'),
             active_item = false;
-        offsets.each(function (idx, item) {
+        offsets.each((idx, item) => {
           if (item.viewport_offset >= item.top_offset) {
             var arrivals = expedition.find('[' + self.add_namespace('data-magellan-arrival') + ']');
             arrivals.not(item.arrival).removeClass(settings.active_class);
@@ -174,7 +174,7 @@
             viewport_offset : viewport_offset
           }
         }
-      }).sort(function (a, b) {
+      }).sort((a, b) => {
         if (a.top_offset < b.top_offset) {
           return -1;
         }
@@ -198,7 +198,7 @@
       this.S(window).off('.magellan');
     },
 
-    filterPathname : function (pathname) {
+    filterPathname : pathname => {
       pathname = pathname || '';
       return pathname
           .replace(/^\//,'')

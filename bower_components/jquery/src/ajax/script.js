@@ -1,7 +1,7 @@
 define([
 	"../core",
 	"../ajax"
-], function( jQuery ) {
+], jQuery => {
 
 // Install script dataType
 jQuery.ajaxSetup({
@@ -12,7 +12,7 @@ jQuery.ajaxSetup({
 		script: /(?:java|ecma)script/
 	},
 	converters: {
-		"text script": function( text ) {
+		"text script": text => {
 			jQuery.globalEval( text );
 			return text;
 		}
@@ -20,7 +20,7 @@ jQuery.ajaxSetup({
 });
 
 // Handle cache's special case and crossDomain
-jQuery.ajaxPrefilter( "script", function( s ) {
+jQuery.ajaxPrefilter( "script", s => {
 	if ( s.cache === undefined ) {
 		s.cache = false;
 	}
@@ -30,19 +30,19 @@ jQuery.ajaxPrefilter( "script", function( s ) {
 });
 
 // Bind script tag hack transport
-jQuery.ajaxTransport( "script", function( s ) {
+jQuery.ajaxTransport( "script", s => {
 	// This transport only deals with cross domain requests
 	if ( s.crossDomain ) {
 		var script, callback;
 		return {
-			send: function( _, complete ) {
+			send: (_, complete) => {
 				script = jQuery("<script>").prop({
 					async: true,
 					charset: s.scriptCharset,
 					src: s.url
 				}).on(
 					"load error",
-					callback = function( evt ) {
+					callback = evt => {
 						script.remove();
 						callback = null;
 						if ( evt ) {
@@ -52,7 +52,7 @@ jQuery.ajaxTransport( "script", function( s ) {
 				);
 				document.head.appendChild( script[ 0 ] );
 			},
-			abort: function() {
+			abort: () => {
 				if ( callback ) {
 					callback();
 				}

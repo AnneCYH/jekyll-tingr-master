@@ -1,7 +1,7 @@
 define([
 	"../core",
 	"../manipulation" // appendTo
-], function( jQuery ) {
+], jQuery => {
 
 var iframe,
 	elemdisplay = {};

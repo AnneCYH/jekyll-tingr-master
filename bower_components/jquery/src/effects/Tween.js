@@ -1,7 +1,7 @@
 define([
 	"../core",
 	"../css"
-], function( jQuery ) {
+], jQuery => {
 
 function Tween( elem, options, prop, end, easing ) {
 	return new Tween.prototype.init( elem, options, prop, end, easing );
@@ -56,7 +56,7 @@ Tween.prototype.init.prototype = Tween.prototype;
 
 Tween.propHooks = {
 	_default: {
-		get: function( tween ) {
+		get: tween => {
 			var result;
 
 			if ( tween.elem[ tween.prop ] != null &&
@@ -72,7 +72,7 @@ Tween.propHooks = {
 			// Empty strings, null, undefined and "auto" are converted to 0.
 			return !result || result === "auto" ? 0 : result;
 		},
-		set: function( tween ) {
+		set: tween => {
 			// Use step hook for back compat.
 			// Use cssHook if its there.
 			// Use .style if available and use plain properties where available.
@@ -90,7 +90,7 @@ Tween.propHooks = {
 // Support: IE9
 // Panic based approach to setting things on disconnected nodes
 Tween.propHooks.scrollTop = Tween.propHooks.scrollLeft = {
-	set: function( tween ) {
+	set: tween => {
 		if ( tween.elem.nodeType && tween.elem.parentNode ) {
 			tween.elem[ tween.prop ] = tween.now;
 		}
@@ -98,12 +98,8 @@ Tween.propHooks.scrollTop = Tween.propHooks.scrollLeft = {
 };
 
 jQuery.easing = {
-	linear: function( p ) {
-		return p;
-	},
-	swing: function( p ) {
-		return 0.5 - Math.cos( p * Math.PI ) / 2;
-	}
+	linear: p => p,
+	swing: p => 0.5 - Math.cos( p * Math.PI ) / 2
 };
 
 jQuery.fx = Tween.prototype.init;

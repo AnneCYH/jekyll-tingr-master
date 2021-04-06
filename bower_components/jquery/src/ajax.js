@@ -7,7 +7,7 @@ define([
 	"./ajax/parseJSON",
 	"./ajax/parseXML",
 	"./deferred"
-], function( jQuery, rnotwhite, nonce, rquery ) {
+], (jQuery, rnotwhite, nonce, rquery) => {
 
 var
 	rhash = /#.*$/,
@@ -50,7 +50,7 @@ var
 function addToPrefiltersOrTransports( structure ) {
 
 	// dataTypeExpression is optional and defaults to "*"
-	return function( dataTypeExpression, func ) {
+	return (dataTypeExpression, func) => {
 
 		if ( typeof dataTypeExpression !== "string" ) {
 			func = dataTypeExpression;
@@ -87,7 +87,7 @@ function inspectPrefiltersOrTransports( structure, options, originalOptions, jqX
 	function inspect( dataType ) {
 		var selected;
 		inspected[ dataType ] = true;
-		jQuery.each( structure[ dataType ] || [], function( _, prefilterOrFactory ) {
+		jQuery.each( structure[ dataType ] || [], (_, prefilterOrFactory) => {
 			var dataTypeOrTransport = prefilterOrFactory( options, originalOptions, jqXHR );
 			if ( typeof dataTypeOrTransport === "string" && !seekingTransport && !inspected[ dataTypeOrTransport ] ) {
 				options.dataTypes.unshift( dataTypeOrTransport );
@@ -352,21 +352,19 @@ jQuery.extend({
 	// Creates a full fledged settings object into target
 	// with both ajaxSettings and settings fields.
 	// If target is omitted, writes into ajaxSettings.
-	ajaxSetup: function( target, settings ) {
-		return settings ?
+	ajaxSetup: (target, settings) => settings ?
 
-			// Building a settings object
-			ajaxExtend( ajaxExtend( target, jQuery.ajaxSettings ), settings ) :
+        // Building a settings object
+        ajaxExtend( ajaxExtend( target, jQuery.ajaxSettings ), settings ) :
 
-			// Extending ajaxSettings
-			ajaxExtend( jQuery.ajaxSettings, target );
-	},
+        // Extending ajaxSettings
+        ajaxExtend( jQuery.ajaxSettings, target ),
 
 	ajaxPrefilter: addToPrefiltersOrTransports( prefilters ),
 	ajaxTransport: addToPrefiltersOrTransports( transports ),
 
 	// Main method
-	ajax: function( url, options ) {
+	ajax: (url, options) => {
 
 		// If url is an object, simulate pre-1.5 signature
 		if ( typeof url === "object" ) {
@@ -416,7 +414,7 @@ jQuery.extend({
 				readyState: 0,
 
 				// Builds headers hashtable if needed
-				getResponseHeader: function( key ) {
+				getResponseHeader: key => {
 					var match;
 					if ( state === 2 ) {
 						if ( !responseHeaders ) {
@@ -431,9 +429,7 @@ jQuery.extend({
 				},
 
 				// Raw string
-				getAllResponseHeaders: function() {
-					return state === 2 ? responseHeadersString : null;
-				},
+				getAllResponseHeaders: () => state === 2 ? responseHeadersString : null,
 
 				// Caches the header
 				setRequestHeader: function( name, value ) {
@@ -620,7 +616,7 @@ jQuery.extend({
 			}
 			// Timeout
 			if ( s.async && s.timeout > 0 ) {
-				timeoutTimer = setTimeout(function() {
+				timeoutTimer = setTimeout(() => {
 					jqXHR.abort("timeout");
 				}, s.timeout );
 			}
@@ -754,17 +750,13 @@ jQuery.extend({
 		return jqXHR;
 	},
 
-	getJSON: function( url, data, callback ) {
-		return jQuery.get( url, data, callback, "json" );
-	},
+	getJSON: (url, data, callback) => jQuery.get( url, data, callback, "json" ),
 
-	getScript: function( url, callback ) {
-		return jQuery.get( url, undefined, callback, "script" );
-	}
+	getScript: (url, callback) => jQuery.get( url, undefined, callback, "script" )
 });
 
-jQuery.each( [ "get", "post" ], function( i, method ) {
-	jQuery[ method ] = function( url, data, callback, type ) {
+jQuery.each( [ "get", "post" ], (i, method) => {
+	jQuery[ method ] = (url, data, callback, type) => {
 		// Shift arguments if data argument was omitted
 		if ( jQuery.isFunction( data ) ) {
 			type = type || callback;

@@ -11,7 +11,7 @@
       active_class : 'active',
       multi_expand : false,
       toggleable : true,
-      callback : function () {}
+      callback : () => {}
     },
 
     init : function (scope, method, options) {
@@ -44,9 +44,7 @@
         if (settings.toggleable && target.is(active_content)) {
           target.parent('dd, li').toggleClass(settings.active_class, false);
           target.toggleClass(settings.active_class, false);
-          S(this).attr('aria-expanded', function(i, attr){
-              return attr === 'true' ? 'false' : 'true';
-          });
+          S(this).attr('aria-expanded', (i, attr) => attr === 'true' ? 'false' : 'true');
           settings.callback(target);
           target.triggerHandler('toggled', [accordion]);
           accordion.triggerHandler('toggled', [target]);
@@ -81,8 +79,8 @@
       }
     },
 
-    off : function () {},
+    off : () => {},
 
-    reflow : function () {}
+    reflow : () => {}
   };
 }(jQuery, window, window.document));

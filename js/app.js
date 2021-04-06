@@ -6,12 +6,12 @@ jQuery(document).ready(function($) {
   if ($('form#contact_form').length > 0) {
     $('form#contact_form').validate({
       messages: {},
-      submitHandler: function(form) {
+      submitHandler: form => {
         $.ajax({
           type: 'POST',
           url: 'send.php',
           data: $(form).serialize(),
-          success: function(data) {
+          success: data => {
             if (data.match(/success/)) {
               $(form).trigger('reset');
               $('#thanks').show().fadeOut(5000);
@@ -23,7 +23,7 @@ jQuery(document).ready(function($) {
     });
   }
 
-  $('#menu-toggler').on('click', function() {
+  $('#menu-toggler').on('click', () => {
     $('.top-bar-section').toggle();
     return false;
   });
@@ -31,7 +31,7 @@ jQuery(document).ready(function($) {
   if ($('#slides').length > 0) {
     $('#slides').on('init.slides', function() {
       var that = this;
-      setTimeout(function() {
+      setTimeout(() => {
         $('.slides-container', that).children().eq(0).addClass(
           'active');
       }, 300);
@@ -49,7 +49,7 @@ jQuery(document).ready(function($) {
       var index = $(this).superslides('current');
       var that = this;
 
-      setTimeout(function() {
+      setTimeout(() => {
         $('.slides-container', that).children().eq(index).addClass(
           'active');
       }, 300);
@@ -92,7 +92,7 @@ jQuery(document).ready(function($) {
         // http://stackoverflow.com/questions/3363035/jquery-animate-forces-style-overflowhidden
         $(this).animate({
           'width': percent + '%'
-        }, 1700, function() {
+        }, 1700, () => {
           $(highlight).css('overflow', 'visible');
         });
       });
@@ -135,14 +135,14 @@ jQuery(document).ready(function($) {
     });
   }
 
-  $('.back-to-top').on('click', function() {
+  $('.back-to-top').on('click', () => {
     $("html, body").animate({
       scrollTop: 0
     }, 1000);
     return false;
   });
 
-  var masonryGallery = function(sel) {
+  var masonryGallery = sel => {
 
     var $ctx = $(sel);
     var items = $('.gallery li', $ctx);
@@ -166,7 +166,7 @@ jQuery(document).ready(function($) {
 
     window.msnry = msnry;
 
-    $('.gallery', $ctx).imagesLoaded(function() {
+    $('.gallery', $ctx).imagesLoaded(() => {
       msnry.layout();
     });
 

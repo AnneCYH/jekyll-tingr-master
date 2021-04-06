@@ -17,8 +17,21 @@ define([
 	"./css/swap",
 	"./core/ready",
 	"./selector" // contains
-], function( jQuery, pnum, access, rmargin, rnumnonpx, cssExpand, isHidden,
-	getStyles, curCSS, defaultDisplay, addGetHookIf, support, data_priv ) {
+], (
+    jQuery,
+    pnum,
+    access,
+    rmargin,
+    rnumnonpx,
+    cssExpand,
+    isHidden,
+    getStyles,
+    curCSS,
+    defaultDisplay,
+    addGetHookIf,
+    support,
+    data_priv
+) => {
 
 var
 	// Swappable if display is none or starts with table except "table", "table-cell", or "table-caption"
@@ -206,7 +219,7 @@ jQuery.extend({
 	// behavior of getting and setting a style property
 	cssHooks: {
 		opacity: {
-			get: function( elem, computed ) {
+			get: (elem, computed) => {
 				if ( computed ) {
 
 					// We should always get a number back from opacity
@@ -240,7 +253,7 @@ jQuery.extend({
 	},
 
 	// Get and set the style property on a DOM Node
-	style: function( elem, name, value, extra ) {
+	style: (elem, name, value, extra) => {
 
 		// Don't set styles on text and comment nodes
 		if ( !elem || elem.nodeType === 3 || elem.nodeType === 8 || !elem.style ) {
@@ -300,7 +313,7 @@ jQuery.extend({
 		}
 	},
 
-	css: function( elem, name, extra, styles ) {
+	css: (elem, name, extra, styles) => {
 		var val, num, hooks,
 			origName = jQuery.camelCase( name );
 
@@ -334,22 +347,20 @@ jQuery.extend({
 	}
 });
 
-jQuery.each([ "height", "width" ], function( i, name ) {
+jQuery.each([ "height", "width" ], (i, name) => {
 	jQuery.cssHooks[ name ] = {
-		get: function( elem, computed, extra ) {
+		get: (elem, computed, extra) => {
 			if ( computed ) {
 
 				// Certain elements can have dimension info if we invisibly show them
 				// but it must have a current display style that would benefit
 				return rdisplayswap.test( jQuery.css( elem, "display" ) ) && elem.offsetWidth === 0 ?
-					jQuery.swap( elem, cssShow, function() {
-						return getWidthOrHeight( elem, name, extra );
-					}) :
+					jQuery.swap( elem, cssShow, () => getWidthOrHeight( elem, name, extra )) :
 					getWidthOrHeight( elem, name, extra );
 			}
 		},
 
-		set: function( elem, value, extra ) {
+		set: (elem, value, extra) => {
 			var styles = extra && getStyles( elem );
 			return setPositiveNumber( elem, value, extra ?
 				augmentWidthOrHeight(
@@ -366,7 +377,7 @@ jQuery.each([ "height", "width" ], function( i, name ) {
 
 // Support: Android 2.3
 jQuery.cssHooks.marginRight = addGetHookIf( support.reliableMarginRight,
-	function( elem, computed ) {
+	(elem, computed) => {
 		if ( computed ) {
 			return jQuery.swap( elem, { "display": "inline-block" },
 				curCSS, [ elem, "marginRight" ] );
@@ -379,9 +390,9 @@ jQuery.each({
 	margin: "",
 	padding: "",
 	border: "Width"
-}, function( prefix, suffix ) {
+}, (prefix, suffix) => {
 	jQuery.cssHooks[ prefix + suffix ] = {
-		expand: function( value ) {
+		expand: value => {
 			var i = 0,
 				expanded = {},
 
@@ -404,7 +415,7 @@ jQuery.each({
 
 jQuery.fn.extend({
 	css: function( name, value ) {
-		return access( this, function( elem, name, value ) {
+		return access( this, (elem, name, value) => {
 			var styles, len,
 				map = {},
 				i = 0;

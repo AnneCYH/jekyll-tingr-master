@@ -12,7 +12,7 @@ define([
 	"./css",
 	"./deferred",
 	"./traversing"
-], function( jQuery, pnum, cssExpand, isHidden, defaultDisplay, data_priv ) {
+], (jQuery, pnum, cssExpand, isHidden, defaultDisplay, data_priv) => {
 
 var
 	fxNow, timerId,
@@ -73,7 +73,7 @@ var
 
 // Animations created synchronously will run synchronously
 function createFxNow() {
-	setTimeout(function() {
+	setTimeout(() => {
 		fxNow = undefined;
 	});
 	return ( fxNow = jQuery.now() );
@@ -129,7 +129,7 @@ function defaultPrefilter( elem, props, opts ) {
 		if ( hooks.unqueued == null ) {
 			hooks.unqueued = 0;
 			oldfire = hooks.empty.fire;
-			hooks.empty.fire = function() {
+			hooks.empty.fire = () => {
 				if ( !hooks.unqueued ) {
 					oldfire();
 				}
@@ -137,9 +137,9 @@ function defaultPrefilter( elem, props, opts ) {
 		}
 		hooks.unqueued++;
 
-		anim.always(function() {
+		anim.always(() => {
 			// Ensure the complete handler is called before this completes
-			anim.always(function() {
+			anim.always(() => {
 				hooks.unqueued--;
 				if ( !jQuery.queue( elem, "fx" ).length ) {
 					hooks.empty.fire();
@@ -171,7 +171,7 @@ function defaultPrefilter( elem, props, opts ) {
 
 	if ( opts.overflow ) {
 		style.overflow = "hidden";
-		anim.always(function() {
+		anim.always(() => {
 			style.overflow = opts.overflow[ 0 ];
 			style.overflowX = opts.overflow[ 1 ];
 			style.overflowY = opts.overflow[ 2 ];
@@ -217,11 +217,11 @@ function defaultPrefilter( elem, props, opts ) {
 		if ( hidden ) {
 			jQuery( elem ).show();
 		} else {
-			anim.done(function() {
+			anim.done(() => {
 				jQuery( elem ).hide();
 			});
 		}
-		anim.done(function() {
+		anim.done(() => {
 			var prop;
 
 			data_priv.remove( elem, "fxshow" );
@@ -289,11 +289,11 @@ function Animation( elem, properties, options ) {
 		stopped,
 		index = 0,
 		length = animationPrefilters.length,
-		deferred = jQuery.Deferred().always( function() {
+		deferred = jQuery.Deferred().always( () => {
 			// Don't match elem in the :animated selector
 			delete tick.elem;
 		}),
-		tick = function() {
+		tick = () => {
 			if ( stopped ) {
 				return false;
 			}
@@ -328,7 +328,7 @@ function Animation( elem, properties, options ) {
 			startTime: fxNow || createFxNow(),
 			duration: options.duration,
 			tweens: [],
-			createTween: function( prop, end ) {
+			createTween: (prop, end) => {
 				var tween = jQuery.Tween( elem, animation.opts, prop, end,
 						animation.opts.specialEasing[ prop ] || animation.opts.easing );
 				animation.tweens.push( tween );
@@ -390,7 +390,7 @@ function Animation( elem, properties, options ) {
 
 jQuery.Animation = jQuery.extend( Animation, {
 
-	tweener: function( props, callback ) {
+	tweener: (props, callback) => {
 		if ( jQuery.isFunction( props ) ) {
 			callback = props;
 			props = [ "*" ];
@@ -409,7 +409,7 @@ jQuery.Animation = jQuery.extend( Animation, {
 		}
 	},
 
-	prefilter: function( callback, prepend ) {
+	prefilter: (callback, prepend) => {
 		if ( prepend ) {
 			animationPrefilters.unshift( callback );
 		} else {
@@ -418,7 +418,7 @@ jQuery.Animation = jQuery.extend( Animation, {
 	}
 });
 
-jQuery.speed = function( speed, easing, fn ) {
+jQuery.speed = (speed, easing, fn) => {
 	var opt = speed && typeof speed === "object" ? jQuery.extend( {}, speed ) : {
 		complete: fn || !fn && easing ||
 			jQuery.isFunction( speed ) && speed,
@@ -478,7 +478,7 @@ jQuery.fn.extend({
 			this.queue( optall.queue, doAnimation );
 	},
 	stop: function( type, clearQueue, gotoEnd ) {
-		var stopQueue = function( hooks ) {
+		var stopQueue = hooks => {
 			var stop = hooks.stop;
 			delete hooks.stop;
 			stop( gotoEnd );
@@ -570,7 +570,7 @@ jQuery.fn.extend({
 	}
 });
 
-jQuery.each([ "toggle", "show", "hide" ], function( i, name ) {
+jQuery.each([ "toggle", "show", "hide" ], (i, name) => {
 	var cssFn = jQuery.fn[ name ];
 	jQuery.fn[ name ] = function( speed, easing, callback ) {
 		return speed == null || typeof speed === "boolean" ?
@@ -587,14 +587,14 @@ jQuery.each({
 	fadeIn: { opacity: "show" },
 	fadeOut: { opacity: "hide" },
 	fadeToggle: { opacity: "toggle" }
-}, function( name, props ) {
+}, (name, props) => {
 	jQuery.fn[ name ] = function( speed, easing, callback ) {
 		return this.animate( props, speed, easing, callback );
 	};
 });
 
 jQuery.timers = [];
-jQuery.fx.tick = function() {
+jQuery.fx.tick = () => {
 	var timer,
 		i = 0,
 		timers = jQuery.timers;
@@ -615,7 +615,7 @@ jQuery.fx.tick = function() {
 	fxNow = undefined;
 };
 
-jQuery.fx.timer = function( timer ) {
+jQuery.fx.timer = timer => {
 	jQuery.timers.push( timer );
 	if ( timer() ) {
 		jQuery.fx.start();
@@ -626,13 +626,13 @@ jQuery.fx.timer = function( timer ) {
 
 jQuery.fx.interval = 13;
 
-jQuery.fx.start = function() {
+jQuery.fx.start = () => {
 	if ( !timerId ) {
 		timerId = setInterval( jQuery.fx.tick, jQuery.fx.interval );
 	}
 };
 
-jQuery.fx.stop = function() {
+jQuery.fx.stop = () => {
 	clearInterval( timerId );
 	timerId = null;
 };

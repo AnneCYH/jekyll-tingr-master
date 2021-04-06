@@ -7,7 +7,7 @@ define([
 	"../selector",
 	// Optional event/alias dependency
 	"../event/alias"
-], function( jQuery ) {
+], jQuery => {
 
 // Keep a copy of the old load method
 var _load = jQuery.fn.load;
@@ -64,9 +64,9 @@ jQuery.fn.load = function( url, params, callback ) {
 				// Otherwise use the full result
 				responseText );
 
-		}).complete( callback && function( jqXHR, status ) {
+		}).complete( callback && ((jqXHR, status) => {
 			self.each( callback, response || [ jqXHR.responseText, status, jqXHR ] );
-		});
+		}));
 	}
 
 	return this;

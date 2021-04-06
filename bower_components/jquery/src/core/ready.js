@@ -2,7 +2,7 @@ define([
 	"../core",
 	"../core/init",
 	"../deferred"
-], function( jQuery ) {
+], jQuery => {
 
 // The deferred used on DOM ready
 var readyList;
@@ -23,7 +23,7 @@ jQuery.extend({
 	readyWait: 1,
 
 	// Hold (or release) the ready event
-	holdReady: function( hold ) {
+	holdReady: hold => {
 		if ( hold ) {
 			jQuery.readyWait++;
 		} else {
@@ -32,7 +32,7 @@ jQuery.extend({
 	},
 
 	// Handle when the DOM is ready
-	ready: function( wait ) {
+	ready: wait => {
 
 		// Abort if there are pending holds or we're already ready
 		if ( wait === true ? --jQuery.readyWait : jQuery.isReady ) {
@@ -67,7 +67,7 @@ function completed() {
 	jQuery.ready();
 }
 
-jQuery.ready.promise = function( obj ) {
+jQuery.ready.promise = obj => {
 	if ( !readyList ) {
 
 		readyList = jQuery.Deferred();

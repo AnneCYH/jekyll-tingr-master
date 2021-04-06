@@ -6,7 +6,7 @@
 // code.google.com/p/graphics-detect/source/browse/js/detect.js
 
 
-(function(){
+((() => {
 
     if (!Modernizr.webgl) return;
 
@@ -39,4 +39,4 @@
     }
 
     canvas = undefined;
-})();
+}))();

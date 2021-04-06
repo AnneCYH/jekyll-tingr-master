@@ -17,10 +17,10 @@
       multiple_opened : false,
       bg_class : 'reveal-modal-bg',
       root_element : 'body',
-      open : function(){},
-      opened : function(){},
-      close : function(){},
-      closed : function(){},
+      open : () => {},
+      opened : () => {},
+      close : () => {},
+      closed : () => {},
       on_ajax_error: $.noop,
       bg : $('.reveal-modal-bg'),
       css : {
@@ -115,7 +115,7 @@
       var self = this;
 
       // PATCH #1: fixing multiple keyup event trigger from single key press
-      self.S('body').off('keyup.fndtn.reveal').on('keyup.fndtn.reveal', function ( event ) {
+      self.S('body').off('keyup.fndtn.reveal').on('keyup.fndtn.reveal', event => {
         var open_modal = self.S('[' + self.attr_name() + '].open'),
             settings = open_modal.data(self.attr_name(true) + '-init') || self.settings ;
         // PATCH #2: making sure that the close event can be called only while unlocked,
@@ -172,7 +172,7 @@
         this.key_up_on(modal);    // PATCH #3: turning on key up capture only when a reveal window is open
 
         // Prevent namespace event from triggering twice
-        modal.on('open.fndtn.reveal', function(e) {
+        modal.on('open.fndtn.reveal', e => {
           if (e.namespace !== 'fndtn.reveal') return;
         });
 
@@ -201,7 +201,7 @@
         } else {
           var old_success = typeof ajax_settings.success !== 'undefined' ? ajax_settings.success : null;
           $.extend(ajax_settings, {
-            success : function (data, textStatus, jqXHR) {
+            success : (data, textStatus, jqXHR) => {
               if ( $.isFunction(old_success) ) {
                 var result = old_success(data, textStatus, jqXHR);
                 if (typeof result == 'string') {
@@ -307,7 +307,7 @@
         if (el.parent(root_element).length === 0) {
           var placeholder = el.wrap('<div style="display: none;" />').parent();
 
-          el.on('closed.fndtn.reveal.wrapped', function () {
+          el.on('closed.fndtn.reveal.wrapped', () => {
             el.detach().appendTo(placeholder);
             el.unwrap().unbind('closed.fndtn.reveal.wrapped');
           });
@@ -326,30 +326,26 @@
             opacity: 1
           };
 
-          return setTimeout(function () {
-            return el
-              .css(css)
-              .animate(end_css, settings.animation_speed, 'linear', function () {
-                context.locked = false;
-                el.trigger('opened.fndtn.reveal');
-              })
-              .addClass('open');
-          }, settings.animation_speed / 2);
+          return setTimeout(() => el
+            .css(css)
+            .animate(end_css, settings.animation_speed, 'linear', () => {
+              context.locked = false;
+              el.trigger('opened.fndtn.reveal');
+            })
+            .addClass('open'), settings.animation_speed / 2);
         }
 
         if (animData.fade) {
           css.top = $(window).scrollTop() + el.data('css-top') + 'px';
           var end_css = {opacity: 1};
 
-          return setTimeout(function () {
-            return el
-              .css(css)
-              .animate(end_css, settings.animation_speed, 'linear', function () {
-                context.locked = false;
-                el.trigger('opened.fndtn.reveal');
-              })
-              .addClass('open');
-          }, settings.animation_speed / 2);
+          return setTimeout(() => el
+            .css(css)
+            .animate(end_css, settings.animation_speed, 'linear', () => {
+              context.locked = false;
+              el.trigger('opened.fndtn.reveal');
+            })
+            .addClass('open'), settings.animation_speed / 2);
         }
 
         return el.css(css).show().css({opacity : 1}).addClass('open').trigger('opened.fndtn.reveal');
@@ -367,11 +363,11 @@
       return el.show();
     },
 
-    to_back : function(el) {
+    to_back : el => {
       el.addClass('toback');
     },
 
-    to_front : function(el) {
+    to_front : el => {
       el.removeClass('toback');
     },
 
@@ -392,27 +388,23 @@
             opacity: 0
           };
 
-          return setTimeout(function () {
-            return el
-              .animate(end_css, settings.animation_speed, 'linear', function () {
-                context.locked = false;
-                el.css(css).trigger('closed.fndtn.reveal');
-              })
-              .removeClass('open');
-          }, settings.animation_speed / 2);
+          return setTimeout(() => el
+            .animate(end_css, settings.animation_speed, 'linear', () => {
+              context.locked = false;
+              el.css(css).trigger('closed.fndtn.reveal');
+            })
+            .removeClass('open'), settings.animation_speed / 2);
         }
 
         if (animData.fade) {
           var end_css = {opacity : 0};
 
-          return setTimeout(function () {
-            return el
-              .animate(end_css, settings.animation_speed, 'linear', function () {
-                context.locked = false;
-                el.css(css).trigger('closed.fndtn.reveal');
-              })
-              .removeClass('open');
-          }, settings.animation_speed / 2);
+          return setTimeout(() => el
+            .animate(end_css, settings.animation_speed, 'linear', () => {
+              context.locked = false;
+              el.css(css).trigger('closed.fndtn.reveal');
+            })
+            .removeClass('open'), settings.animation_speed / 2);
         }
 
         return el.hide().css(css).removeClass('open').trigger('closed.fndtn.reveal');
@@ -428,7 +420,7 @@
       return el.hide();
     },
 
-    close_video : function (e) {
+    close_video : e => {
       var video = $('.flex-video', e.target),
           iframe = $('iframe', video);
 
@@ -439,7 +431,7 @@
       }
     },
 
-    open_video : function (e) {
+    open_video : e => {
       var video = $('.flex-video', e.target),
           iframe = video.find('iframe');
 
@@ -464,7 +456,7 @@
       return str;
     },
 
-    cache_offset : function (modal) {
+    cache_offset : modal => {
       var offset = modal.show().height() + parseInt(modal.css('top'), 10) + modal.scrollY;
 
       modal.hide();
@@ -476,7 +468,7 @@
       $(this.scope).off('.fndtn.reveal');
     },
 
-    reflow : function () {}
+    reflow : () => {}
   };
 
   /*

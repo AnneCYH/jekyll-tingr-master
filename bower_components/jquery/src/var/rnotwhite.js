@@ -1,3 +1,1 @@
-define(function() {
-	return (/\S+/g);
-});
+define(() => /\S+/g);

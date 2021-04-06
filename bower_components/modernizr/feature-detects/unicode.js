@@ -7,7 +7,7 @@
  * 
  * Warning : positive Unicode support doesn't mean you can use it inside <title>, this seams more related to OS & Language packs
  */
-Modernizr.addTest('unicode', function() {
+Modernizr.addTest('unicode', () => {
 	
 	
 	var bool,
@@ -16,7 +16,7 @@ Modernizr.addTest('unicode', function() {
 		
 		star = document.createElement('span');
 
-	Modernizr.testStyles('#modernizr{font-family:Arial,sans;font-size:300em;}', function(node) {
+	Modernizr.testStyles('#modernizr{font-family:Arial,sans;font-size:300em;}', node => {
 
 		missingGlyph.innerHTML = '&#5987';
 		star.innerHTML = '&#9734';		

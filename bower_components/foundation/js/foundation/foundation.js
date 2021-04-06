@@ -9,7 +9,7 @@
 (function ($, window, document, undefined) {
   'use strict';
 
-  var header_helpers = function (class_array) {
+  var header_helpers = class_array => {
     var i = class_array.length;
     var head = $('head');
 
@@ -34,7 +34,7 @@
 
   // Enable FastClick if present
 
-  $(function () {
+  $(() => {
     if (typeof FastClick !== 'undefined') {
       // Don't attach to body if undefined
       if (typeof document.body !== 'undefined') {
@@ -46,7 +46,7 @@
   // private Fast Selector wrapper,
   // returns jQuery object. Only use where
   // getElementById is not available.
-  var S = function (selector, context) {
+  var S = (selector, context) => {
     if (typeof selector === 'string') {
       if (context) {
         var cont;
@@ -128,7 +128,7 @@
 
   };
 
-  var single_image_loaded = function (image, callback) {
+  var single_image_loaded = (image, callback) => {
     function loaded () {
       callback(image[0]);
     }
@@ -180,7 +180,7 @@
           info = ('getComputedStyle' in window) && window.getComputedStyle(style, null) || style.currentStyle;
 
           styleMedia = {
-              matchMedium: function(media) {
+              matchMedium: media => {
                   var text = '@media ' + media + '{ #matchmediajs-test { width: 1px; } }';
 
                   // 'style.styleSheet' is used by IE <= 8 and 'style.textContent' for all other browsers
@@ -196,12 +196,10 @@
           };
       }
 
-      return function(media) {
-          return {
-              matches: styleMedia.matchMedium(media || 'all'),
-              media: media || 'all'
-          };
-      };
+      return media => ({
+        matches: styleMedia.matchMedium(media || 'all'),
+        media: media || 'all'
+      });
   }());
 
   /*
@@ -213,7 +211,7 @@
    * Licensed under the MIT license.
    */
 
-  (function(jQuery) {
+  ((jQuery => {
 
 
   // requestAnimationFrame polyfill adapted from Erik Möller
@@ -251,36 +249,36 @@
     window.cancelAnimationFrame = cancelAnimationFrame;
 
     if (jqueryFxAvailable) {
-      jQuery.fx.timer = function (timer) {
+      jQuery.fx.timer = timer => {
         if (timer() && jQuery.timers.push(timer) && !animating) {
           animating = true;
           raf();
         }
       };
 
-      jQuery.fx.stop = function () {
+      jQuery.fx.stop = () => {
         animating = false;
       };
     }
   } else {
     // polyfill
-    window.requestAnimationFrame = function (callback) {
+    window.requestAnimationFrame = callback => {
       var currTime = new Date().getTime(),
         timeToCall = Math.max(0, 16 - (currTime - lastTime)),
-        id = window.setTimeout(function () {
+        id = window.setTimeout(() => {
           callback(currTime + timeToCall);
         }, timeToCall);
       lastTime = currTime + timeToCall;
       return id;
     };
 
-    window.cancelAnimationFrame = function (id) {
+    window.cancelAnimationFrame = id => {
       clearTimeout(id);
     };
 
   }
 
-  }( $ ));
+  })( $ ));
 
   function removeQuotes (string) {
     if (typeof string === 'string' || string instanceof String) {
@@ -335,7 +333,7 @@
         }
       }
 
-      S(window).load(function () {
+      S(window).load(() => {
         S(window)
           .trigger('resize.fndtn.clearing')
           .trigger('resize.fndtn.dropdown')
@@ -367,7 +365,7 @@
         return this.libs[lib].init.apply(this.libs[lib], args);
       }
 
-      return function () {};
+      return () => {};
     },
 
     patch : function (lib) {
@@ -445,14 +443,14 @@
       //
       // Returns:
       //    Lazy_function (Function): Function with throttling applied.
-      throttle : function (func, delay) {
+      throttle : (func, delay) => {
         var timer = null;
 
         return function () {
           var context = this, args = arguments;
 
           if (timer == null) {
-            timer = setTimeout(function () {
+            timer = setTimeout(() => {
               func.apply(context, args);
               timer = null;
             }, delay);
@@ -474,11 +472,11 @@
       //
       // Returns:
       //    Lazy_function (Function): Function with debouncing applied.
-      debounce : function (func, delay, immediate) {
+      debounce : (func, delay, immediate) => {
         var timeout, result;
         return function () {
           var context = this, args = arguments;
-          var later = function () {
+          var later = () => {
             timeout = null;
             if (!immediate) {
               result = func.apply(context, args);
@@ -503,10 +501,10 @@
       // Returns:
       //    Options (Javascript Object): Contents of the element's data-options
       //    attribute.
-      data_options : function (el, data_attr_name) {
+      data_options : (el, data_attr_name) => {
         data_attr_name = data_attr_name || 'options';
         var opts = {}, ii, p, opts_arr,
-            data_options = function (el) {
+            data_options = el => {
               var namespace = Foundation.global.namespace;
 
               if (namespace.length > 0) {
@@ -570,7 +568,7 @@
       //    Foundation.media_queries
       //
       //    Class (String): Class name for the generated <meta> tag
-      register_media : function (media, media_class) {
+      register_media : (media, media_class) => {
         if (Foundation.media_queries[media] === undefined) {
           $('head').append('<meta class="' + media_class + '"/>');
           Foundation.media_queries[media] = removeQuotes($('.' + media_class).css('font-family'));
@@ -585,7 +583,7 @@
       //
       //    Media (String): Optional media query string for the CSS rule to be
       //    nested under.
-      add_custom_rule : function (rule, media) {
+      add_custom_rule : (rule, media) => {
         if (media === undefined && Foundation.stylesheet) {
           Foundation.stylesheet.insertRule(rule, Foundation.stylesheet.cssRules.length);
         } else {
@@ -626,7 +624,7 @@
         }
 
         images.each(function () {
-          single_image_loaded(self.S(this), function () {
+          single_image_loaded(self.S(this), () => {
             unloaded -= 1;
             if (unloaded === 0) {
               callback(images);
@@ -661,9 +659,7 @@
       //
       // Returns:
       //    (Boolean): Whether the media query passes or not
-      match : function (mq) {
-        return window.matchMedia(mq).matches;
-      },
+      match : mq => window.matchMedia(mq).matches,
 
       // Description:
       //    Helpers for checking Foundation default media queries with JS

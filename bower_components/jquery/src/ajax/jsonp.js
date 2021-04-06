@@ -3,7 +3,7 @@ define([
 	"./var/nonce",
 	"./var/rquery",
 	"../ajax"
-], function( jQuery, nonce, rquery ) {
+], (jQuery, nonce, rquery) => {
 
 var oldCallbacks = [],
 	rjsonp = /(=)\?(?=&|$)|\?\?/;
@@ -19,7 +19,7 @@ jQuery.ajaxSetup({
 });
 
 // Detect, normalize options and install callbacks for jsonp requests
-jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
+jQuery.ajaxPrefilter( "json jsonp", (s, originalSettings, jqXHR) => {
 
 	var callbackName, overwritten, responseContainer,
 		jsonProp = s.jsonp !== false && ( rjsonp.test( s.url ) ?
@@ -43,7 +43,7 @@ jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
 		}
 
 		// Use data converter to retrieve json after script execution
-		s.converters["script json"] = function() {
+		s.converters["script json"] = () => {
 			if ( !responseContainer ) {
 				jQuery.error( callbackName + " was not called" );
 			}
@@ -60,7 +60,7 @@ jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
 		};
 
 		// Clean-up function (fires after converters)
-		jqXHR.always(function() {
+		jqXHR.always(() => {
 			// Restore preexisting value
 			window[ callbackName ] = overwritten;
 

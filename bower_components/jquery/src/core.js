@@ -8,7 +8,7 @@ define([
 	"./var/toString",
 	"./var/hasOwn",
 	"./var/support"
-], function( arr, slice, concat, push, indexOf, class2type, toString, hasOwn, support ) {
+], (arr, slice, concat, push, indexOf, class2type, toString, hasOwn, support) => {
 
 var
 	// Use the correct document accordingly with window argument (sandbox)
@@ -17,11 +17,7 @@ var
 	version = "@VERSION",
 
 	// Define a local copy of jQuery
-	jQuery = function( selector, context ) {
-		// The jQuery object is actually just the init constructor 'enhanced'
-		// Need init if jQuery is called (just allow error to be thrown if not included)
-		return new jQuery.fn.init( selector, context );
-	},
+	jQuery = (selector, context) => new jQuery.fn.init( selector, context ),
 
 	// Support: Android<4.1
 	// Make sure we trim BOM and NBSP
@@ -32,9 +28,7 @@ var
 	rdashAlpha = /-([\da-z])/gi,
 
 	// Used by jQuery.camelCase as callback to replace()
-	fcamelCase = function( all, letter ) {
-		return letter.toUpperCase();
-	};
+	fcamelCase = (all, letter) => letter.toUpperCase();
 
 jQuery.fn = jQuery.prototype = {
 	// The current version of jQuery being used
@@ -87,9 +81,7 @@ jQuery.fn = jQuery.prototype = {
 	},
 
 	map: function( callback ) {
-		return this.pushStack( jQuery.map(this, function( elem, i ) {
-			return callback.call( elem, i, elem );
-		}));
+		return this.pushStack( jQuery.map(this, (elem, i) => callback.call( elem, i, elem )));
 	},
 
 	slice: function() {
@@ -193,31 +185,21 @@ jQuery.extend({
 	// Assume jQuery is ready without the ready module
 	isReady: true,
 
-	error: function( msg ) {
+	error: msg => {
 		throw new Error( msg );
 	},
 
-	noop: function() {},
+	noop: () => {},
 
-	isFunction: function( obj ) {
-		return jQuery.type(obj) === "function";
-	},
+	isFunction: obj => jQuery.type(obj) === "function",
 
 	isArray: Array.isArray,
 
-	isWindow: function( obj ) {
-		return obj != null && obj === obj.window;
-	},
+	isWindow: obj => obj != null && obj === obj.window,
 
-	isNumeric: function( obj ) {
-		// parseFloat NaNs numeric-cast false positives (null|true|false|"")
-		// ...but misinterprets leading-number strings, particularly hex literals ("0x...")
-		// subtraction forces infinities to NaN
-		// adding 1 corrects loss of precision from parseFloat (#15100)
-		return !jQuery.isArray( obj ) && (obj - parseFloat( obj ) + 1) >= 0;
-	},
+	isNumeric: obj => !jQuery.isArray( obj ) && (obj - parseFloat( obj ) + 1) >= 0,
 
-	isPlainObject: function( obj ) {
+	isPlainObject: obj => {
 		// Not plain objects:
 		// - Any object or value whose internal [[Class]] property is not "[object Object]"
 		// - DOM nodes
@@ -236,7 +218,7 @@ jQuery.extend({
 		return true;
 	},
 
-	isEmptyObject: function( obj ) {
+	isEmptyObject: obj => {
 		var name;
 		for ( name in obj ) {
 			return false;
@@ -244,7 +226,7 @@ jQuery.extend({
 		return true;
 	},
 
-	type: function( obj ) {
+	type: obj => {
 		if ( obj == null ) {
 			return obj + "";
 		}
@@ -255,7 +237,7 @@ jQuery.extend({
 	},
 
 	// Evaluates a script in a global context
-	globalEval: function( code ) {
+	globalEval: code => {
 		var script,
 			indirect = eval;
 
@@ -280,16 +262,12 @@ jQuery.extend({
 	// Convert dashed to camelCase; used by the css and data modules
 	// Support: IE9-11+
 	// Microsoft forgot to hump their vendor prefix (#9572)
-	camelCase: function( string ) {
-		return string.replace( rmsPrefix, "ms-" ).replace( rdashAlpha, fcamelCase );
-	},
+	camelCase: string => string.replace( rmsPrefix, "ms-" ).replace( rdashAlpha, fcamelCase ),
 
-	nodeName: function( elem, name ) {
-		return elem.nodeName && elem.nodeName.toLowerCase() === name.toLowerCase();
-	},
+	nodeName: (elem, name) => elem.nodeName && elem.nodeName.toLowerCase() === name.toLowerCase(),
 
 	// args is for internal usage only
-	each: function( obj, callback, args ) {
+	each: (obj, callback, args) => {
 		var value,
 			i = 0,
 			length = obj.length,
@@ -339,14 +317,12 @@ jQuery.extend({
 	},
 
 	// Support: Android<4.1
-	trim: function( text ) {
-		return text == null ?
-			"" :
-			( text + "" ).replace( rtrim, "" );
-	},
+	trim: text => text == null ?
+        "" :
+        ( text + "" ).replace( rtrim, "" ),
 
 	// results is for internal usage only
-	makeArray: function( arr, results ) {
+	makeArray: (arr, results) => {
 		var ret = results || [];
 
 		if ( arr != null ) {
@@ -363,11 +339,9 @@ jQuery.extend({
 		return ret;
 	},
 
-	inArray: function( elem, arr, i ) {
-		return arr == null ? -1 : indexOf.call( arr, elem, i );
-	},
+	inArray: (elem, arr, i) => arr == null ? -1 : indexOf.call( arr, elem, i ),
 
-	merge: function( first, second ) {
+	merge: (first, second) => {
 		var len = +second.length,
 			j = 0,
 			i = first.length;
@@ -381,7 +355,7 @@ jQuery.extend({
 		return first;
 	},
 
-	grep: function( elems, callback, invert ) {
+	grep: (elems, callback, invert) => {
 		var callbackInverse,
 			matches = [],
 			i = 0,
@@ -401,7 +375,7 @@ jQuery.extend({
 	},
 
 	// arg is for internal usage only
-	map: function( elems, callback, arg ) {
+	map: (elems, callback, arg) => {
 		var value,
 			i = 0,
 			length = elems.length,
@@ -473,7 +447,7 @@ jQuery.extend({
 });
 
 // Populate the class2type map
-jQuery.each("Boolean Number String Function Array Date RegExp Object Error".split(" "), function(i, name) {
+jQuery.each("Boolean Number String Function Array Date RegExp Object Error".split(" "), (i, name) => {
 	class2type[ "[object " + name + "]" ] = name.toLowerCase();
 });
 

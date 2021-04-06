@@ -3,24 +3,19 @@ define([
 	"../var/indexOf",
 	"./var/rneedsContext",
 	"../selector"
-], function( jQuery, indexOf, rneedsContext ) {
+], (jQuery, indexOf, rneedsContext) => {
 
 var risSimple = /^.[^:#\[\.,]*$/;
 
 // Implement the identical functionality for filter and not
 function winnow( elements, qualifier, not ) {
 	if ( jQuery.isFunction( qualifier ) ) {
-		return jQuery.grep( elements, function( elem, i ) {
-			/* jshint -W018 */
-			return !!qualifier.call( elem, i, elem ) !== not;
-		});
+		return jQuery.grep( elements, (elem, i) => !!qualifier.call( elem, i, elem ) !== not);
 
 	}
 
 	if ( qualifier.nodeType ) {
-		return jQuery.grep( elements, function( elem ) {
-			return ( elem === qualifier ) !== not;
-		});
+		return jQuery.grep( elements, elem => ( elem === qualifier ) !== not);
 
 	}
 
@@ -32,12 +27,10 @@ function winnow( elements, qualifier, not ) {
 		qualifier = jQuery.filter( qualifier, elements );
 	}
 
-	return jQuery.grep( elements, function( elem ) {
-		return ( indexOf.call( qualifier, elem ) >= 0 ) !== not;
-	});
+	return jQuery.grep( elements, elem => ( indexOf.call( qualifier, elem ) >= 0 ) !== not);
 }
 
-jQuery.filter = function( expr, elems, not ) {
+jQuery.filter = (expr, elems, not) => {
 	var elem = elems[ 0 ];
 
 	if ( not ) {
@@ -46,9 +39,7 @@ jQuery.filter = function( expr, elems, not ) {
 
 	return elems.length === 1 && elem.nodeType === 1 ?
 		jQuery.find.matchesSelector( elem, expr ) ? [ elem ] : [] :
-		jQuery.find.matches( expr, jQuery.grep( elems, function( elem ) {
-			return elem.nodeType === 1;
-		}));
+		jQuery.find.matches( expr, jQuery.grep( elems, elem => elem.nodeType === 1));
 };
 
 jQuery.fn.extend({

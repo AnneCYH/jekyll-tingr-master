@@ -12,7 +12,7 @@
  */
 
 
-(function($) {
+(($ => {
 
 $.extend($.fn, {
 	// http://docs.jquery.com/Plugins/Validation/validate
@@ -41,7 +41,7 @@ $.extend($.fn, {
 			var inputsAndButtons = this.find("input, button");
 
 			// allow suppresing validation by adding a cancel class to the submit button
-			inputsAndButtons.filter(".cancel").click(function () {
+			inputsAndButtons.filter(".cancel").click(() => {
 				validator.cancelSubmit = true;
 			});
 
@@ -53,7 +53,7 @@ $.extend($.fn, {
 			}
 
 			// validate the form on submit
-			this.submit( function( event ) {
+			this.submit( event => {
 				if ( validator.settings.debug )
 					// prevent form submit to be able to see console output
 					event.preventDefault();
@@ -111,7 +111,7 @@ $.extend($.fn, {
 	removeAttrs: function(attributes) {
 		var result = {},
 			$element = this;
-		$.each(attributes.split(/\s/), function(index, value) {
+		$.each(attributes.split(/\s/), (index, value) => {
 			result[value] = $element.attr(value);
 			$element.removeAttr(value);
 		});
@@ -138,7 +138,7 @@ $.extend($.fn, {
 					return existingRules;
 				}
 				var filtered = {};
-				$.each(argument.split(/\s/), function(index, method) {
+				$.each(argument.split(/\s/), (index, method) => {
 					filtered[method] = existingRules[method];
 					delete existingRules[method];
 				});
@@ -169,11 +169,11 @@ $.extend($.fn, {
 // Custom selectors
 $.extend($.expr[":"], {
 	// http://docs.jquery.com/Plugins/Validation/blank
-	blank: function(a) {return !$.trim("" + a.value);},
+	blank: a => !$.trim("" + a.value),
 	// http://docs.jquery.com/Plugins/Validation/filled
-	filled: function(a) {return !!$.trim("" + a.value);},
+	filled: a => !!$.trim("" + a.value),
 	// http://docs.jquery.com/Plugins/Validation/unchecked
-	unchecked: function(a) {return !a.checked;}
+	unchecked: a => !a.checked
 });
 
 // constructor for validator
@@ -196,7 +196,7 @@ $.validator.format = function(source, params) {
 	if ( params.constructor != Array ) {
 		params = [ params ];
 	}
-	$.each(params, function(i, n) {
+	$.each(params, (i, n) => {
 		source = source.replace(new RegExp("\\{" + i + "\\}", "g"), n);
 	});
 	return source;
@@ -261,7 +261,7 @@ $.extend($.validator, {
 	},
 
 	// http://docs.jquery.com/Plugins/Validation/Validator/setDefaults
-	setDefaults: function(settings) {
+	setDefaults: settings => {
 		$.extend( $.validator.defaults, settings );
 	},
 
@@ -301,13 +301,13 @@ $.extend($.validator, {
 			this.reset();
 
 			var groups = (this.groups = {});
-			$.each(this.settings.groups, function(key, value) {
-				$.each(value.split(/\s/), function(index, name) {
+			$.each(this.settings.groups, (key, value) => {
+				$.each(value.split(/\s/), (index, name) => {
 					groups[name] = key;
 				});
 			});
 			var rules = this.settings.rules;
-			$.each(rules, function(key, value) {
+			$.each(rules, (key, value) => {
 				rules[key] = $.validator.normalizeRule(value);
 			});
 
@@ -381,9 +381,7 @@ $.extend($.validator, {
 					});
 				}
 				// remove items from success list
-				this.successList = $.grep( this.successList, function(element) {
-					return !(element.name in errors);
-				});
+				this.successList = $.grep( this.successList, element => !(element.name in errors));
 			}
 			this.settings.showErrors
 				? this.settings.showErrors.call( this, this.errorMap, this.errorList )
@@ -405,7 +403,7 @@ $.extend($.validator, {
 			return this.objectLength(this.invalid);
 		},
 
-		objectLength: function( obj ) {
+		objectLength: obj => {
 			var count = 0;
 			for ( var i in obj )
 				count++;
@@ -440,9 +438,7 @@ $.extend($.validator, {
 
 		findLastActive: function() {
 			var lastActive = this.lastActive;
-			return lastActive && $.grep(this.errorList, function(n) {
-				return n.element.name == lastActive.name;
-			}).length == 1 && lastActive;
+			return lastActive && $.grep(this.errorList, n => n.element.name == lastActive.name).length == 1 && lastActive;
 		},
 
 		elements: function() {
@@ -466,9 +462,7 @@ $.extend($.validator, {
 			});
 		},
 
-		clean: function( selector ) {
-			return $( selector )[0];
-		},
+		clean: selector => $( selector )[0],
 
 		errors: function() {
 			return $( this.settings.errorElement + "." + this.settings.errorClass, this.errorContext );
@@ -683,16 +677,12 @@ $.extend($.validator, {
 			return element;
 		},
 
-		checkable: function( element ) {
-			return /radio|checkbox/i.test(element.type);
-		},
+		checkable: element => /radio|checkbox/i.test(element.type),
 
 		findByName: function( name ) {
 			// select by name and filter by form for performance over form.find("[name=...]")
 			var form = this.currentForm;
-			return $(document.getElementsByName(name)).map(function(index, element) {
-				return element.form == form && element.name == name && element  || null;
-			});
+			return $(document.getElementsByName(name)).map((index, element) => element.form == form && element.name == name && element  || null);
 		},
 
 		getLength: function(value, element) {
@@ -713,15 +703,9 @@ $.extend($.validator, {
 		},
 
 		dependTypes: {
-			"boolean": function(param, element) {
-				return param;
-			},
-			"string": function(param, element) {
-				return !!$(param, element.form).length;
-			},
-			"function": function(param, element) {
-				return param(element);
-			}
+			"boolean": (param, element) => param,
+			"string": (param, element) => !!$(param, element.form).length,
+			"function": (param, element) => param(element)
 		},
 
 		optional: function(element) {
@@ -779,7 +763,7 @@ $.extend($.validator, {
 			$.extend(this.classRuleSettings, className);
 	},
 
-	classRules: function(element) {
+	classRules: element => {
 		var rules = {};
 		var classes = $(element).attr('class');
 		classes && $.each(classes.split(' '), function() {
@@ -790,7 +774,7 @@ $.extend($.validator, {
 		return rules;
 	},
 
-	attributeRules: function(element) {
+	attributeRules: element => {
 		var rules = {};
 		var $element = $(element);
 
@@ -817,7 +801,7 @@ $.extend($.validator, {
 		return rules;
 	},
 
-	metadataRules: function(element) {
+	metadataRules: element => {
 		if (!$.metadata) return {};
 
 		var meta = $.data(element.form, 'validator').settings.meta;
@@ -826,7 +810,7 @@ $.extend($.validator, {
 			$(element).metadata();
 	},
 
-	staticRules: function(element) {
+	staticRules: element => {
 		var rules = {};
 		var validator = $.data(element.form, 'validator');
 		if (validator.settings.rules) {
@@ -835,9 +819,9 @@ $.extend($.validator, {
 		return rules;
 	},
 
-	normalizeRules: function(rules, element) {
+	normalizeRules: (rules, element) => {
 		// handle dependency check
-		$.each(rules, function(prop, val) {
+		$.each(rules, (prop, val) => {
 			// ignore rule when param is explicitly false, eg. required:false
 			if (val === false) {
 				delete rules[prop];
@@ -862,7 +846,7 @@ $.extend($.validator, {
 		});
 
 		// evaluate parameters
-		$.each(rules, function(rule, parameter) {
+		$.each(rules, (rule, parameter) => {
 			rules[rule] = $.isFunction(parameter) ? parameter(element) : parameter;
 		});
 
@@ -901,7 +885,7 @@ $.extend($.validator, {
 	},
 
 	// Converts a simple string to a {string: true} rule, e.g., "required" to {required:true}
-	normalizeRule: function(data) {
+	normalizeRule: data => {
 		if( typeof data == "string" ) {
 			var transformed = {};
 			$.each(data.split(/\s/), function() {
@@ -913,7 +897,7 @@ $.extend($.validator, {
 	},
 
 	// http://docs.jquery.com/Plugins/Validation/Validator/addMethod
-	addMethod: function(name, method, message) {
+	addMethod: (name, method, message) => {
 		$.validator.methods[name] = method;
 		$.validator.messages[name] = message != undefined ? message : $.validator.messages[name];
 		if (method.length < 3) {
@@ -972,7 +956,7 @@ $.extend($.validator, {
 				port: "validate" + element.name,
 				dataType: "json",
 				data: data,
-				success: function(response) {
+				success: response => {
 					validator.settings.messages[element.name].remote = previous.originalMessage;
 					var valid = response === true;
 					if ( valid ) {
@@ -1092,10 +1076,10 @@ $.extend($.validator, {
 		},
 
 		// http://docs.jquery.com/Plugins/Validation/Methods/equalTo
-		equalTo: function(value, element, param) {
+		equalTo: (value, element, param) => {
 			// bind to the blur event of the target in order to revalidate whenever the target field is updated
 			// TODO find a way to bind the event just once, avoiding the unbind-rebind overhead
-			var target = $(param).unbind(".validate-equalTo").bind("blur.validate-equalTo", function() {
+			var target = $(param).unbind(".validate-equalTo").bind("blur.validate-equalTo", () => {
 				$(element).valid();
 			});
 			return value == target.val();
@@ -1108,16 +1092,16 @@ $.extend($.validator, {
 // deprecated, use $.validator.format instead
 $.format = $.validator.format;
 
-})(jQuery);
+}))(jQuery);
 
 // ajax mode: abort
 // usage: $.ajax({ mode: "abort"[, port: "uniqueport"]});
 // if mode:"abort" is used, the previous request on that port (port can be undefined) is aborted via XMLHttpRequest.abort()
-;(function($) {
+;(($ => {
 	var pendingRequests = {};
 	// Use a prefilter if available (1.5+)
 	if ( $.ajaxPrefilter ) {
-		$.ajaxPrefilter(function(settings, _, xhr) {
+		$.ajaxPrefilter((settings, _, xhr) => {
 			var port = settings.port;
 			if (settings.mode == "abort") {
 				if ( pendingRequests[port] ) {
@@ -1141,21 +1125,21 @@ $.format = $.validator.format;
 			return ajax.apply(this, arguments);
 		};
 	}
-})(jQuery);
+}))(jQuery);
 
 // provides cross-browser focusin and focusout events
 // IE has native support, in other browsers, use event caputuring (neither bubbles)
 
 // provides delegate(type: String, delegate: Selector, handler: Callback) plugin for easier event delegation
 // handler is only called when $(event.target).is(delegate), in the scope of the jquery-object for event.target
-;(function($) {
+;(($ => {
 	// only implement if not provided by jQuery core (since 1.4)
 	// TODO verify if jQuery 1.4's implementation is compatible with older jQuery special-event APIs
 	if (!jQuery.event.special.focusin && !jQuery.event.special.focusout && document.addEventListener) {
 		$.each({
 			focus: 'focusin',
 			blur: 'focusout'
-		}, function( original, fix ){
+		}, (original, fix) => {
 			$.event.special[fix] = {
 				setup:function() {
 					this.addEventListener( original, handler, true );
@@ -1186,4 +1170,4 @@ $.format = $.validator.format;
 			});
 		}
 	});
-})(jQuery);
+}))(jQuery);

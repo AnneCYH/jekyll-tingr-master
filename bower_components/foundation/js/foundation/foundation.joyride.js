@@ -37,11 +37,11 @@
         left : ['right', 'top', 'bottom'],
         right : ['left', 'top', 'bottom']
       },
-      post_ride_callback     : function () {},    // A method to call once the tour closes (canceled or complete)
-      post_step_callback     : function () {},    // A method to call after each step
-      pre_step_callback      : function () {},    // A method to call before each step
-      pre_ride_callback      : function () {},    // A method to call before the tour starts (passed index, tip, and cloned exposed element)
-      post_expose_callback   : function () {},    // A method to call after an element has been exposed
+      post_ride_callback     : () => {},    // A method to call once the tour closes (canceled or complete)
+      post_step_callback     : () => {},    // A method to call after each step
+      pre_step_callback      : () => {},    // A method to call before each step
+      pre_ride_callback      : () => {},    // A method to call before the tour starts (passed index, tip, and cloned exposed element)
+      post_expose_callback   : () => {},    // A method to call after an element has been exposed
       template : { // HTML segments for tip layout
         link          : '<a href="#close" class="joyride-close-tip">&times;</a>',
         timer         : '<div class="joyride-timer-indicator-wrap"><span class="joyride-timer-indicator"></span></div>',
@@ -97,21 +97,21 @@
 
       $(this.scope)
         .off('.joyride')
-        .on('click.fndtn.joyride', '.joyride-next-tip, .joyride-modal-bg', function (e) {
+        .on('click.fndtn.joyride', '.joyride-next-tip, .joyride-modal-bg', e => {
           e.preventDefault();
           this.go_next()
-        }.bind(this))
-        .on('click.fndtn.joyride', '.joyride-prev-tip', function (e) {
+        })
+        .on('click.fndtn.joyride', '.joyride-prev-tip', e => {
           e.preventDefault();
           this.go_prev();
-        }.bind(this))
+        })
 
-        .on('click.fndtn.joyride', '.joyride-close-tip', function (e) {
+        .on('click.fndtn.joyride', '.joyride-close-tip', e => {
           e.preventDefault();
           this.end(this.settings.abort_on_close);
-        }.bind(this))
+        })
 
-        .on('keyup.fndtn.joyride', function (e) {
+        .on('keyup.fndtn.joyride', e => {
           // Don't do anything if keystrokes are disabled
           // or if the joyride is not being shown
           if (!this.settings.keyboard || !this.settings.riding) {
@@ -131,11 +131,11 @@
               e.preventDefault();
               this.end(this.settings.abort_on_close);
           }
-        }.bind(this));
+        });
 
       $(window)
         .off('.joyride')
-        .on('resize.fndtn.joyride', self.throttle(function () {
+        .on('resize.fndtn.joyride', self.throttle(() => {
           if ($('[' + self.attr_name() + ']').length > 0 && self.settings.$next_tip && self.settings.riding) {
             if (self.settings.exposed.length > 0) {
               var $els = $(self.settings.exposed);
@@ -350,11 +350,11 @@
 
               this.settings.$next_tip.show();
 
-              setTimeout(function () {
+              setTimeout(() => {
                 $timer.animate({
                   width : $timer.parent().width()
                 }, this.settings.timer, 'linear');
-              }.bind(this), this.settings.tip_animation_fade_speed);
+              }, this.settings.tip_animation_fade_speed);
 
             } else {
               this.settings.$next_tip.show();
@@ -371,11 +371,11 @@
                 .fadeIn(this.settings.tip_animation_fade_speed)
                 .show();
 
-              setTimeout(function () {
+              setTimeout(() => {
                 $timer.animate({
                   width : $timer.parent().width()
                 }, this.settings.timer, 'linear');
-              }.bind(this), this.settings.tip_animation_fade_speed);
+              }, this.settings.tip_animation_fade_speed);
 
             } else {
               this.settings.$next_tip.fadeIn(this.settings.tip_animation_fade_speed);
@@ -402,10 +402,8 @@
 
     },
 
-    is_phone : function () {
-      return matchMedia(Foundation.media_queries.small).matches &&
-        !matchMedia(Foundation.media_queries.medium).matches;
-    },
+    is_phone : () => matchMedia(Foundation.media_queries.small).matches &&
+      !matchMedia(Foundation.media_queries.medium).matches,
 
     hide : function () {
       if (this.settings.modal && this.settings.expose) {
@@ -451,7 +449,7 @@
     set_target : function () {
       var cl = this.settings.$li.attr(this.add_namespace('data-class')),
           id = this.settings.$li.attr(this.add_namespace('data-id')),
-          $sel = function () {
+          $sel = () => {
             if (id) {
               return $(document.getElementById(id));
             } else if (cl) {
@@ -856,7 +854,7 @@
       ];
     },
 
-    visible : function (hidden_corners) {
+    visible : hidden_corners => {
       var i = hidden_corners.length;
 
       while (i--) {
@@ -868,7 +866,7 @@
       return true;
     },
 
-    nub_position : function (nub, pos, def) {
+    nub_position : (nub, pos, def) => {
       if (pos === 'auto') {
         nub.addClass(def);
       } else {
@@ -878,11 +876,11 @@
 
     startTimer : function () {
       if (this.settings.$li.length) {
-        this.settings.automate = setTimeout(function () {
+        this.settings.automate = setTimeout(() => {
           this.hide();
           this.show();
           this.startTimer();
-        }.bind(this), this.settings.timer);
+        }, this.settings.timer);
       } else {
         clearTimeout(this.settings.automate);
       }
@@ -927,6 +925,6 @@
       this.settings = {};
     },
 
-    reflow : function () {}
+    reflow : () => {}
   };
 }(jQuery, window, window.document));

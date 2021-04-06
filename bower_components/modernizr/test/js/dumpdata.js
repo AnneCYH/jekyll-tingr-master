@@ -46,9 +46,7 @@ function processTree(data){
     filenames.push(relpath + match[0]);
   }
 
-  var jqxhrs = filenames.map(function(filename){
-    return jQuery.getScript(filename);
-  });
+  var jqxhrs = filenames.map(filename => jQuery.getScript(filename));
 
   jQuery.when.apply(jQuery, jqxhrs).done(resultsToDOM);
 

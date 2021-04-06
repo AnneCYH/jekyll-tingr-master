@@ -5,7 +5,7 @@
  * Copyright 2013 Klaus Hartl
  * Released under the MIT license
  */
-(function (factory) {
+((factory => {
 	if (typeof define === 'function' && define.amd) {
 		// AMD
 		define(['jquery'], factory);
@@ -16,7 +16,7 @@
 		// Browser globals
 		factory(jQuery);
 	}
-}(function ($) {
+})($ => {
 
 	var pluses = /\+/g;
 
@@ -52,7 +52,7 @@
 		return $.isFunction(converter) ? converter(value) : value;
 	}
 
-	var config = $.cookie = function (key, value, options) {
+	var config = $.cookie = (key, value, options) => {
 
 		// Write
 
@@ -104,7 +104,7 @@
 
 	config.defaults = {};
 
-	$.removeCookie = function (key, options) {
+	$.removeCookie = (key, options) => {
 		if ($.cookie(key) === undefined) {
 			return false;
 		}

@@ -4,7 +4,7 @@ define([
 	"./var/rmargin",
 	"./var/getStyles",
 	"../selector" // contains
-], function( jQuery, rnumnonpx, rmargin, getStyles ) {
+], (jQuery, rnumnonpx, rmargin, getStyles) => {
 
 function curCSS( elem, name, computed ) {
 	var width, minWidth, maxWidth, ret,

@@ -1,8 +1,8 @@
 define([
 	"../var/support"
-], function( support ) {
+], support => {
 
-(function() {
+((() => {
 	var fragment = document.createDocumentFragment(),
 		div = fragment.appendChild( document.createElement( "div" ) ),
 		input = document.createElement( "input" );
@@ -25,7 +25,7 @@ define([
 	// Make sure textarea (and checkbox) defaultValue is properly cloned
 	div.innerHTML = "<textarea>x</textarea>";
 	support.noCloneChecked = !!div.cloneNode( true ).lastChild.defaultValue;
-})();
+}))();
 
 return support;
 

@@ -5,7 +5,7 @@ define([
 	"./core/init",
 	"./traversing/findFilter",
 	"./selector"
-], function( jQuery, indexOf, rneedsContext ) {
+], (jQuery, indexOf, rneedsContext) => {
 
 var rparentsprev = /^(?:parents|prev(?:Until|All))/,
 	// Methods guaranteed to produce a unique set when starting from a unique set
@@ -17,7 +17,7 @@ var rparentsprev = /^(?:parents|prev(?:Until|All))/,
 	};
 
 jQuery.extend({
-	dir: function( elem, dir, until ) {
+	dir: (elem, dir, until) => {
 		var matched = [],
 			truncate = until !== undefined;
 
@@ -32,7 +32,7 @@ jQuery.extend({
 		return matched;
 	},
 
-	sibling: function( n, elem ) {
+	sibling: (n, elem) => {
 		var matched = [];
 
 		for ( ; n; n = n.nextSibling ) {
@@ -130,44 +130,22 @@ function sibling( cur, dir ) {
 }
 
 jQuery.each({
-	parent: function( elem ) {
+	parent: elem => {
 		var parent = elem.parentNode;
 		return parent && parent.nodeType !== 11 ? parent : null;
 	},
-	parents: function( elem ) {
-		return jQuery.dir( elem, "parentNode" );
-	},
-	parentsUntil: function( elem, i, until ) {
-		return jQuery.dir( elem, "parentNode", until );
-	},
-	next: function( elem ) {
-		return sibling( elem, "nextSibling" );
-	},
-	prev: function( elem ) {
-		return sibling( elem, "previousSibling" );
-	},
-	nextAll: function( elem ) {
-		return jQuery.dir( elem, "nextSibling" );
-	},
-	prevAll: function( elem ) {
-		return jQuery.dir( elem, "previousSibling" );
-	},
-	nextUntil: function( elem, i, until ) {
-		return jQuery.dir( elem, "nextSibling", until );
-	},
-	prevUntil: function( elem, i, until ) {
-		return jQuery.dir( elem, "previousSibling", until );
-	},
-	siblings: function( elem ) {
-		return jQuery.sibling( ( elem.parentNode || {} ).firstChild, elem );
-	},
-	children: function( elem ) {
-		return jQuery.sibling( elem.firstChild );
-	},
-	contents: function( elem ) {
-		return elem.contentDocument || jQuery.merge( [], elem.childNodes );
-	}
-}, function( name, fn ) {
+	parents: elem => jQuery.dir( elem, "parentNode" ),
+	parentsUntil: (elem, i, until) => jQuery.dir( elem, "parentNode", until ),
+	next: elem => sibling( elem, "nextSibling" ),
+	prev: elem => sibling( elem, "previousSibling" ),
+	nextAll: elem => jQuery.dir( elem, "nextSibling" ),
+	prevAll: elem => jQuery.dir( elem, "previousSibling" ),
+	nextUntil: (elem, i, until) => jQuery.dir( elem, "nextSibling", until ),
+	prevUntil: (elem, i, until) => jQuery.dir( elem, "previousSibling", until ),
+	siblings: elem => jQuery.sibling( ( elem.parentNode || {} ).firstChild, elem ),
+	children: elem => jQuery.sibling( elem.firstChild ),
+	contents: elem => elem.contentDocument || jQuery.merge( [], elem.childNodes )
+}, (name, fn) => {
 	jQuery.fn[ name ] = function( until, selector ) {
 		var matched = jQuery.map( this, fn, until );
 

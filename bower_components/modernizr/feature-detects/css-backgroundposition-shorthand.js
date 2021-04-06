@@ -5,15 +5,15 @@
     Example: http://jsfiddle.net/Blink/bBXvt/
 */
 
-(function() {
+((() => {
 
     var elem = document.createElement('a'),
         eStyle = elem.style,
         val = "right 10px bottom 10px";
 
-    Modernizr.addTest('bgpositionshorthand', function(){
+    Modernizr.addTest('bgpositionshorthand', () => {
         eStyle.cssText = "background-position: " + val + ";";
         return (eStyle.backgroundPosition === val);
     });
 
-}());
+})());

@@ -1,5 +1,5 @@
 // Stylable scrollbars detection
-Modernizr.addTest('cssscrollbar', function() {
+Modernizr.addTest('cssscrollbar', () => {
 
 	var bool,
 
@@ -10,7 +10,7 @@ Modernizr.addTest('cssscrollbar', function() {
 				.slice(1)
 				.join('#') + "scrollbar{width:0px}";
 
-	Modernizr.testStyles(styles, function(node) {
+	Modernizr.testStyles(styles, node => {
 		bool = 'scrollWidth' in node && node.scrollWidth == 40;
 	});
 

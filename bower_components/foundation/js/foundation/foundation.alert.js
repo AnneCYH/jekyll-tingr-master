@@ -7,7 +7,7 @@
     version : '5.5.2',
 
     settings : {
-      callback : function () {}
+      callback : () => {}
     },
 
     init : function (scope, method, options) {
@@ -38,6 +38,6 @@
       });
     },
 
-    reflow : function () {}
+    reflow : () => {}
   };
 }(jQuery, window, window.document));

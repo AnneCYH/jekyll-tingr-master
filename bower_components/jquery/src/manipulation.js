@@ -13,7 +13,16 @@ define([
 	"./traversing",
 	"./selector",
 	"./event"
-], function( jQuery, concat, push, access, rcheckableType, support, data_priv, data_user ) {
+], (
+    jQuery,
+    concat,
+    push,
+    access,
+    rcheckableType,
+    support,
+    data_priv,
+    data_user
+) => {
 
 var
 	rxhtmlTag = /<(?!area|br|col|embed|hr|img|input|link|meta|param)(([\w:]+)[^>]*)\/>/gi,
@@ -145,7 +154,7 @@ function fixInput( src, dest ) {
 }
 
 jQuery.extend({
-	clone: function( elem, dataAndEvents, deepDataAndEvents ) {
+	clone: (elem, dataAndEvents, deepDataAndEvents) => {
 		var i, l, srcElements, destElements,
 			clone = elem.cloneNode( true ),
 			inPage = jQuery.contains( elem.ownerDocument, elem );
@@ -187,7 +196,7 @@ jQuery.extend({
 		return clone;
 	},
 
-	buildFragment: function( elems, context, scripts, selection ) {
+	buildFragment: (elems, context, scripts, selection) => {
 		var elem, tmp, tag, wrap, contains, j,
 			fragment = context.createDocumentFragment(),
 			nodes = [],
@@ -273,7 +282,7 @@ jQuery.extend({
 		return fragment;
 	},
 
-	cleanData: function( elems ) {
+	cleanData: elems => {
 		var data, elem, type, key,
 			special = jQuery.event.special,
 			i = 0;
@@ -555,7 +564,7 @@ jQuery.each({
 	insertBefore: "before",
 	insertAfter: "after",
 	replaceAll: "replaceWith"
-}, function( name, original ) {
+}, (name, original) => {
 	jQuery.fn[ name ] = function( selector ) {
 		var elems,
 			ret = [],

@@ -13,8 +13,8 @@
       align : 'bottom',
       is_hover : false,
       hover_timeout : 150,
-      opened : function () {},
-      closed : function () {}
+      opened : () => {},
+      closed : () => {}
     },
 
     init : function (scope, method, options) {
@@ -76,7 +76,7 @@
                   settings = target.data(self.attr_name(true) + '-init') || self.settings;
           }
 
-          self.timeout = setTimeout(function () {
+          self.timeout = setTimeout(() => {
             if ($this.data(self.data_attr())) {
               if (settings.is_hover) {
                 self.close.call(self, S('#' + $this.data(self.data_attr())));
@@ -86,9 +86,9 @@
                 self.close.call(self, $this);
               }
             }
-          }.bind(this), settings.hover_timeout);
+          }, settings.hover_timeout);
         })
-        .on('click.fndtn.dropdown', function (e) {
+        .on('click.fndtn.dropdown', e => {
           var parent = S(e.target).closest('[' + self.attr_name() + '-content]');
           var links  = parent.find('a');
 
@@ -122,7 +122,7 @@
 
       S(window)
         .off('.dropdown')
-        .on('resize.fndtn.dropdown', self.throttle(function () {
+        .on('resize.fndtn.dropdown', self.throttle(() => {
           self.resize.call(self);
         }, 50));
 
@@ -446,10 +446,8 @@
       }
     },
 
-    small : function () {
-      return matchMedia(Foundation.media_queries.small).matches &&
-        !matchMedia(Foundation.media_queries.medium).matches;
-    },
+    small : () => matchMedia(Foundation.media_queries.small).matches &&
+      !matchMedia(Foundation.media_queries.medium).matches,
 
     off : function () {
       this.S(this.scope).off('.fndtn.dropdown');
@@ -458,6 +456,6 @@
       this.S('[data-dropdown-content]').off('.fndtn.dropdown');
     },
 
-    reflow : function () {}
+    reflow : () => {}
   };
 }(jQuery, window, window.document));

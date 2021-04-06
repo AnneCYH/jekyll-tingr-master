@@ -14,11 +14,9 @@
       disable_for_touch : false,
       hover_delay : 200,
       show_on : 'all',
-      tip_template : function (selector, content) {
-        return '<span data-selector="' + selector + '" id="' + selector + '" class="'
-          + Foundation.libs.tooltip.settings.tooltip_class.substring(1)
-          + '" role="tooltip">' + content + '<span class="nub"></span></span>';
-      }
+      tip_template : (selector, content) => '<span data-selector="' + selector + '" id="' + selector + '" class="'
+        + Foundation.libs.tooltip.settings.tooltip_class.substring(1)
+        + '" role="tooltip">' + content + '<span class="nub"></span></span>'
     },
 
     cache : {},
@@ -43,13 +41,9 @@
       return false;
     },
 
-    medium : function () {
-      return matchMedia(Foundation.media_queries['medium']).matches;
-    },
+    medium : () => matchMedia(Foundation.media_queries['medium']).matches,
 
-    large : function () {
-      return matchMedia(Foundation.media_queries['large']).matches;
-    },
+    large : () => matchMedia(Foundation.media_queries['large']).matches,
 
     events : function (instance) {
       var self = this,
@@ -145,10 +139,7 @@
         });
     },
 
-    ie_touch : function (e) {
-      // How do I distinguish between IE11 and Windows Phone 8?????
-      return false;
-    },
+    ie_touch : e => false,
 
     showTip : function ($target) {
       var $tip = this.getTip($target);
@@ -199,7 +190,7 @@
 
       if (Modernizr.touch) {
         $tip.append('<span class="tap-to-close">' + settings.touch_close_text + '</span>');
-        $tip.on('touchstart.fndtn.tooltip MSPointerDown.fndtn.tooltip', function (e) {
+        $tip.on('touchstart.fndtn.tooltip MSPointerDown.fndtn.tooltip', e => {
           self.hide($target);
         });
       }
@@ -223,14 +214,12 @@
         tip.css({'width' : (width) ? width : 'auto'});
       }
 
-      objPos = function (obj, top, right, bottom, left, width) {
-        return obj.css({
-          'top' : (top) ? top : 'auto',
-          'bottom' : (bottom) ? bottom : 'auto',
-          'left' : (left) ? left : 'auto',
-          'right' : (right) ? right : 'auto'
-        }).end();
-      };
+      objPos = (obj, top, right, bottom, left, width) => obj.css({
+        'top' : (top) ? top : 'auto',
+        'bottom' : (bottom) ? bottom : 'auto',
+        'left' : (left) ? left : 'auto',
+        'right' : (right) ? right : 'auto'
+      }).end();
 
       objPos(tip, (target.offset().top + target.outerHeight() + 10), 'auto', 'auto', target.offset().left);
 
@@ -272,16 +261,14 @@
       tip.css('visibility', 'visible').hide();
     },
 
-    small : function () {
-      return matchMedia(Foundation.media_queries.small).matches &&
-        !matchMedia(Foundation.media_queries.medium).matches;
-    },
+    small : () => matchMedia(Foundation.media_queries.small).matches &&
+      !matchMedia(Foundation.media_queries.medium).matches,
 
     inheritable_classes : function ($target) {
       var settings = $.extend({}, this.settings, this.data_options($target)),
           inheritables = ['tip-top', 'tip-left', 'tip-bottom', 'tip-right', 'radius', 'round'].concat(settings.additional_inheritable_classes),
           classes = $target.attr('class'),
-          filtered = classes ? $.map(classes.split(' '), function (el, i) {
+          filtered = classes ? $.map(classes.split(' '), (el, i) => {
             if ($.inArray(el, inheritables) !== -1) {
               return el;
             }
@@ -297,7 +284,7 @@
 
       if ($tip.find('.tap-to-close').length === 0) {
         $tip.append('<span class="tap-to-close">' + settings.touch_close_text + '</span>');
-        $tip.on('click.fndtn.tooltip.tapclose touchstart.fndtn.tooltip.tapclose MSPointerDown.fndtn.tooltip.tapclose', function (e) {
+        $tip.on('click.fndtn.tooltip.tapclose touchstart.fndtn.tooltip.tapclose MSPointerDown.fndtn.tooltip.tapclose', e => {
           self.hide($target);
         });
       }
@@ -319,7 +306,7 @@
 
     hide : function ($target) {
       var $tip = this.getTip($target);
-      $tip.fadeOut(150, function () {
+      $tip.fadeOut(150, () => {
         $tip.find('.tap-to-close').remove();
         $tip.off('click.fndtn.tooltip.tapclose MSPointerDown.fndtn.tapclose');
         $target.removeClass('open');
@@ -334,6 +321,6 @@
       }).remove();
     },
 
-    reflow : function () {}
+    reflow : () => {}
   };
 }(jQuery, window, window.document));

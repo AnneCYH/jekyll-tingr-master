@@ -8,7 +8,7 @@
 
     settings : {
       active_class : 'active',
-      callback : function () {},
+      callback : () => {},
       deep_linking : false,
       scroll_to_content : true,
       is_hover : false
@@ -39,7 +39,7 @@
       var self = this,
           S = this.S;
 
-      var usual_tab_behavior =  function (e, target) {
+      var usual_tab_behavior =  (e, target) => {
           var settings = S(target).closest('[' + self.attr_name() + ']').data(self.attr_name(true) + '-init');
           if (!settings.is_hover || Modernizr.touch) {
             e.preventDefault();
@@ -75,7 +75,7 @@
         });
 
       // Location hash change event
-      S(window).on('hashchange.fndtn.tab', function (e) {
+      S(window).on('hashchange.fndtn.tab', e => {
         e.preventDefault();
         self.handle_location_hash_change();
       });
@@ -178,7 +178,7 @@
               .attr('aria-hidden', null);
 
           },
-          go_to_hash = function(hash) {
+          go_to_hash = hash => {
             // This function allows correct behaviour of the browser's back button when deep linking is enabled. Without it
             // the user would get continually redirected to the default hash.
             var is_entry_location = window.location.href === self.entry_location,
@@ -242,8 +242,8 @@
       return str;
     },
 
-    off : function () {},
+    off : () => {},
 
-    reflow : function () {}
+    reflow : () => {}
   };
 }(jQuery, window, window.document));

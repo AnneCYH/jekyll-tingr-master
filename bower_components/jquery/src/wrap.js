@@ -3,7 +3,7 @@ define([
 	"./core/init",
 	"./manipulation", // clone
 	"./traversing" // parent, contents
-], function( jQuery ) {
+], jQuery => {
 
 jQuery.fn.extend({
 	wrapAll: function( html ) {

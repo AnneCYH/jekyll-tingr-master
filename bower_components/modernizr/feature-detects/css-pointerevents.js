@@ -7,7 +7,7 @@
 // github.com/Modernizr/Modernizr/issues/80
 
 
-Modernizr.addTest('pointerevents', function(){
+Modernizr.addTest('pointerevents', () => {
     var element = document.createElement('x'),
         documentElement = document.documentElement,
         getComputedStyle = window.getComputedStyle,

@@ -1,5 +1,5 @@
 /*! http://mths.be/placeholder v2.0.9 by @mathias */
-(function(factory) {
+((factory => {
 	if (typeof define === 'function' && define.amd) {
 		// AMD
 		define(['jquery'], factory);
@@ -7,7 +7,7 @@
 		// Browser globals
 		factory(jQuery);
 	}
-}(function($) {
+})($ => {
 
 	// Opera Mini v7 doesn’t support placeholder although its DOM seems to indicate so
 	var isOperaMini = Object.prototype.toString.call(window.operamini) == '[object OperaMini]';
@@ -46,7 +46,7 @@
 		placeholder.textarea = isTextareaSupported;
 
 		hooks = {
-			'get': function(element) {
+			'get': element => {
 				var $element = $(element);
 
 				var $passwordInput = $element.data('placeholder-password');
@@ -56,7 +56,7 @@
 
 				return $element.data('placeholder-enabled') && $element.hasClass('placeholder') ? '' : element.value;
 			},
-			'set': function(element, value) {
+			'set': (element, value) => {
 				var $element = $(element);
 
 				var $passwordInput = $element.data('placeholder-password');
@@ -93,19 +93,19 @@
 			propHooks.value = hooks;
 		}
 
-		$(function() {
+		$(() => {
 			// Look for forms
 			$(document).delegate('form', 'submit.placeholder', function() {
 				// Clear the placeholder values so they don't get submitted
 				var $inputs = $('.placeholder', this).each(clearPlaceholder);
-				setTimeout(function() {
+				setTimeout(() => {
 					$inputs.each(setPlaceholder);
 				}, 10);
 			});
 		});
 
 		// Clear placeholder values upon page reload
-		$(window).bind('beforeunload.placeholder', function() {
+		$(window).bind('beforeunload.placeholder', () => {
 			$('.placeholder').each(function() {
 				this.value = '';
 			});
@@ -117,7 +117,7 @@
 		// Return an object of element attributes
 		var newAttrs = {};
 		var rinlinejQuery = /^jQuery\d+$/;
-		$.each(elem.attributes, function(i, attr) {
+		$.each(elem.attributes, (i, attr) => {
 			if (attr.specified && !rinlinejQuery.test(attr.name)) {
 				newAttrs[attr.name] = attr.value;
 			}

@@ -1,7 +1,7 @@
 define([
 	"../core",
 	"../var/strundefined"
-], function( jQuery, strundefined ) {
+], (jQuery, strundefined) => {
 
 var
 	// Map over jQuery in case of overwrite
@@ -10,7 +10,7 @@ var
 	// Map over the $ in case of overwrite
 	_$ = window.$;
 
-jQuery.noConflict = function( deep ) {
+jQuery.noConflict = deep => {
 	if ( window.$ === jQuery ) {
 		window.$ = _$;
 	}

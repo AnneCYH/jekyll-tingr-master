@@ -2,7 +2,7 @@ define([
 	"../core",
 	"./support",
 	"../core/init"
-], function( jQuery, support ) {
+], (jQuery, support) => {
 
 var rreturn = /\r/g;
 
@@ -54,9 +54,7 @@ jQuery.fn.extend({
 				val += "";
 
 			} else if ( jQuery.isArray( val ) ) {
-				val = jQuery.map( val, function( value ) {
-					return value == null ? "" : value + "";
-				});
+				val = jQuery.map( val, value => value == null ? "" : value + "");
 			}
 
 			hooks = jQuery.valHooks[ this.type ] || jQuery.valHooks[ this.nodeName.toLowerCase() ];
@@ -72,7 +70,7 @@ jQuery.fn.extend({
 jQuery.extend({
 	valHooks: {
 		option: {
-			get: function( elem ) {
+			get: elem => {
 				var val = jQuery.find.attr( elem, "value" );
 				return val != null ?
 					val :
@@ -82,7 +80,7 @@ jQuery.extend({
 			}
 		},
 		select: {
-			get: function( elem ) {
+			get: elem => {
 				var value, option,
 					options = elem.options,
 					index = elem.selectedIndex,
@@ -119,7 +117,7 @@ jQuery.extend({
 				return values;
 			},
 
-			set: function( elem, value ) {
+			set: (elem, value) => {
 				var optionSet, option,
 					options = elem.options,
 					values = jQuery.makeArray( value ),
@@ -145,16 +143,14 @@ jQuery.extend({
 // Radios and checkboxes getter/setter
 jQuery.each([ "radio", "checkbox" ], function() {
 	jQuery.valHooks[ this ] = {
-		set: function( elem, value ) {
+		set: (elem, value) => {
 			if ( jQuery.isArray( value ) ) {
 				return ( elem.checked = jQuery.inArray( jQuery(elem).val(), value ) >= 0 );
 			}
 		}
 	};
 	if ( !support.checkOn ) {
-		jQuery.valHooks[ this ].get = function( elem ) {
-			return elem.getAttribute("value") === null ? "on" : elem.value;
-		};
+		jQuery.valHooks[ this ].get = elem => elem.getAttribute("value") === null ? "on" : elem.value;
 	}
 });
 

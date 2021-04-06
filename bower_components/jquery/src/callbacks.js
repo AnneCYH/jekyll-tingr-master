@@ -1,7 +1,7 @@
 define([
 	"./core",
 	"./var/rnotwhite"
-], function( jQuery, rnotwhite ) {
+], (jQuery, rnotwhite) => {
 
 // String to Object options format cache
 var optionsCache = {};
@@ -9,7 +9,7 @@ var optionsCache = {};
 // Convert String-formatted options into Object-formatted ones and store in cache
 function createOptions( options ) {
 	var object = optionsCache[ options ] = {};
-	jQuery.each( options.match( rnotwhite ) || [], function( _, flag ) {
+	jQuery.each( options.match( rnotwhite ) || [], (_, flag) => {
 		object[ flag ] = true;
 	});
 	return object;
@@ -37,7 +37,7 @@ function createOptions( options ) {
  *	stopOnFalse:	interrupt callings when a callback returns false
  *
  */
-jQuery.Callbacks = function( options ) {
+jQuery.Callbacks = options => {
 
 	// Convert options from String-formatted to Object-formatted if needed
 	// (we check in cache first)
@@ -62,7 +62,7 @@ jQuery.Callbacks = function( options ) {
 		// Stack of fire calls for repeatable lists
 		stack = !options.once && [],
 		// Fire callbacks
-		fire = function( data ) {
+		fire = data => {
 			memory = options.memory && data;
 			fired = true;
 			firingIndex = firingStart || 0;
@@ -96,7 +96,7 @@ jQuery.Callbacks = function( options ) {
 					// First, we save the current length
 					var start = list.length;
 					(function add( args ) {
-						jQuery.each( args, function( _, arg ) {
+						jQuery.each( args, (_, arg) => {
 							var type = jQuery.type( arg );
 							if ( type === "function" ) {
 								if ( !options.unique || !self.has( arg ) ) {
@@ -124,7 +124,7 @@ jQuery.Callbacks = function( options ) {
 			// Remove a callback from the list
 			remove: function() {
 				if ( list ) {
-					jQuery.each( arguments, function( _, arg ) {
+					jQuery.each( arguments, (_, arg) => {
 						var index;
 						while ( ( index = jQuery.inArray( arg, list, index ) ) > -1 ) {
 							list.splice( index, 1 );
@@ -144,9 +144,7 @@ jQuery.Callbacks = function( options ) {
 			},
 			// Check if a given callback is in the list.
 			// If no argument is given, return whether or not list has callbacks attached.
-			has: function( fn ) {
-				return fn ? jQuery.inArray( fn, list ) > -1 : !!( list && list.length );
-			},
+			has: fn => fn ? jQuery.inArray( fn, list ) > -1 : !!( list && list.length ),
 			// Remove all callbacks from the list
 			empty: function() {
 				list = [];
@@ -159,9 +157,7 @@ jQuery.Callbacks = function( options ) {
 				return this;
 			},
 			// Is it disabled?
-			disabled: function() {
-				return !list;
-			},
+			disabled: () => !list,
 			// Lock the list in its current state
 			lock: function() {
 				stack = undefined;
@@ -171,9 +167,7 @@ jQuery.Callbacks = function( options ) {
 				return this;
 			},
 			// Is it locked?
-			locked: function() {
-				return !stack;
-			},
+			locked: () => !stack,
 			// Call all callbacks with the given context and arguments
 			fireWith: function( context, args ) {
 				if ( list && ( !fired || stack ) ) {
@@ -193,9 +187,7 @@ jQuery.Callbacks = function( options ) {
 				return this;
 			},
 			// To know if the callbacks have already been called at least once
-			fired: function() {
-				return !!fired;
-			}
+			fired: () => !!fired
 		};
 
 	return self;

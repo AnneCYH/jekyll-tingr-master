@@ -3,7 +3,7 @@
 //
 // by @alrra
 
-Modernizr.addTest('ruby', function () {
+Modernizr.addTest('ruby', () => {
 
     var ruby = document.createElement('ruby'),
         rt = document.createElement('rt'),

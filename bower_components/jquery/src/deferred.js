@@ -2,11 +2,11 @@ define([
 	"./core",
 	"./var/slice",
 	"./callbacks"
-], function( jQuery, slice ) {
+], (jQuery, slice) => {
 
 jQuery.extend({
 
-	Deferred: function( func ) {
+	Deferred: func => {
 		var tuples = [
 				// action, add listener, listener list, final state
 				[ "resolve", "done", jQuery.Callbacks("once memory"), "resolved" ],
@@ -15,17 +15,15 @@ jQuery.extend({
 			],
 			state = "pending",
 			promise = {
-				state: function() {
-					return state;
-				},
+				state: () => state,
 				always: function() {
 					deferred.done( arguments ).fail( arguments );
 					return this;
 				},
 				then: function( /* fnDone, fnFail, fnProgress */ ) {
 					var fns = arguments;
-					return jQuery.Deferred(function( newDefer ) {
-						jQuery.each( tuples, function( i, tuple ) {
+					return jQuery.Deferred(newDefer => {
+						jQuery.each( tuples, (i, tuple) => {
 							var fn = jQuery.isFunction( fns[ i ] ) && fns[ i ];
 							// deferred[ done | fail | progress ] for forwarding actions to newDefer
 							deferred[ tuple[1] ](function() {
@@ -45,9 +43,7 @@ jQuery.extend({
 				},
 				// Get a promise for this deferred
 				// If obj is provided, the promise aspect is added to the object
-				promise: function( obj ) {
-					return obj != null ? jQuery.extend( obj, promise ) : promise;
-				}
+				promise: obj => obj != null ? jQuery.extend( obj, promise ) : promise
 			},
 			deferred = {};
 
@@ -55,7 +51,7 @@ jQuery.extend({
 		promise.pipe = promise.then;
 
 		// Add list-specific methods
-		jQuery.each( tuples, function( i, tuple ) {
+		jQuery.each( tuples, (i, tuple) => {
 			var list = tuple[ 2 ],
 				stateString = tuple[ 3 ];
 
@@ -64,7 +60,7 @@ jQuery.extend({
 
 			// Handle state
 			if ( stateString ) {
-				list.add(function() {
+				list.add(() => {
 					// state = [ resolved | rejected ]
 					state = stateString;
 
@@ -105,17 +101,15 @@ jQuery.extend({
 			deferred = remaining === 1 ? subordinate : jQuery.Deferred(),
 
 			// Update function for both resolve and progress values
-			updateFunc = function( i, contexts, values ) {
-				return function( value ) {
-					contexts[ i ] = this;
-					values[ i ] = arguments.length > 1 ? slice.call( arguments ) : value;
-					if ( values === progressValues ) {
-						deferred.notifyWith( contexts, values );
-					} else if ( !( --remaining ) ) {
-						deferred.resolveWith( contexts, values );
-					}
-				};
-			},
+			updateFunc = (i, contexts, values) => function( value ) {
+                contexts[ i ] = this;
+                values[ i ] = arguments.length > 1 ? slice.call( arguments ) : value;
+                if ( values === progressValues ) {
+                    deferred.notifyWith( contexts, values );
+                } else if ( !( --remaining ) ) {
+                    deferred.resolveWith( contexts, values );
+                }
+            },
 
 			progressValues, progressContexts, resolveContexts;
 

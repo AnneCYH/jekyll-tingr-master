@@ -10,7 +10,7 @@ define([
 	"./core/init",
 	"./css",
 	"./selector" // contains
-], function( jQuery, strundefined, access, rnumnonpx, curCSS, addGetHookIf, support ) {
+], (jQuery, strundefined, access, rnumnonpx, curCSS, addGetHookIf, support) => {
 
 var docElem = window.document.documentElement;
 
@@ -22,7 +22,7 @@ function getWindow( elem ) {
 }
 
 jQuery.offset = {
-	setOffset: function( elem, options, i ) {
+	setOffset: (elem, options, i) => {
 		var curPosition, curLeft, curCSSTop, curTop, curOffset, curCSSLeft, calculatePosition,
 			position = jQuery.css( elem, "position" ),
 			curElem = jQuery( elem ),
@@ -159,11 +159,11 @@ jQuery.fn.extend({
 });
 
 // Create scrollLeft and scrollTop methods
-jQuery.each( { scrollLeft: "pageXOffset", scrollTop: "pageYOffset" }, function( method, prop ) {
+jQuery.each( { scrollLeft: "pageXOffset", scrollTop: "pageYOffset" }, (method, prop) => {
 	var top = "pageYOffset" === prop;
 
 	jQuery.fn[ method ] = function( val ) {
-		return access( this, function( elem, method, val ) {
+		return access( this, (elem, method, val) => {
 			var win = getWindow( elem );
 
 			if ( val === undefined ) {
@@ -189,9 +189,9 @@ jQuery.each( { scrollLeft: "pageXOffset", scrollTop: "pageYOffset" }, function( 
 // Blink bug: https://code.google.com/p/chromium/issues/detail?id=229280
 // getComputedStyle returns percent when specified for top/left/bottom/right;
 // rather than make the css module depend on the offset module, just check for it here
-jQuery.each( [ "top", "left" ], function( i, prop ) {
+jQuery.each( [ "top", "left" ], (i, prop) => {
 	jQuery.cssHooks[ prop ] = addGetHookIf( support.pixelPosition,
-		function( elem, computed ) {
+		(elem, computed) => {
 			if ( computed ) {
 				computed = curCSS( elem, prop );
 				// If curCSS returns percentage, fallback to offset

@@ -2,9 +2,9 @@ define([
 	"../core",
 	"../var/support",
 	"../ajax"
-], function( jQuery, support ) {
+], (jQuery, support) => {
 
-jQuery.ajaxSettings.xhr = function() {
+jQuery.ajaxSettings.xhr = () => {
 	try {
 		return new XMLHttpRequest();
 	} catch( e ) {}
@@ -25,7 +25,7 @@ var xhrId = 0,
 // Open requests must be manually aborted on unload (#5280)
 // See https://support.microsoft.com/kb/2856746 for more info
 if ( window.attachEvent ) {
-	window.attachEvent( "onunload", function() {
+	window.attachEvent( "onunload", () => {
 		for ( var key in xhrCallbacks ) {
 			xhrCallbacks[ key ]();
 		}
@@ -35,13 +35,13 @@ if ( window.attachEvent ) {
 support.cors = !!xhrSupported && ( "withCredentials" in xhrSupported );
 support.ajax = xhrSupported = !!xhrSupported;
 
-jQuery.ajaxTransport(function( options ) {
+jQuery.ajaxTransport(options => {
 	var callback;
 
 	// Cross domain only allowed if supported through XMLHttpRequest
 	if ( support.cors || xhrSupported && !options.crossDomain ) {
 		return {
-			send: function( headers, complete ) {
+			send: (headers, complete) => {
 				var i,
 					xhr = options.xhr(),
 					id = ++xhrId;
@@ -75,36 +75,34 @@ jQuery.ajaxTransport(function( options ) {
 				}
 
 				// Callback
-				callback = function( type ) {
-					return function() {
-						if ( callback ) {
-							delete xhrCallbacks[ id ];
-							callback = xhr.onload = xhr.onerror = null;
+				callback = type => () => {
+                    if ( callback ) {
+                        delete xhrCallbacks[ id ];
+                        callback = xhr.onload = xhr.onerror = null;
 
-							if ( type === "abort" ) {
-								xhr.abort();
-							} else if ( type === "error" ) {
-								complete(
-									// file: protocol always yields status 0; see #8605, #14207
-									xhr.status,
-									xhr.statusText
-								);
-							} else {
-								complete(
-									xhrSuccessStatus[ xhr.status ] || xhr.status,
-									xhr.statusText,
-									// Support: IE9
-									// Accessing binary-data responseText throws an exception
-									// (#11426)
-									typeof xhr.responseText === "string" ? {
-										text: xhr.responseText
-									} : undefined,
-									xhr.getAllResponseHeaders()
-								);
-							}
-						}
-					};
-				};
+                        if ( type === "abort" ) {
+                            xhr.abort();
+                        } else if ( type === "error" ) {
+                            complete(
+                                // file: protocol always yields status 0; see #8605, #14207
+                                xhr.status,
+                                xhr.statusText
+                            );
+                        } else {
+                            complete(
+                                xhrSuccessStatus[ xhr.status ] || xhr.status,
+                                xhr.statusText,
+                                // Support: IE9
+                                // Accessing binary-data responseText throws an exception
+                                // (#11426)
+                                typeof xhr.responseText === "string" ? {
+                                    text: xhr.responseText
+                                } : undefined,
+                                xhr.getAllResponseHeaders()
+                            );
+                        }
+                    }
+                };
 
 				// Listen to events
 				xhr.onload = callback();
@@ -124,7 +122,7 @@ jQuery.ajaxTransport(function( options ) {
 				}
 			},
 
-			abort: function() {
+			abort: () => {
 				if ( callback ) {
 					callback();
 				}

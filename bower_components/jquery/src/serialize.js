@@ -4,7 +4,7 @@ define([
 	"./core/init",
 	"./traversing", // filter
 	"./attributes/prop"
-], function( jQuery, rcheckableType ) {
+], (jQuery, rcheckableType) => {
 
 var r20 = /%20/g,
 	rbracket = /\[\]$/,
@@ -17,7 +17,7 @@ function buildParams( prefix, obj, traditional, add ) {
 
 	if ( jQuery.isArray( obj ) ) {
 		// Serialize array item.
-		jQuery.each( obj, function( i, v ) {
+		jQuery.each( obj, (i, v) => {
 			if ( traditional || rbracket.test( prefix ) ) {
 				// Treat each array item as a scalar.
 				add( prefix, v );
@@ -42,10 +42,10 @@ function buildParams( prefix, obj, traditional, add ) {
 
 // Serialize an array of form elements or a set of
 // key/values into a query string
-jQuery.param = function( a, traditional ) {
+jQuery.param = (a, traditional) => {
 	var prefix,
 		s = [],
-		add = function( key, value ) {
+		add = (key, value) => {
 			// If value is a function, invoke it and return its value
 			value = jQuery.isFunction( value ) ? value() : ( value == null ? "" : value );
 			s[ s.length ] = encodeURIComponent( key ) + "=" + encodeURIComponent( value );
@@ -99,9 +99,10 @@ jQuery.fn.extend({
 			return val == null ?
 				null :
 				jQuery.isArray( val ) ?
-					jQuery.map( val, function( val ) {
-						return { name: elem.name, value: val.replace( rCRLF, "\r\n" ) };
-					}) :
+					jQuery.map( val, val => ({
+                        name: elem.name,
+                        value: val.replace( rCRLF, "\r\n" )
+                    })) :
 					{ name: elem.name, value: val.replace( rCRLF, "\r\n" ) };
 		}).get();
 	}

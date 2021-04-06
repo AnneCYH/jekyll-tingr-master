@@ -1,9 +1,9 @@
 define([
 	"../core"
-], function( jQuery ) {
+], jQuery => {
 
 // A method for quickly swapping in/out CSS properties to get correct calculations.
-jQuery.swap = function( elem, options, callback, args ) {
+jQuery.swap = (elem, options, callback, args) => {
 	var ret, name,
 		old = {};
 

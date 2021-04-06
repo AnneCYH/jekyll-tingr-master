@@ -1,5 +1,3 @@
 define([
 	"../../var/pnum"
-], function( pnum ) {
-	return new RegExp( "^(" + pnum + ")(?!px)[a-z%]+$", "i" );
-});
+], pnum => new RegExp( "^(" + pnum + ")(?!px)[a-z%]+$", "i" ));

@@ -89,17 +89,17 @@
           })
 
         .on('click.fndtn.clearing', '.clearing-main-next',
-          function (e) { self.nav(e, 'next') })
+          e => { self.nav(e, 'next') })
         .on('click.fndtn.clearing', '.clearing-main-prev',
-          function (e) { self.nav(e, 'prev') })
+          e => { self.nav(e, 'prev') })
         .on('click.fndtn.clearing', this.settings.close_selectors,
           function (e) { Foundation.libs.clearing.close(e, this) });
 
       $(document).on('keydown.fndtn.clearing',
-          function (e) { self.keydown(e) });
+          e => { self.keydown(e) });
 
       S(window).off('.clearing').on('resize.fndtn.clearing',
-        function () { self.resize() });
+        () => { self.resize() });
 
       this.swipe_events(scope);
     },
@@ -207,24 +207,24 @@
           loaded = {};
 
       // Event to disable scrolling on touch devices when Clearing is activated
-      $('body').on('touchmove', function (e) {
+      $('body').on('touchmove', e => {
         e.preventDefault();
       });
 
-      image.error(function () {
+      image.error(() => {
         error = true;
       });
 
       function startLoad() {
-        setTimeout(function () {
-          this.image_loaded(image, function () {
+        setTimeout(() => {
+          this.image_loaded(image, () => {
             if (image.outerWidth() === 1 && !error) {
               startLoad.call(this);
             } else {
               cb.call(this, image);
             }
-          }.bind(this));
-        }.bind(this), 100);
+          });
+        }, 100);
       }
 
       function cb (image) {
@@ -239,7 +239,7 @@
         this.fix_height(target)
           .caption(self.S('.clearing-caption', visible_image), self.S('img', target))
           .center_and_label(image, label)
-          .shift(current, target, function () {
+          .shift(current, target, () => {
             target.closest('li').siblings().removeClass('visible');
             target.closest('li').addClass('visible');
           });
@@ -268,13 +268,13 @@
     close : function (e, el) {
       e.preventDefault();
 
-      var root = (function (target) {
+      var root = ((target => {
             if (/blackout/.test(target.selector)) {
               return target;
             } else {
               return target.closest('.clearing-blackout');
             }
-          }($(el))),
+          })($(el))),
           body = $(document.body), container, visible_image;
 
       if (el === e.target && root) {
@@ -297,9 +297,7 @@
       return false;
     },
 
-    is_open : function (current) {
-      return current.parent().prop('style').length > 0;
-    },
+    is_open : current => current.parent().prop('style').length > 0,
 
     keydown : function (e) {
       var clearing = $('.clearing-blackout ul[' + this.attr_name() + ']'),
@@ -550,7 +548,7 @@
       return response;
     },
 
-    adjacent : function (current_index, target_index) {
+    adjacent : (current_index, target_index) => {
       for (var i = target_index + 1; i >= target_index - 1; i--) {
         if (i === current_index) {
           return true;

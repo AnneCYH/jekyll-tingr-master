@@ -3,7 +3,7 @@ define([
 	"../core",
 	"./var/rsingleTag",
 	"../traversing/findFilter"
-], function( jQuery, rsingleTag ) {
+], (jQuery, rsingleTag) => {
 
 // A central reference to the root jQuery(document)
 var rootjQuery,

@@ -72,7 +72,7 @@
             return trigger(path);
           }
 
-          return $.get(path, function (response) {
+          return $.get(path, response => {
             el.html(response);
             el.data(self.data_attr + '-last-path', path);
             trigger();
@@ -104,7 +104,7 @@
 
       $(window)
         .off('.interchange')
-        .on('resize.fndtn.interchange', self.throttle(function () {
+        .on('resize.fndtn.interchange', self.throttle(() => {
             var currMediaHash = self.get_media_hash();
             if (currMediaHash !== prevMediaHash) {
                 self.resize();
@@ -135,9 +135,9 @@
                   var args = Array.prototype.slice.call(arguments, 0);
                 }
 
-                return function() {
+                return () => {
                   passed.el.trigger(passed.scenario[1], args);
-                }
+                };
               }(passed)));
           }
         }
@@ -310,7 +310,7 @@
       return this.cache[uuid] = scenarios;
     },
 
-    trim : function (str) {
+    trim : str => {
 
       if (typeof str === 'string') {
         return $.trim(str);

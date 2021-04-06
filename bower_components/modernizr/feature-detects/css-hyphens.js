@@ -18,7 +18,7 @@ More details at https://github.com/Modernizr/Modernizr/issues/312
 
 */
 
-(function() {
+((() => {
 
 	if (!document.body){
 		window.console && console.warn('document.body doesn\'t exist. Modernizr hyphens test needs it.');
@@ -171,7 +171,7 @@ More details at https://github.com/Modernizr/Modernizr/issues/312
 		}
 	}
 
-	Modernizr.addTest("csshyphens", function() {
+	Modernizr.addTest("csshyphens", () => {
 
 		if (!Modernizr.testAllProps('hyphens')) return false;
 
@@ -185,7 +185,7 @@ More details at https://github.com/Modernizr/Modernizr/issues/312
 		}
 	});
 
-	Modernizr.addTest("softhyphens", function() {
+	Modernizr.addTest("softhyphens", () => {
 		try {
 			// use numeric entity instead of &shy; in case it's XHTML
 			return test_hyphens('&#173;', true) && test_hyphens('&#8203;', false);
@@ -194,7 +194,7 @@ More details at https://github.com/Modernizr/Modernizr/issues/312
 		}
 	});
 
-	Modernizr.addTest("softhyphensfind", function() {
+	Modernizr.addTest("softhyphensfind", () => {
 		try {
 			return test_hyphens_find('&#173;') && test_hyphens_find('&#8203;');
 		} catch(e) {
@@ -202,4 +202,4 @@ More details at https://github.com/Modernizr/Modernizr/issues/312
 		}
 	});
 
-})();
+}))();

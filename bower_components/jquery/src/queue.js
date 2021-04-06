@@ -3,10 +3,10 @@ define([
 	"./data/var/data_priv",
 	"./deferred",
 	"./callbacks"
-], function( jQuery, data_priv ) {
+], (jQuery, data_priv) => {
 
 jQuery.extend({
-	queue: function( elem, type, data ) {
+	queue: (elem, type, data) => {
 		var queue;
 
 		if ( elem ) {
@@ -25,14 +25,14 @@ jQuery.extend({
 		}
 	},
 
-	dequeue: function( elem, type ) {
+	dequeue: (elem, type) => {
 		type = type || "fx";
 
 		var queue = jQuery.queue( elem, type ),
 			startLength = queue.length,
 			fn = queue.shift(),
 			hooks = jQuery._queueHooks( elem, type ),
-			next = function() {
+			next = () => {
 				jQuery.dequeue( elem, type );
 			};
 
@@ -61,10 +61,10 @@ jQuery.extend({
 	},
 
 	// Not public - generate a queueHooks object, or return the current one
-	_queueHooks: function( elem, type ) {
+	_queueHooks: (elem, type) => {
 		var key = type + "queueHooks";
 		return data_priv.get( elem, key ) || data_priv.access( elem, key, {
-			empty: jQuery.Callbacks("once memory").add(function() {
+			empty: jQuery.Callbacks("once memory").add(() => {
 				data_priv.remove( elem, [ type + "queue", key ] );
 			})
 		});
@@ -114,7 +114,7 @@ jQuery.fn.extend({
 			defer = jQuery.Deferred(),
 			elements = this,
 			i = this.length,
-			resolve = function() {
+			resolve = () => {
 				if ( !( --count ) ) {
 					defer.resolveWith( elements, [ elements ] );
 				}
