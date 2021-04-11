@@ -717,7 +717,7 @@
     var args = Array.prototype.slice.call(arguments, 0);
 
     return this.each(function () {
-      Foundation.init.apply(Foundation, [this].concat(args));
+      Foundation.init(...[this].concat(args));
       return this;
     });
   };

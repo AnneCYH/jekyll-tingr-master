@@ -1234,7 +1234,7 @@ jQuery.extend({
 					return this;
 				},
 				always: function() {
-					return deferred.done.apply( deferred, arguments ).fail.apply( deferred, arguments );
+					return deferred.done(...arguments).fail.apply( deferred, arguments );
 				},
 				pipe: function( fnDone, fnFail, fnProgress ) {
 					return jQuery.Deferred(function( newDefer ) {
@@ -4039,7 +4039,7 @@ var Sizzle = function( selector, context, results, seed ) {
 
 	if ( toString.call(checkSet) === "[object Array]" ) {
 		if ( !prune ) {
-			results.push.apply( results, checkSet );
+			results.push(...checkSet);
 
 		} else if ( context && context.nodeType === 1 ) {
 			for ( i = 0; checkSet[i] != null; i++ ) {
@@ -4499,7 +4499,7 @@ var Expr = Sizzle.selectors = {
 					var ret = Sizzle.filter(match[3], curLoop, inplace, true ^ not);
 
 					if ( !inplace ) {
-						result.push.apply( result, ret );
+						result.push(...ret);
 					}
 
 					return false;
@@ -4807,7 +4807,7 @@ var makeArray = function( array, results ) {
 	array = Array.prototype.slice.call( array, 0 );
 
 	if ( results ) {
-		results.push.apply( results, array );
+		results.push(...array);
 		return results;
 	}
 	
@@ -5828,7 +5828,7 @@ jQuery.fn.extend({
 			});
 		} else if ( arguments.length ) {
 			var set = jQuery(arguments[0]);
-			set.push.apply( set, this.toArray() );
+			set.push(...this.toArray());
 			return this.pushStack( set, "before", arguments );
 		}
 	},
@@ -5840,7 +5840,7 @@ jQuery.fn.extend({
 			});
 		} else if ( arguments.length ) {
 			var set = this.pushStack( this, "after", arguments );
-			set.push.apply( set, jQuery(arguments[0]).toArray() );
+			set.push(...jQuery(arguments[0]).toArray());
 			return set;
 		}
 	},
@@ -6399,7 +6399,7 @@ jQuery.extend({
 					if ( ret[i].nodeType === 1 ) {
 						var jsTags = jQuery.grep( ret[i].getElementsByTagName( "script" ), checkScriptType );
 
-						ret.splice.apply( ret, [i + 1, 0].concat( jsTags ) );
+						ret.splice(...[i + 1, 0].concat( jsTags ));
 					}
 					fragment.appendChild( ret[i] );
 				}
@@ -8338,7 +8338,7 @@ jQuery.fn.extend({
 		var bool = typeof fn === "boolean";
 
 		if ( jQuery.isFunction(fn) && jQuery.isFunction(fn2) ) {
-			this._toggle.apply( this, arguments );
+			this._toggle(...arguments);
 
 		} else if ( fn == null || bool ) {
 			this.each(function() {

@@ -50,7 +50,7 @@ function processTree(data){
     return jQuery.getScript(filename);
   });
 
-  jQuery.when.apply(jQuery, jqxhrs).done(resultsToDOM);
+  jQuery.when(...jqxhrs).done(resultsToDOM);
 
 }
 

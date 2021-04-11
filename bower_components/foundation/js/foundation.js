@@ -717,7 +717,7 @@
     var args = Array.prototype.slice.call(arguments, 0);
 
     return this.each(function () {
-      Foundation.init.apply(Foundation, [this].concat(args));
+      Foundation.init(...[this].concat(args));
       return this;
     });
   };
@@ -1917,7 +1917,7 @@
           }
 
           if (settings.is_hover) {
-            self.open.apply(self, [dropdown, target]);
+            self.open(dropdown, target);
           }
         })
         .on('mouseleave.fndtn.dropdown', '[' + this.attr_name() + '], [' + this.attr_name() + '-content]', function (e) {

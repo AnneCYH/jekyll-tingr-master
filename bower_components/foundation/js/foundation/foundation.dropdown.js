@@ -62,7 +62,7 @@
           }
 
           if (settings.is_hover) {
-            self.open.apply(self, [dropdown, target]);
+            self.open(dropdown, target);
           }
         })
         .on('mouseleave.fndtn.dropdown', '[' + this.attr_name() + '], [' + this.attr_name() + '-content]', function (e) {
