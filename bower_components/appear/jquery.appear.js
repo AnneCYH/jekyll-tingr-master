@@ -3,8 +3,8 @@
  * https://github.com/bas2k/jquery.appear/
  * http://code.google.com/p/jquery-appear/
  *
- * Copyright (c) 2009 Michael Hixson
- * Copyright (c) 2012 Alexander Brovikov
+ * Copyright (c) 2009 Michael Hixson Backup
+ * Copyright (c) 2012 Alexander Brovikov Backup
  * Licensed under the MIT license (http://www.opensource.org/licenses/mit-license.php)
  */
 (function($) {
